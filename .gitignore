@@ -52,3 +52,4 @@ rsconnect/
 # quatro
 /.quarto/
 _site/
+_book/

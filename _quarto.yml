@@ -1,31 +1,5 @@
 project:
   type: book
-
-book:
-  title: One Seven
-  author: "Chunzhe, Spencer, ZHANG"
-  page-navigation: true
-  sidebar:
-    style: "docked"
-    search: true
-    alignment: left
-    contents:
-      - text: "Home"
-        href: index.qmd
-      - Section: "Data"
-        contents:
-          - data_code.qmd
-
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-
-
-project:
-  type: book
   output-dir: _book
 
 book:
@@ -34,77 +8,24 @@ book:
 
   page-footer:
     left: |
-      One seven project .
+      One seven project.
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
-  cover-image: cover.jpg
-  favicon: cover.jpg
-  site-url: https://r4ds.hadley.nz/
-  repo-url: https://github.com/hadley/r4ds/
-  repo-branch: main
+      This site was built with <a href="https://quarto.org/">Quarto</a>.
+  # site-url: https://r4ds.hadley.nz/
+  repo-url: https://github.com/sepmein/one_seven
+  repo-branch: master
   repo-actions: [edit, issue]
   chapters:
     - index.qmd
 
-    - preface-2e.qmd
-    - intro.qmd
-
-    - part: whole-game.qmd
+    - part: qmd/01_data/01_00_data.qmd
       chapters:
-        - data-visualize.qmd
-        - workflow-basics.qmd
-        - data-transform.qmd
-        - workflow-style.qmd
-        - data-tidy.qmd
-        - workflow-scripts.qmd
-        - data-import.qmd
-        - workflow-help.qmd
-
-    - part: visualize.qmd
-      chapters:
-        - layers.qmd
-        - EDA.qmd
-        - communication.qmd
-
-    - part: transform.qmd
-      chapters:
-        - logicals.qmd
-        - numbers.qmd
-        - strings.qmd
-        - regexps.qmd
-        - factors.qmd
-        - datetimes.qmd
-        - missing-values.qmd
-        - joins.qmd
-
-    - part: import.qmd
-      chapters:
-        - spreadsheets.qmd
-        - databases.qmd
-        - arrow.qmd
-        - rectangling.qmd
-        - webscraping.qmd
-
-    - part: program.qmd
-      chapters:
-        - functions.qmd
-        - iteration.qmd
-        - base-R.qmd
-
-    - part: communicate.qmd
-      chapters:
-        - quarto.qmd
-        - quarto-formats.qmd
+        - qmd/01_data/01_01_data_code.qmd
 
 format:
   html:
     theme:
       - cosmo
-      - r4ds.scss
     code-link: true
-
-    author-meta: "Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund"
-    include-in-header: "plausible.html"
-    callout-appearance: simple
 
 editor: visual
