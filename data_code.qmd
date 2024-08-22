@@ -1,0 +1,112 @@
+---
+title: "Data Code for One Seven Project"
+lightbox: true
+format:
+    html:
+        toc: true
+        number-sections: true
+        html-math-method: katex
+        smooth-scroll: true
+---
+
+# Data Code for the One Seven Project
+
+## Data Sources
+
+The One Seven project relies on two major sources of data:
+
+1. **DHIS2**: The District Health Information System 2, which aggregates health data from various health facilities, capturing real-time information on disease incidence, healthcare services, and demographic statistics.
+2. **Household Surveys**: Direct surveys conducted at the household level, providing detailed, individual-level data on health outcomes, sociodemographic factors, and other relevant indicators.
+
+## Metadata Structure
+
+Metadata provides crucial information about each data element, ensuring consistency, accuracy, and clarity in data management and analysis. In the context of the One Seven project, metadata includes the following descriptive details:
+
+### Required Metadata Fields
+
+- **Title**: The official title of the data element, succinctly describing its content and purpose.
+
+- **Definition**: A clear and precise explanation of what the data element represents, including any relevant context or specific conditions under which the data is collected. This should be comprehensive to avoid any ambiguity in interpretation.
+
+- **Data Type**: The classification of the data element based on its nature. Common data types include:
+  - **Nominal**: Categorical data with no intrinsic ordering (e.g., "Male", "Female").
+  - **Ordinal**: Categorical data with a specific order (e.g., "Low", "Medium", "High").
+  - **Ratio**: Numeric data with a meaningful zero point (e.g., age, weight).
+  - **Continuous**: Numeric data that can take any value within a range (e.g., height, temperature).
+
+- **Data Element Code**: A unique alphanumeric code that identifies each data element within the dataset. This code should be consistent across all datasets to facilitate cross-referencing and data integration.
+
+- **Format**: The required format for the data element, particularly important for dates, times, and complex codes. Examples include:
+  - **Dates**: "YYYY-MM-DD"
+  - **Identifiers**: "ABC-1234"
+
+- **Allowed Values**: The set of permissible values for the data element, especially important for categorical variables. For instance:
+  - **Gender**: "Male", "Female", "Other"
+  - **Age Group**: "0-4", "5-9", "10-14", "15+"
+
+- **Unit of Measurement**: The standard unit in which the data element is measured, ensuring uniformity across datasets. For instance:
+  - **Weight**: Kilograms (kg)
+  - **Height**: Centimeters (cm)
+  - **Temperature**: Degrees Celsius (°C)
+
+- **Data Collection Method**: Details on how the data element is collected, including the tools, techniques, and protocols used. This is particularly important for ensuring the reliability and validity of the data.
+
+- **Data Source**: The origin of the data element (e.g., "Collected from household surveys conducted in 2023" or "Extracted from DHIS2 data submissions by health facilities").
+
+### Optional Metadata Fields
+
+- **Numerators and Denominators**: If the data element is a calculated field, the metadata must specify the numerator and denominator used in the calculation. This is crucial for derived indicators, such as rates and ratios.
+
+- **Calculations**:
+
+The "Calculations" section in the metadata structure is crucial for understanding how derived or calculated data elements are generated within the dataset. This section should provide a comprehensive explanation of the formulas, methods, and assumptions used to compute the data elements, ensuring that the calculations are transparent and reproducible. Here’s how you can enrich this section:
+
+1. **Formula or Equation**:
+    - Clearly state the mathematical formula or equation used to calculate the data element. Include all relevant variables and constants.
+    - Example:
+     - **Incidence Rate Calculation**: 
+        \[
+        \text{Incidence Rate} = \left(\frac{\text{Number of New Cases}}{\text{Population at Risk}}\right) \times 1000
+        \]
+        Here, the incidence rate is calculated as the number of new cases per 1,000 population at risk.
+
+2. **Assumptions**(if any):
+    - Outline any assumptions made during the calculation, especially those that may influence the result. These could include assumptions about data completeness, homogeneity of the population, or specific methodological choices.
+    - Example:
+    - It is assumed that the population at risk remains constant during the period of analysis, which may not account for migration or changes in population demographics.
+
+3. **Validation and Verification**(if any):
+    - Explain how the calculation was validated or verified. This might involve comparing the calculated values against known benchmarks, cross-validation with other data sources, or using statistical methods to assess the accuracy of the calculation.
+    - Example:
+    - Validation was performed by comparing the calculated incidence rates against historical data to ensure consistency and accuracy.
+
+4. **Potential Sources of Error**(if any):
+    - Discuss any potential sources of error in the calculation, such as data entry errors, measurement inaccuracies, or model assumptions. Provide guidance on how these errors can be minimized or accounted for in the analysis.
+    - Example:
+    - Potential errors may arise from underreporting of cases or inaccuracies in population estimates, which could lead to an overestimation or underestimation of the incidence rate.
+
+
+- **Changes Over Time**: Document any changes in the definition, coding, or measurement of the data element over the duration of the project. This section should include:
+  - **Date of Change**: When the change was implemented.
+  - **Nature of Change**: A detailed description of what was changed and why (e.g., "In 2024, the age categories were revised to align with new WHO guidelines").
+  - **Impact on Data**: Any potential impact on data comparability and analysis due to the change.
+
+- **Validation Rules**: Any rules or checks that are applied to ensure data quality, such as range checks or consistency checks between related variables.
+
+- **Disaggregation**: Specifies how the data can be broken down, such as by age, sex, geographic region, or other relevant categories.
+
+### Example of Metadata for a Specific Data Element
+
+| **Title**           | Malaria Incidence Rate          |
+|---------------------|---------------------------------|
+| **Definition**      | The number of new malaria cases per 1,000 population within a specific time period.|
+| **Data Type**       | Ratio                           |
+| **Data Element Code**| MAL_INC_RATE                    |
+| **Format**          | Numeric                         |
+| **Allowed Values**  | 0-1000 (cases per 1,000 population)|
+| **Unit of Measurement**| Cases per 1,000 population     |
+| **Numerator**       | Number of new malaria cases identified through RDTs or microscopy|
+| **Denominator**     | Total population in the area during the same time period|
+| **Changes Over Time**| On January 2024, the method of diagnosis was expanded to include PCR results, which may affect comparability with prior data.|
+
+This detailed metadata structure ensures that all team members and stakeholders have a clear understanding of each data element, facilitating accurate data analysis and reporting across the project.
