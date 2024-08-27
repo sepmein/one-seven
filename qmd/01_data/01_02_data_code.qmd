@@ -1,6 +1,8 @@
-## Data Code Structure
+# Data Codes
 
-### Data Code for files names
+All codes should be **UPPERCASE**.
+
+## File Names
 
 General structure:
 
@@ -20,3 +22,68 @@ The study countries followed the current naming:
 | Zambia                       | ZAM          |
 
 : Country Codes ALPHA-3 in the 1,7 mCTRC project
+
+### Data Sources
+
+For conciseness and clarity in data management and documentation, two-letter abbreviations are used to represent major data sources, streamlining communication and reducing complexity in written materials. Here’s a brief explanation of each:
+
+-   **DH**: stands for **DHIS2** (District Health Information Software), which is a widely used health management data platform that helps health managers compile, analyze, and report data. It is particularly prevalent in low-resource settings and developing countries.
+
+-   **HH**: stands for **Household survey**, a methodological approach in data collection that involves gathering data directly from households. This approach is crucial for obtaining detailed demographic, socioeconomic, and health-related information directly from residents, providing insights that are not always captured through routine data collection systems.
+
+### Aggregation
+
+The health facility catchment areas(HFCA) were used as the proxy to characterize the spatial heterogeneity of malaria transmission in the study area. The health system structure will determine the administrative division unit for the selection of intervention and control arms.
+
+There are two levels of aggregation in the *1, 7 project*, **health facility level** and **village** level. Here’s a brief explanation of each:
+
+-   **HF**: stands for **health facility**
+
+-   **VI**: stands for **village**
+
+### Version
+
+Data version were denoted as a **YYMMDD** date format.
+
+### Example
+
+```         
+ZAM_DH_HF_20240826.csv
+```
+
+This stands for **health facility** level data from **DHIS2** in **Zambia**, the data were generated at **26th August, 2024**.
+
+## Data Fields
+
+`R` is the default data processing and analysis programme in this project. The data field should generally conform to the following format:
+
+### Date
+
+The date field represent a single moment in time in a platform-independent format.
+
+```{r, message=FALSE}
+library(lubridate)
+today()
+```
+
+### Time
+
+```{r}
+now()
+```
+
+### Sex
+
+The “sex” data element refers to the biological differences between males and females, as identified and reported by the respondents or observed by the data collectors. The sex of a respondent is typically recorded during household interviews. This information is used as a basic demographic identifier for all respondents, including children and adults.
+
+Sex was denoted as categorical data
+
+```{r}
+as.factor(c("M", "F"))
+```
+
+## Missing data
+
+-   NA - Not applicable
+
+-   Blank - Not reported or missing

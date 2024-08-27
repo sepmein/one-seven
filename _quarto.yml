@@ -11,7 +11,6 @@ book:
       One seven project.
     right: |
       This site was built with <a href="https://quarto.org/">Quarto</a>.
-  # site-url: https://r4ds.hadley.nz/
   repo-url: https://github.com/sepmein/one_seven
   repo-branch: master
   repo-actions: [edit, issue]
@@ -22,6 +21,7 @@ book:
       chapters:
         - qmd/01_data/01_01_meta_data.qmd
         - qmd/01_data/01_02_data_code.qmd
+        - qmd/01_data/01_01_data_code.qmd
 
 format:
   html:
