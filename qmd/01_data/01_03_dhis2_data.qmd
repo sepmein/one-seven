@@ -1,0 +1,89 @@
+# Year
+
+-   **Title**: year
+
+-   **Definition**: year
+
+-   **Data Type**:
+
+    -   **Continuous**
+
+-   **Data Element Code**: year
+
+-   **Format**: YYYY, four digits
+
+-   **Allowed Values**: \> 0, \< 9999
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: NA
+
+-   **Data Source**: Generated from the ***periodname***
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any): NA
+
+-   **Potential Sources of Error**(if any): NA
+
+```{=html}
+<!-- -->
+```
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**: NA
+
+-   **Disaggregation**: NA
+
+# Month
+
+-   **Title**: month
+
+-   **Definition**: month
+
+-   **Data Type**:
+
+    -   **Continuous**
+
+-   **Data Element Code**: year
+
+-   **Format**: mm, one or two digits
+
+-   **Allowed Values**: 1 - 12
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: NA
+
+-   **Data Source**: Generated from the ***periodname***
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any): NA
+
+-   **Potential Sources of Error**(if any): NA
+
+```{=html}
+<!-- -->
+```
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**: NA
+
+-   **Disaggregation**: NA
