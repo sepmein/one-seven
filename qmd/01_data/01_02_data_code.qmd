@@ -6,7 +6,7 @@ All codes should be **UPPERCASE**.
 
 General structure:
 
-Country codes + data source files + data file naming + version code
+**Country codes** + **Data Source** codes + **Aggregation level** code + **Version** code
 
 ### Country codes
 
@@ -21,7 +21,7 @@ The study countries followed the current naming:
 | Tanzania, United Republic of | TZA          |
 | Zambia                       | ZAM          |
 
-: Country Codes ALPHA-3 in the 1,7 mCTRC project
+: Country Codes ALPHA-3 in the 1,7 mCTRC project {#tbl-iso3}
 
 ### Data Sources
 
@@ -29,7 +29,7 @@ For conciseness and clarity in data management and documentation, two-letter abb
 
 -   **DH**: stands for **DHIS2** (District Health Information Software), which is a widely used health management data platform that helps health managers compile, analyze, and report data. It is particularly prevalent in low-resource settings and developing countries.
 
--   **HH**: stands for **Household survey**, a methodological approach in data collection that involves gathering data directly from households. This approach is crucial for obtaining detailed demographic, socioeconomic, and health-related information directly from residents, providing insights that are not always captured through routine data collection systems.
+-   **HH**: stands for **Household survey**, a methodological approach in data collection that involves gathering data directly from households. This approach is crucial for obtaining detailed demographic, socioeconomic, and health-related information directly from residents, providing insights that are not always captured through routine data collection systems. **HHB** for baseline household survey, **HHE** for endline household survey.
 
 ### Aggregation
 
@@ -40,6 +40,10 @@ There are two levels of aggregation in the *1, 7 project*, **health facility lev
 -   **HF**: stands for **health facility**
 
 -   **VI**: stands for **village**
+
+-   **HH**: stands for **household**
+
+-   **PR**: stands for **personal**
 
 ### Version
 
@@ -86,4 +90,10 @@ as.factor(c("M", "F"))
 
 -   NA - Not applicable
 
+    The term "Not Applicable" is used when certain questions in a survey do not need to be asked, depending on the responses to previous questions. For instance, the question “How many months pregnant are you?” would be classified as not applicable if the response to the earlier question “Are you pregnant now?” is either No or Unsure.
+
 -   Blank - Not reported or missing
+
+    A response is considered missing if it should have been provided but was omitted due to an oversight by the interviewer. An example of this is if a respondent indicates they are pregnant by answering Yes to the question “Are you pregnant now?” but the interviewer fails to ask the follow-up question “How many months pregnant are you?” and leaves it unanswered. In such cases, a specific code is used to denote the omission.
+
+    For most survey analyses, it's crucial to adjust the denominators of indicators to exclude cases marked as "not applicable" while including those marked as "missing." This careful distinction ensures the accuracy and comparability of the survey results with the official reports.

@@ -21,7 +21,14 @@ book:
       chapters:
         - qmd/01_data/01_01_meta_data.qmd
         - qmd/01_data/01_02_data_code.qmd
-        - qmd/01_data/01_01_data_code.qmd
+
+    - part: qmd/02_analysis/02_00_analysis.qmd
+      chapters:
+        - qmd/02_analysis/02_01_methodology.qmd
+
+    - part: Zambia
+      chapters:
+        - qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.qmd
 
 format:
   html:

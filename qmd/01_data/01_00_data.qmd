@@ -4,11 +4,69 @@ Data serves as the foundation upon which project analysis, and decision-making a
 
 Data collection involves systematically gathering information from diverse sources, ranging from direct observations and surveys to historical records and digital databases. The definition phase establishes the parameters and criteria that guide what data is relevant and how it is categorized. Preparation, on the other hand, involves cleaning, organizing, and transforming the raw data into a structured format suitable for analysis. This includes handling missing values, removing inconsistencies, and ensuring that the data aligns with the research objectives. By meticulously addressing these stages, researchers lay the groundwork for meaningful analysis, enabling insights that drive progress across various fields.
 
-``` {#packages .r}
-require(Hmisc)
-require(qreport)
-require(data.table)
+```{r}
+#| label: packages_required_for_quarto
+if (!require("pacman")) {
+  install.packages("pacman")
+}
+pacman::p_load(Hmisc)
+pacman::p_load(qreport)
+pacman::p_load(data.table)
 options(prType='html') # make describe & contents print in html
 hookaddcap()   # make knitr call a function at the end of each chunk
                # to automatically add to list of figures (in qreport)
 ```
+
+Those packages were used in this project:
+
+```{r}
+#| label: packages_required_for_analysis
+pacman::p_load(
+  # plotting
+  "ggplot2",
+  # data set manipulating
+  "dplyr",
+  "tidyr",
+  # read excel
+  "readxl",
+  # write csv
+  "readr",
+  # text formatter
+  "glue",
+  # text formatter
+  "scales",
+  # ggplot theme
+  "cowplot",
+  # reorder columns
+  "forcats",
+  "stringr",
+  "patchwork"
+)
+# packages to read DHIS2 API
+pacman::p_load_gh("sepmein/datimutils")
+```
+
+-   **pacman**[^01_00_data-1]: Tools to more conveniently perform tasks associated with add-on packages. pacman conveniently wraps library and package related functions and names them in an intuitive and consistent fashion. It seeks to combine functionality from lower level functions which can speed up workflow.
+-   **Hmisc**[^01_00_data-2]: Contains many functions useful for data analysis, high-level graphics, utility operations, functions for computing sample size and power, simulation, importing and annotating datasets, imputing missing values, advanced table making, variable clustering, character string manipulation, conversion of R objects to LaTeX and html code, recoding variables, caching, simplified parallel computing, encrypting and decrypting data using a safe workflow, general moving window statistical estimation, and assistance in interpreting principal component analysis.
+-   **qreport**[^01_00_data-3]: Provides statistical components, tables, and graphs that are useful in 'Quarto' and 'RMarkdown' reports and that produce 'Quarto' elements for special formatting such as tabs and marginal notes and graphs. Some of the functions produce entire report sections with tabs, e.g., the missing data report created by missChk(). Functions for inserting variables and tables inside 'graphviz' and 'mermaid' diagrams are included, and so are special clinical trial graphics for adverse event reporting.
+-   **data.table**[^01_00_data-4]: `data.table` provides a high-performance version of [base R](https://www.r-project.org/about.html)’s `data.frame` with syntax and feature enhancements for ease of use, convenience and programming speed.
+-   **ggplot2**[^01_00_data-5]: ggplot2 is an R package for producing visualizations of data. Unlike many graphics packages, ggplot2 uses a conceptual framework based on the grammar of graphics. This allows you to ‘speak’ a graph from composable elements, instead of being limited to a predefined set of charts.
+-   **dplyr**
+-   **readxl**
+-   **readr**
+-   **glue**
+-   **scales**
+-   **cowplot**
+-   **forcats**
+-   **stringr**
+-   **patchwork**
+
+[^01_00_data-1]: Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*. version 0.5.0, <http://github.com/trinker/pacman>.
+
+[^01_00_data-2]: <https://doi.org/10.32614/CRAN.package.Hmisc>
+
+[^01_00_data-3]: <https://doi.org/10.32614/CRAN.package.qreport>
+
+[^01_00_data-4]: Barrett T, Dowle M, Srinivasan A, Gorecki J, Chirico M, Hocking T, Schwendinger B (2024). *data.table: Extension of 'data.frame'*. R package version 1.15.99, https://Rdatatable.gitlab.io/data.table, https://github.com/Rdatatable/data.table, [https://r-datatable.com](https://r-datatable.com/).
+
+[^01_00_data-5]: H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
