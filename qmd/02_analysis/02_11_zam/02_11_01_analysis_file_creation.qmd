@@ -2,10 +2,15 @@
 
 ```{r}
 #| label: zam_analysis_file_creation_library
+#| message: false
+#| echo: fenced
+#| warning: false
 require(readxl)
 require(readr)
 require(Hmisc)
 require(here)
+require(data.table)
+require(lubridate)
 ```
 
 ## Raw data
@@ -54,7 +59,7 @@ Zambia submitted data to WHO at 23th, July, 2024.
 
         -   Endline-visit.xls
 
-###  Data Pathes
+### Data Pathes
 
 ```{r}
 #| label: zam_raw_data_path
@@ -75,12 +80,12 @@ PATH_ZAM_HHB_HH_TEST_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/B
 PATH_ZAM_HHB_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/visit_phone_combine.csv"
 
 # Endline
-PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-census.xls"
+PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-census.xlsx"
 PATH_ZAM_HHE_PR_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline household_member_all.csv"
-PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-household.xls"
-PATH_ZAM_HHE_HH_ITN_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-net.xls"
+PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-household.xlsx"
+PATH_ZAM_HHE_HH_ITN_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-net.xlsx"
 PATH_ZAM_HHE_HH_TEST_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/1,7 Parasite Microscope endline survey 2023 results_updated Rufunsa_version.xlsx"
-PATH_ZAM_HHE_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-visit.xls"
+PATH_ZAM_HHE_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-visit.xlsx"
 
 ```
 
@@ -88,28 +93,47 @@ PATH_ZAM_HHE_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/
 
 ```{r}
 #| label: zam_load_raw_data
+#| warning: false
+#| message: false
 
 # DHIS2
-zam_dh_hf_raw <- read_excel( here( PATH_ZAM_DH_HF_RAW_240723) , skip = 1)
-zam_dh_vl_raw <- read_excel( here( PATH_ZAM_DH_VL_RAW_240723) , skip = 2)
+zam_dh_hf_raw <- read_excel(here(PATH_ZAM_DH_HF_RAW_240723) , skip = 1)
+zam_dh_vl_raw <- read_excel(here(PATH_ZAM_DH_VL_RAW_240723) , skip = 2)
 
 # Survey
-zam_hh_hh_raw <- read_excel( here( PATH_ZAM_HH_HH_RAW_240723) )
-zam_hh_codebook_raw <- read_excel( here( PATH_ZAM_HH_CODEBOOK_RAW_240723) )
+zam_hh_hh_raw <- read_excel(here(PATH_ZAM_HH_HH_RAW_240723))
+zam_hh_codebook_raw <- read_excel(here(PATH_ZAM_HH_CODEBOOK_RAW_240723))
 
 ## Baseline
-zam_hhb_hh_houseinfo_raw <- read_csv( here( PATH_ZAM_HHB_HH_HOUSEINFO_RAW_240723) )
-zam_hhb_pr_raw <- read_csv( here( PATH_ZAM_HHB_PR_RAW_240723) )
-zam_hhb_hh_detailed_houseinfo_raw <- read_csv( here( PATH_ZAM_HHB_HH_DETAILED_HOUSEINFO_RAW_240723) )
-zam_hhb_hh_itn_raw <- read_csv( here( PATH_ZAM_HHB_HH_ITN_RAW_240723) )
-zam_hhb_hh_test_raw <- read_excel( here( PATH_ZAM_HHB_HH_TEST_RAW_240723) )
-zam_hhb_hh_visit_raw <- read_csv( here( PATH_ZAM_HHB_HH_VISIT_RAW_240723) )
+zam_hhb_hh_houseinfo_raw <- fread(here(PATH_ZAM_HHB_HH_HOUSEINFO_RAW_240723))
+zam_hhb_pr_raw <- fread(here(PATH_ZAM_HHB_PR_RAW_240723))
+zam_hhb_hh_detailed_houseinfo_raw <- fread(here(PATH_ZAM_HHB_HH_DETAILED_HOUSEINFO_RAW_240723))
+zam_hhb_hh_itn_raw <- fread(here(PATH_ZAM_HHB_HH_ITN_RAW_240723))
+zam_hhb_hh_test_raw <- read_excel(here(PATH_ZAM_HHB_HH_TEST_RAW_240723))
+zam_hhb_hh_visit_raw <- fread(here(PATH_ZAM_HHB_HH_VISIT_RAW_240723))
 
 ## Endline
-zam_hhe_hh_houseinfo_raw <- read_excel( here( PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723) )
-zam_hhe_pr_raw <- read_csv( here( PATH_ZAM_HHE_PR_RAW_240723) )
-zam_hhe_hh_detailed_houseinfo_raw <- read_excel( here( PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723) )
-zam_hhe_hh_itn_raw <- read_excel( here( PATH_ZAM_HHE_HH_ITN_RAW_240723) )
-zam_hhe_hh_test_raw <- read_excel( here( PATH_ZAM_HHE_HH_TEST_RAW_240723) )
-zam_hhe_hh_visit_raw <- read_excel( here( PATH_ZAM_HHE_HH_VISIT_RAW_240723) )
+zam_hhe_hh_houseinfo_raw <- read_excel(here(PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723))
+zam_hhe_pr_raw <- fread(here(PATH_ZAM_HHE_PR_RAW_240723))
+zam_hhe_hh_detailed_houseinfo_raw <- read_excel(here(PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723))
+zam_hhe_hh_itn_raw <- read_excel(here(PATH_ZAM_HHE_HH_ITN_RAW_240723))
+zam_hhe_hh_test_raw <- read_excel(here(PATH_ZAM_HHE_HH_TEST_RAW_240723))
+zam_hhe_hh_visit_raw <- read_excel(here(PATH_ZAM_HHE_HH_VISIT_RAW_240723))
 ```
+
+```{r}
+#| label: zam-updata-dh-hf
+#| lst-label: zam-updata-dh-hf
+#| lst-cap: Recode HFCA data from DHIS2, Zambia
+zam_dh_hf <- upData(
+  zam_dh_hf_raw,
+  YEAR = my(periodname) |> year(),
+  MONTH = my(periodname) |> month(),
+  rename = .q(organisationunitname = HFCA,
+              "Malaria Clinical Cases" = MC_CLN,
+              "Malaria Confirmed Cases" = MC_CFM 
+              )
+)
+```
+
+see @sec-data-meta-date, @sec-data-meta-administrative, @sec-meta-data-malaria for more information.

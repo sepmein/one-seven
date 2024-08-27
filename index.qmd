@@ -4,7 +4,7 @@ title: "One Seven Project"
 
 Based on the content of the provided document, here’s an introduction for the One Seven Project tailored for a Quarto project:
 
----
+------------------------------------------------------------------------
 
 # Introduction
 
@@ -16,16 +16,10 @@ Malaria continues to be a major public health challenge in many parts of Africa,
 
 ## The 17-mRCTR Approach
 
-The 17-mRCTR approach is an adaptation of the "1-3-7" malaria elimination strategy, which was originally developed in China. This approach emphasizes rapid detection and response to malaria cases within communities. Specifically, it involves:
-- **Day 1**: Reporting of confirmed malaria cases.
-- **Day 7**: Community-level testing and treatment interventions based on real-time surveillance data.
+The 17-mRCTR approach is an adaptation of the "1-3-7" malaria elimination strategy, which was originally developed in China. This approach emphasizes rapid detection and response to malaria cases within communities. Specifically, it involves: - **Day 1**: Reporting of confirmed malaria cases. - **Day 7**: Community-level testing and treatment interventions based on real-time surveillance data.
 
 This strategy has been locally tailored to the high transmission settings in Africa, where the malaria burden remains high. By focusing on community-based interventions, the 17-mRCTR approach aims to reduce the malaria incidence ratio (MIR) and improve the overall health outcomes in the target areas.
 
 ## Project Objectives
 
-The primary objective of the One Seven Project is to validate the effectiveness of the 17-mRCTR approach in different epidemiological settings. By doing so, the project seeks to establish a scalable model for malaria control that can be implemented across other high-burden regions. Specific goals include:
-- Reducing malaria prevalence and incidence in the intervention areas.
-- Enhancing the capacity of local health systems to respond to malaria outbreaks.
-- Engaging communities in proactive health-seeking behaviors and adherence to malaria prevention measures.
-
+The primary objective of the One Seven Project is to validate the effectiveness of the 17-mRCTR approach in different epidemiological settings. By doing so, the project seeks to establish a scalable model for malaria control that can be implemented across other high-burden regions. Specific goals include: - Reducing malaria prevalence and incidence in the intervention areas. - Enhancing the capacity of local health systems to respond to malaria outbreaks. - Engaging communities in proactive health-seeking behaviors and adherence to malaria prevention measures.

@@ -21,6 +21,7 @@ book:
       chapters:
         - qmd/01_data/01_01_meta_data.qmd
         - qmd/01_data/01_02_data_code.qmd
+        - qmd/01_data/01_03_dhis2_data.qmd
 
     - part: qmd/02_analysis/02_00_analysis.qmd
       chapters:

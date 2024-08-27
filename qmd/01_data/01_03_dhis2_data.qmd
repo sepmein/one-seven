@@ -1,18 +1,18 @@
-# Year
+# DHIS2 Data codes
 
--   **Title**: year
+## Date
+
+### Year
 
 -   **Definition**: year
 
--   **Data Type**:
+-   **Data Type**: **Continuous**
 
-    -   **Continuous**
-
--   **Data Element Code**: year
+-   **Data Element Code**: **YEAR**
 
 -   **Format**: YYYY, four digits
 
--   **Allowed Values**: \> 0, \< 9999
+-   **Allowed Values**: 0 - 9999
 
 -   **Unit of Measurement**: NA
 
@@ -34,26 +34,21 @@ Optional Metadata Fields
 
 -   **Potential Sources of Error**(if any): NA
 
-```{=html}
-<!-- -->
-```
 -   **Changes Over Time**: NA
 
 -   **Validation Rules**: NA
 
 -   **Disaggregation**: NA
 
-# Month
+### Month
 
 -   **Title**: month
 
 -   **Definition**: month
 
--   **Data Type**:
+-   **Data Type**: **Continuous**
 
-    -   **Continuous**
-
--   **Data Element Code**: year
+-   **Data Element Code**: MONTH
 
 -   **Format**: mm, one or two digits
 
@@ -79,11 +74,200 @@ Optional Metadata Fields
 
 -   **Potential Sources of Error**(if any): NA
 
-```{=html}
-<!-- -->
-```
 -   **Changes Over Time**: NA
 
 -   **Validation Rules**: NA
 
 -   **Disaggregation**: NA
+
+Related codes: @zam-updata-dh-hf,
+
+## Administrative unit
+
+Related codes: @zam-updata-dh-hf,
+
+### Health facility catchment area
+
+-   **Title**: Health facility catchment area
+
+-   **Definition**:
+
+    The concept of a Health Facility Catchment Area (HFCA) is pivotal for understanding the geographic and demographic boundaries served by a health facility. Essentially, an HFCA delineates the area from which a health facility draws its clientele, shaping the framework for health service delivery and planning.
+
+    An HFCA is typically defined based on several criteria, including the geographic proximity of the population to the facility, the patterns of healthcare utilization by the population, and the availability of transportation and roads. It’s crucial for estimating the population that a facility serves, which in turn helps in planning and allocating healthcare resources efficiently. This demographic and geographic delineation allows for targeted health interventions and aids in the management of both routine and emergency healthcare services.
+
+    The methodologies for defining an HFCA can vary significantly. They often depend on the availability of detailed geo-positioned data on where patients live relative to the health facility, as well as data on their health-seeking behaviors. In regions like sub-Saharan Africa, where detailed geographic data may not always be readily available, the definition of an HFCA can be challenging. Researchers and healthcare planners sometimes have to rely on less precise or indirect methods of defining these areas, impacting the accuracy and effectiveness of health service planning and disease mapping.
+
+    The approaches to defining an HFCA have direct implications on the health outcomes of the population served. Effective delineation of catchment areas ensures that healthcare resources are allocated appropriately, potentially reducing healthcare disparities and improving overall public health outcomes.
+
+-   **Data Type**: **categorized**
+
+-   **Data Element Code**: HFCA
+
+-   **Format**: string
+
+-   **Allowed Values**: string
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: provided by the country
+
+-   **Data Source**: @zam-updata-dh-hf `organisationunitname` data field.
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any):
+
+    A list of HFCA - village list should be created and consistent with all database in the project.
+
+-   **Potential Sources of Error**(if any):
+
+    Databases across different files has different HFCA - village list.
+
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**:
+
+    Each HFCA should have a unique ID to avoid different naming across the databases.
+
+-   **Disaggregation**: NA
+
+## Malaria
+
+### Reported Clinical Cases, MC_CLN
+
+-   **Definition**:
+
+    Reported clinical malaria cases refer to instances of malaria that have been officially recorded by healthcare providers, typically following diagnosis through established clinical criteria and diagnostic tests. These cases involve symptoms consistent with malaria, such as fever and chills, which are confirmed via laboratory tests showing the presence of malaria parasites in the blood.
+
+    The definition and classification of reported clinical malaria cases can vary depending on the context and the specifics of healthcare policies. Common diagnostic methods include microscopic examination of blood smears and rapid diagnostic tests (RDTs). In regions with high malaria transmission, the presence of fever combined with a positive parasitemia test is often used to confirm a clinical case of malaria.
+
+    Moreover, case definitions can be influenced by factors such as local epidemiology and the goals of specific health interventions or research studies. For instance, in vaccine efficacy trials, precise case definitions are crucial to accurately assess the effectiveness of the vaccine under study. These definitions might include specific thresholds for parasitemia and detailed symptom recording to differentiate between clinical malaria and other febrile illnesses.\\
+
+-   **Data Type**: continuous
+
+-   **Data Element Code**: **MC_CLN**
+
+-   **Format**: integer
+
+-   **Allowed Values**: \>= 0
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: provided by the country
+
+-   **Data Source**: @zam-updata-dh-hf `Malaria Clinical Cases` data field.
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any):
+
+    -   **MC_CLN** should less than total malaria cases.
+
+    -   Aggregated by HFCA should be the same as village level.
+
+    -   Monthly aggregation should equal to weekly data.
+
+-   **Potential Sources of Error**(if any):
+
+    -   Databases across different files has different summation, if not, should contact country and confirm the data.
+
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**:
+
+    Different disaggregation should be consistent with each other.
+
+-   **Disaggregation**: Weekly, Montly, @sec-data-meta-hfca, village level
+
+### Reported Confirmed Cases, MC_CFM
+
+-   **Definition**:
+
+    The distinction between “clinical malaria cases” and “confirmed malaria cases” is significant in both clinical practice and research settings, reflecting different approaches to diagnosis and reporting.
+
+    **Clinical Malaria Cases**
+
+    Clinical malaria cases generally refer to the presentation of malaria-like symptoms, particularly fever, which may be associated with other non-specific symptoms such as chills, headache, sweats, and malaise. These cases are often diagnosed based on symptom presentation alone, especially in areas where laboratory resources are scarce or during acute management where rapid treatment is prioritized.
+
+    **Confirmed Malaria Cases**
+
+    Confirmed malaria cases, on the other hand, are those where the presence of malaria parasites has been established through laboratory testing. Common diagnostic tests include:
+
+    **Microscopy**: This traditional method involves staining and visually examining blood smears under a microscope to identify malaria parasites.
+
+    **Rapid Diagnostic Tests (RDTs)**: These provide a quicker way of diagnosing malaria by detecting specific antigens derived from malaria parasites in a person’s blood.
+
+    **Key Differences**
+
+    **Accuracy and Reliability**: Confirmed cases are more reliable due to the verification by laboratory tests, which reduces the risk of misdiagnosis. Clinical diagnoses, while useful in quick decision-making scenarios, are more prone to error, especially in regions where malaria symptoms may overlap with those of other febrile illnesses.
+
+    **Resource Dependency**: Confirmatory testing requires specific laboratory capabilities, which might not be available in all settings, especially in rural or resource-limited areas. Clinical diagnoses do not require laboratory confirmation and are thus more common in low-resource settings.
+
+    **Epidemiological Impact**: For surveillance and public health management, confirmed case counts are more valuable as they provide a precise measure of malaria transmission intensity and can guide the effective allocation of resources for control and prevention efforts.
+
+    **Clinical and Public Health Implications**
+
+    The differentiation between clinical and confirmed cases is crucial for the accurate epidemiological mapping of malaria, guiding treatment protocols, and shaping preventive strategies. In clinical trials, such as those for malaria vaccines, the distinction is critical as it impacts the interpretation of efficacy and effectiveness.
+
+    Understanding these distinctions is essential for designing and implementing effective malaria control and elimination strategies, especially in endemic regions. For more detailed exploration of malaria case definitions and their implications, studies and reviews available on platforms like SpringerLink and Malaria Journal provide comprehensive insights.
+
+-   **Data Type**: continuous
+
+-   **Data Element Code**: MC_CFM
+
+-   **Format**: integer
+
+-   **Allowed Values**: \>= 0
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: provided by the country
+
+-   **Data Source**: @zam-updata-dh-hf `Malaria Confirmed Cases` data field.
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any):
+
+    -   **MC_CFM** should less than total malaria cases.
+
+    -   Aggregated by HFCA should be the same as village level.
+
+    -   Monthly aggregation should equal to weekly data.
+
+-   **Potential Sources of Error**(if any):
+
+    -   Databases across different files has different summation, if not, should contact country and confirm the data.
+
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**:
+
+    Different disaggregation should be consistent with each other.
+
+-   **Disaggregation**: Weekly, Montly, @sec-data-meta-hfca, village level
