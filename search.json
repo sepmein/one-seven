@@ -1,0 +1,217 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "One Seven Project",
+    "section": "",
+    "text": "1 Introduction\nThe One Seven Project is a multi-country initiative aimed at reducing the malaria disease burden through the implementation of an innovative strategy known as the 17-malaria Reactive Community-based Testing and Response (17-mRCTR) approach. This approach builds upon previous successful malaria control interventions, adapting them to the unique epidemiological contexts of four African countries: Burkina Faso, Zambia, Senegal, and Tanzania.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>One Seven Project</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#background",
+    "href": "index.html#background",
+    "title": "One Seven Project",
+    "section": "1.1 Background",
+    "text": "1.1 Background\nMalaria continues to be a major public health challenge in many parts of Africa, where the progress towards its elimination has stalled. Despite the widespread use of interventions such as insecticide-treated nets (ITNs) and artemisinin-based combination therapies (ACTs), many high-transmission areas still experience significant levels of morbidity and mortality. The One Seven Project addresses these challenges by enhancing community-based surveillance and response systems.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>One Seven Project</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-17-mrctr-approach",
+    "href": "index.html#the-17-mrctr-approach",
+    "title": "One Seven Project",
+    "section": "1.2 The 17-mRCTR Approach",
+    "text": "1.2 The 17-mRCTR Approach\nThe 17-mRCTR approach is an adaptation of the “1-3-7” malaria elimination strategy, which was originally developed in China. This approach emphasizes rapid detection and response to malaria cases within communities. Specifically, it involves: - Day 1: Reporting of confirmed malaria cases. - Day 7: Community-level testing and treatment interventions based on real-time surveillance data.\nThis strategy has been locally tailored to the high transmission settings in Africa, where the malaria burden remains high. By focusing on community-based interventions, the 17-mRCTR approach aims to reduce the malaria incidence ratio (MIR) and improve the overall health outcomes in the target areas.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>One Seven Project</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#project-objectives",
+    "href": "index.html#project-objectives",
+    "title": "One Seven Project",
+    "section": "1.3 Project Objectives",
+    "text": "1.3 Project Objectives\nThe primary objective of the One Seven Project is to validate the effectiveness of the 17-mRCTR approach in different epidemiological settings. By doing so, the project seeks to establish a scalable model for malaria control that can be implemented across other high-burden regions. Specific goals include: - Reducing malaria prevalence and incidence in the intervention areas. - Enhancing the capacity of local health systems to respond to malaria outbreaks. - Engaging communities in proactive health-seeking behaviors and adherence to malaria prevention measures.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>One Seven Project</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_01_meta_data.html",
+    "href": "qmd/01_data/01_01_meta_data.html",
+    "title": "2  Meta Data",
+    "section": "",
+    "text": "3 Data Sources\nThe One Seven project relies on two major sources of data:",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Meta Data</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_01_meta_data.html#required-metadata-fields",
+    "href": "qmd/01_data/01_01_meta_data.html#required-metadata-fields",
+    "title": "2  Meta Data",
+    "section": "4.1 Required Metadata Fields",
+    "text": "4.1 Required Metadata Fields\n\nTitle: The official title of the data element, succinctly describing its content and purpose.\nDefinition: A clear and precise explanation of what the data element represents, including any relevant context or specific conditions under which the data is collected. This should be comprehensive to avoid any ambiguity in interpretation.\nData Type: The classification of the data element based on its nature. Common data types include:\n\nNominal: Categorical data with no intrinsic ordering (e.g., “Male”, “Female”).\nOrdinal: Categorical data with a specific order (e.g., “Low”, “Medium”, “High”).\nRatio: Numeric data with a meaningful zero point (e.g., age, weight).\nContinuous: Numeric data that can take any value within a range (e.g., height, temperature).\n\nData Element Code: A unique alphanumeric code that identifies each data element within the dataset. This code should be consistent across all datasets to facilitate cross-referencing and data integration.\nFormat: The required format for the data element, particularly important for dates, times, and complex codes. Examples include:\n\nDates: “YYYY-MM-DD”\nIdentifiers: “ABC-1234”\n\nAllowed Values: The set of permissible values for the data element, especially important for categorical variables. For instance:\n\nGender: “Male”, “Female”, “Other”\nAge Group: “0-4”, “5-9”, “10-14”, “15+”\n\nUnit of Measurement: The standard unit in which the data element is measured, ensuring uniformity across datasets. For instance:\n\nWeight: Kilograms (kg)\nHeight: Centimeters (cm)\nTemperature: Degrees Celsius (°C)\n\nData Collection Method: Details on how the data element is collected, including the tools, techniques, and protocols used. This is particularly important for ensuring the reliability and validity of the data.\nData Source: The origin of the data element (e.g., “Collected from household surveys conducted in 2023” or “Extracted from DHIS2 data submissions by health facilities”).",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Meta Data</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_01_meta_data.html#optional-metadata-fields",
+    "href": "qmd/01_data/01_01_meta_data.html#optional-metadata-fields",
+    "title": "2  Meta Data",
+    "section": "4.2 Optional Metadata Fields",
+    "text": "4.2 Optional Metadata Fields\n\nNumerators and Denominators: If the data element is a calculated field, the metadata must specify the numerator and denominator used in the calculation. This is crucial for derived indicators, such as rates and ratios.\nCalculations:\n\nThe “Calculations” section in the metadata structure is crucial for understanding how derived or calculated data elements are generated within the dataset. This section should provide a comprehensive explanation of the formulas, methods, and assumptions used to compute the data elements, ensuring that the calculations are transparent and reproducible. Here’s how you can enrich this section:\n\nFormula or Equation:\n\nClearly state the mathematical formula or equation used to calculate the data element. Include all relevant variables and constants.\nExample:\nIncidence Rate Calculation: [ = () ] Here, the incidence rate is calculated as the number of new cases per 1,000 population at risk.\n\nAssumptions(if any):\n\nOutline any assumptions made during the calculation, especially those that may influence the result. These could include assumptions about data completeness, homogeneity of the population, or specific methodological choices.\nExample:\nIt is assumed that the population at risk remains constant during the period of analysis, which may not account for migration or changes in population demographics.\n\nValidation and Verification(if any):\n\nExplain how the calculation was validated or verified. This might involve comparing the calculated values against known benchmarks, cross-validation with other data sources, or using statistical methods to assess the accuracy of the calculation.\nExample:\nValidation was performed by comparing the calculated incidence rates against historical data to ensure consistency and accuracy.\n\nPotential Sources of Error(if any):\n\nDiscuss any potential sources of error in the calculation, such as data entry errors, measurement inaccuracies, or model assumptions. Provide guidance on how these errors can be minimized or accounted for in the analysis.\nExample:\nPotential errors may arise from underreporting of cases or inaccuracies in population estimates, which could lead to an overestimation or underestimation of the incidence rate.\n\n\n\nChanges Over Time: Document any changes in the definition, coding, or measurement of the data element over the duration of the project. This section should include:\n\nDate of Change: When the change was implemented.\nNature of Change: A detailed description of what was changed and why (e.g., “In 2024, the age categories were revised to align with new WHO guidelines”).\nImpact on Data: Any potential impact on data comparability and analysis due to the change.\n\nValidation Rules: Any rules or checks that are applied to ensure data quality, such as range checks or consistency checks between related variables.\nDisaggregation: Specifies how the data can be broken down, such as by age, sex, geographic region, or other relevant categories.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Meta Data</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_01_meta_data.html#example-of-metadata-for-a-specific-data-element",
+    "href": "qmd/01_data/01_01_meta_data.html#example-of-metadata-for-a-specific-data-element",
+    "title": "2  Meta Data",
+    "section": "4.3 Example of Metadata for a Specific Data Element",
+    "text": "4.3 Example of Metadata for a Specific Data Element\n\n\n\n\n\n\n\nTitle\nMalaria Incidence Rate\n\n\n\n\nDefinition\nThe number of new malaria cases per 1,000 population within a specific time period.\n\n\nData Type\nRatio\n\n\nData Element Code\nMAL_INC_RATE\n\n\nFormat\nNumeric\n\n\nAllowed Values\n0-1000 (cases per 1,000 population)\n\n\nUnit of Measurement\nCases per 1,000 population\n\n\nNumerator\nNumber of new malaria cases identified through RDTs or microscopy\n\n\nDenominator\nTotal population in the area during the same time period\n\n\nChanges Over Time\nOn January 2024, the method of diagnosis was expanded to include PCR results, which may affect comparability with prior data.\n\n\n\nThis detailed metadata structure ensures that all team members and stakeholders have a clear understanding of each data element, facilitating accurate data analysis and reporting across the project.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Meta Data</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_02_data_code.html",
+    "href": "qmd/01_data/01_02_data_code.html",
+    "title": "\n3  Data Codes\n",
+    "section": "",
+    "text": "3.1 File Names\nGeneral structure:\nCountry codes + Data Source codes + Aggregation level code + Version code",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_02_data_code.html#file-names",
+    "href": "qmd/01_data/01_02_data_code.html#file-names",
+    "title": "\n3  Data Codes\n",
+    "section": "",
+    "text": "3.1.1 Country codes\nCountry codes follows ISO3 naming conversion1.\nThe study countries followed the current naming:\n\n\nTable 3.1: Country Codes ALPHA-3 in the 1,7 mCTRC project\n\n\n\nCountry\nAlpha-3 code\n\n\n\nTanzania, United Republic of\nTZA\n\n\nZambia\nZAM\n\n\n\n\n\n\n\n3.1.2 Data Sources\nFor conciseness and clarity in data management and documentation, two-letter abbreviations are used to represent major data sources, streamlining communication and reducing complexity in written materials. Here’s a brief explanation of each:\n\nDH: stands for DHIS2 (District Health Information Software), which is a widely used health management data platform that helps health managers compile, analyze, and report data. It is particularly prevalent in low-resource settings and developing countries.\nHH: stands for Household survey, a methodological approach in data collection that involves gathering data directly from households. This approach is crucial for obtaining detailed demographic, socioeconomic, and health-related information directly from residents, providing insights that are not always captured through routine data collection systems. HHB for baseline household survey, HHE for endline household survey.\n\n3.1.3 Aggregation\nThe health facility catchment areas(HFCA) were used as the proxy to characterize the spatial heterogeneity of malaria transmission in the study area. The health system structure will determine the administrative division unit for the selection of intervention and control arms.\nThere are two levels of aggregation in the 1, 7 project, health facility level and village level. Here’s a brief explanation of each:\n\nHF: stands for health facility\nVI: stands for village\nHH: stands for household\nPR: stands for personal\n\n3.1.4 Version\nData version were denoted as a YYMMDD date format.\n\n3.1.5 Example\nZAM_DH_HF_20240826.csv\nThis stands for health facility level data from DHIS2 in Zambia, the data were generated at 26th August, 2024.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_02_data_code.html#data-fields",
+    "href": "qmd/01_data/01_02_data_code.html#data-fields",
+    "title": "\n3  Data Codes\n",
+    "section": "\n3.2 Data Fields",
+    "text": "3.2 Data Fields\nR is the default data processing and analysis programme in this project. The data field should generally conform to the following format:\n\n3.2.1 Date\nThe date field represent a single moment in time in a platform-independent format.\n\nlibrary(lubridate)\ntoday()\n\n[1] \"2024-08-28\"\n\n\n\n3.2.2 Time\n\nnow()\n\n[1] \"2024-08-28 00:10:07 CST\"\n\n\n\n3.2.3 Sex\nThe “sex” data element refers to the biological differences between males and females, as identified and reported by the respondents or observed by the data collectors. The sex of a respondent is typically recorded during household interviews. This information is used as a basic demographic identifier for all respondents, including children and adults.\nSex was denoted as categorical data\n\nas.factor(c(\"M\", \"F\"))\n\n[1] M F\nLevels: F M",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_02_data_code.html#missing-data",
+    "href": "qmd/01_data/01_02_data_code.html#missing-data",
+    "title": "\n3  Data Codes\n",
+    "section": "\n3.3 Missing data",
+    "text": "3.3 Missing data\n\n\nNA - Not applicable\nThe term “Not Applicable” is used when certain questions in a survey do not need to be asked, depending on the responses to previous questions. For instance, the question “How many months pregnant are you?” would be classified as not applicable if the response to the earlier question “Are you pregnant now?” is either No or Unsure.\n\n\nBlank - Not reported or missing\nA response is considered missing if it should have been provided but was omitted due to an oversight by the interviewer. An example of this is if a respondent indicates they are pregnant by answering Yes to the question “Are you pregnant now?” but the interviewer fails to ask the follow-up question “How many months pregnant are you?” and leaves it unanswered. In such cases, a specific code is used to denote the omission.\nFor most survey analyses, it’s crucial to adjust the denominators of indicators to exclude cases marked as “not applicable” while including those marked as “missing.” This careful distinction ensures the accuracy and comparability of the survey results with the official reports.",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_02_data_code.html#footnotes",
+    "href": "qmd/01_data/01_02_data_code.html#footnotes",
+    "title": "\n3  Data Codes\n",
+    "section": "",
+    "text": "Country codes, worldbank, https://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm↩︎",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_03_dhis2_data.html",
+    "href": "qmd/01_data/01_03_dhis2_data.html",
+    "title": "4  DHIS2 Data codes",
+    "section": "",
+    "text": "4.1 Date",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DHIS2 Data codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_03_dhis2_data.html#date",
+    "href": "qmd/01_data/01_03_dhis2_data.html#date",
+    "title": "4  DHIS2 Data codes",
+    "section": "",
+    "text": "4.1.1 Year\n\nDefinition: year\nData Type: Continuous\nData Element Code: YEAR\nFormat: YYYY, four digits\nAllowed Values: 0 - 9999\nUnit of Measurement: NA\nData Collection Method: NA\nData Source: Generated from the periodname\n\nOptional Metadata Fields\n\nNumerators and Denominators: NA\nCalculations: NA\nFormula or Equation: NA\nAssumptions(if any): NA\nValidation and Verification(if any): NA\nPotential Sources of Error(if any): NA\nChanges Over Time: NA\nValidation Rules: NA\nDisaggregation: NA\n\n\n\n4.1.2 Month\n\nTitle: month\nDefinition: month\nData Type: Continuous\nData Element Code: MONTH\nFormat: mm, one or two digits\nAllowed Values: 1 - 12\nUnit of Measurement: NA\nData Collection Method: NA\nData Source: Generated from the periodname\n\nOptional Metadata Fields\n\nNumerators and Denominators: NA\nCalculations: NA\nFormula or Equation: NA\nAssumptions(if any): NA\nValidation and Verification(if any): NA\nPotential Sources of Error(if any): NA\nChanges Over Time: NA\nValidation Rules: NA\nDisaggregation: NA\n\nRelated codes: @zam-updata-dh-hf,",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DHIS2 Data codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_03_dhis2_data.html#administrative-unit",
+    "href": "qmd/01_data/01_03_dhis2_data.html#administrative-unit",
+    "title": "4  DHIS2 Data codes",
+    "section": "4.2 Administrative unit",
+    "text": "4.2 Administrative unit\nRelated codes: @zam-updata-dh-hf,\n\n4.2.1 Health facility catchment area\n\nTitle: Health facility catchment area\nDefinition:\nThe concept of a Health Facility Catchment Area (HFCA) is pivotal for understanding the geographic and demographic boundaries served by a health facility. Essentially, an HFCA delineates the area from which a health facility draws its clientele, shaping the framework for health service delivery and planning.\nAn HFCA is typically defined based on several criteria, including the geographic proximity of the population to the facility, the patterns of healthcare utilization by the population, and the availability of transportation and roads. It’s crucial for estimating the population that a facility serves, which in turn helps in planning and allocating healthcare resources efficiently. This demographic and geographic delineation allows for targeted health interventions and aids in the management of both routine and emergency healthcare services.\nThe methodologies for defining an HFCA can vary significantly. They often depend on the availability of detailed geo-positioned data on where patients live relative to the health facility, as well as data on their health-seeking behaviors. In regions like sub-Saharan Africa, where detailed geographic data may not always be readily available, the definition of an HFCA can be challenging. Researchers and healthcare planners sometimes have to rely on less precise or indirect methods of defining these areas, impacting the accuracy and effectiveness of health service planning and disease mapping.\nThe approaches to defining an HFCA have direct implications on the health outcomes of the population served. Effective delineation of catchment areas ensures that healthcare resources are allocated appropriately, potentially reducing healthcare disparities and improving overall public health outcomes.\nData Type: categorized\nData Element Code: HFCA\nFormat: string\nAllowed Values: string\nUnit of Measurement: NA\nData Collection Method: provided by the country\nData Source: @zam-updata-dh-hf organisationunitname data field.\n\nOptional Metadata Fields\n\nNumerators and Denominators: NA\nCalculations: NA\nFormula or Equation: NA\nAssumptions(if any): NA\nValidation and Verification(if any):\nA list of HFCA - village list should be created and consistent with all database in the project.\nPotential Sources of Error(if any):\nDatabases across different files has different HFCA - village list.\nChanges Over Time: NA\nValidation Rules:\nEach HFCA should have a unique ID to avoid different naming across the databases.\nDisaggregation: NA",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DHIS2 Data codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_03_dhis2_data.html#malaria",
+    "href": "qmd/01_data/01_03_dhis2_data.html#malaria",
+    "title": "4  DHIS2 Data codes",
+    "section": "4.3 Malaria",
+    "text": "4.3 Malaria\n\n4.3.1 Reported Clinical Cases, MC_CLN\n\nDefinition:\nReported clinical malaria cases refer to instances of malaria that have been officially recorded by healthcare providers, typically following diagnosis through established clinical criteria and diagnostic tests. These cases involve symptoms consistent with malaria, such as fever and chills, which are confirmed via laboratory tests showing the presence of malaria parasites in the blood.\nThe definition and classification of reported clinical malaria cases can vary depending on the context and the specifics of healthcare policies. Common diagnostic methods include microscopic examination of blood smears and rapid diagnostic tests (RDTs). In regions with high malaria transmission, the presence of fever combined with a positive parasitemia test is often used to confirm a clinical case of malaria.\nMoreover, case definitions can be influenced by factors such as local epidemiology and the goals of specific health interventions or research studies. For instance, in vaccine efficacy trials, precise case definitions are crucial to accurately assess the effectiveness of the vaccine under study. These definitions might include specific thresholds for parasitemia and detailed symptom recording to differentiate between clinical malaria and other febrile illnesses.\\\nData Type: continuous\nData Element Code: MC_CLN\nFormat: integer\nAllowed Values: &gt;= 0\nUnit of Measurement: NA\nData Collection Method: provided by the country\nData Source: @zam-updata-dh-hf Malaria Clinical Cases data field.\n\nOptional Metadata Fields\n\nNumerators and Denominators: NA\nCalculations: NA\nFormula or Equation: NA\nAssumptions(if any): NA\nValidation and Verification(if any):\n\nMC_CLN should less than total malaria cases.\nAggregated by HFCA should be the same as village level.\nMonthly aggregation should equal to weekly data.\n\nPotential Sources of Error(if any):\n\nDatabases across different files has different summation, if not, should contact country and confirm the data.\n\nChanges Over Time: NA\nValidation Rules:\nDifferent disaggregation should be consistent with each other.\nDisaggregation: Weekly, Montly, ?sec-data-meta-hfca, village level\n\n\n\n4.3.2 Reported Confirmed Cases, MC_CFM\n\nDefinition:\nThe distinction between “clinical malaria cases” and “confirmed malaria cases” is significant in both clinical practice and research settings, reflecting different approaches to diagnosis and reporting.\nClinical Malaria Cases\nClinical malaria cases generally refer to the presentation of malaria-like symptoms, particularly fever, which may be associated with other non-specific symptoms such as chills, headache, sweats, and malaise. These cases are often diagnosed based on symptom presentation alone, especially in areas where laboratory resources are scarce or during acute management where rapid treatment is prioritized.\nConfirmed Malaria Cases\nConfirmed malaria cases, on the other hand, are those where the presence of malaria parasites has been established through laboratory testing. Common diagnostic tests include:\nMicroscopy: This traditional method involves staining and visually examining blood smears under a microscope to identify malaria parasites.\nRapid Diagnostic Tests (RDTs): These provide a quicker way of diagnosing malaria by detecting specific antigens derived from malaria parasites in a person’s blood.\nKey Differences\nAccuracy and Reliability: Confirmed cases are more reliable due to the verification by laboratory tests, which reduces the risk of misdiagnosis. Clinical diagnoses, while useful in quick decision-making scenarios, are more prone to error, especially in regions where malaria symptoms may overlap with those of other febrile illnesses.\nResource Dependency: Confirmatory testing requires specific laboratory capabilities, which might not be available in all settings, especially in rural or resource-limited areas. Clinical diagnoses do not require laboratory confirmation and are thus more common in low-resource settings.\nEpidemiological Impact: For surveillance and public health management, confirmed case counts are more valuable as they provide a precise measure of malaria transmission intensity and can guide the effective allocation of resources for control and prevention efforts.\nClinical and Public Health Implications\nThe differentiation between clinical and confirmed cases is crucial for the accurate epidemiological mapping of malaria, guiding treatment protocols, and shaping preventive strategies. In clinical trials, such as those for malaria vaccines, the distinction is critical as it impacts the interpretation of efficacy and effectiveness.\nUnderstanding these distinctions is essential for designing and implementing effective malaria control and elimination strategies, especially in endemic regions. For more detailed exploration of malaria case definitions and their implications, studies and reviews available on platforms like SpringerLink and Malaria Journal provide comprehensive insights.\nData Type: continuous\nData Element Code: MC_CFM\nFormat: integer\nAllowed Values: &gt;= 0\nUnit of Measurement: NA\nData Collection Method: provided by the country\nData Source: @zam-updata-dh-hf Malaria Confirmed Cases data field.\n\nOptional Metadata Fields\n\nNumerators and Denominators: NA\nCalculations: NA\nFormula or Equation: NA\nAssumptions(if any): NA\nValidation and Verification(if any):\n\nMC_CFM should less than total malaria cases.\nAggregated by HFCA should be the same as village level.\nMonthly aggregation should equal to weekly data.\n\nPotential Sources of Error(if any):\n\nDatabases across different files has different summation, if not, should contact country and confirm the data.\n\nChanges Over Time: NA\nValidation Rules:\nDifferent disaggregation should be consistent with each other.\nDisaggregation: Weekly, Montly, ?sec-data-meta-hfca, village level",
+    "crumbs": [
+      "Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>DHIS2 Data codes</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html",
+    "href": "qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html",
+    "title": "6  Analysis File Creation",
+    "section": "",
+    "text": "6.1 Raw data\nZambia submitted data to WHO at 23th, July, 2024.\n16 files were submitted:",
+    "crumbs": [
+      "Zambia",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Analysis File Creation</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html#raw-data",
+    "href": "qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html#raw-data",
+    "title": "6  Analysis File Creation",
+    "section": "",
+    "text": "DHIS2\n\nHMIS data Lukwipa and Kankumba.xls\nWeekly data.xlsx\n\n\n\nSurveys\n\n1,7_experiment_data_status.xlsx\nBaseline and Endline Survey- Codebook.xlsx\n\nBaseline\n\ncensus_phone_combine.csv\nhousehold_member_phone_combine.csv\nhousehold_phone_combine.csv\nnet_phone_combine.csv\nRufunsa 1,7mRCT BASE-LINE MICROSCOPY RESULTS final.xlsx\nvisit_phone_combine.csv\n\n\n\nEndline\n\n1,7 Parasite Microscope endline survey 2023 results_updated Rufunsa_version.xlsx\nEndline household_member_all.csv\nEndline-census.xls\nEndline-household.xls\nEndline-net.xls\nEndline-visit.xls\n\n\n\n\n\n\n6.1.1 Data Pathes\n\n# DHIS2\nPATH_ZAM_DH_HF_RAW_240723 &lt;- \"2_data/zam/1_raw/HMIS data Lukwipa and Kankumba.xls\"\nPATH_ZAM_DH_VL_RAW_240723 &lt;- \"2_data/zam/1_raw/Weekly data.xlsx\"\n\n# Survey\nPATH_ZAM_HH_HH_RAW_240723 &lt;- \"2_data/zam/1_raw/1,7_experiment_data_status.xlsx\"\nPATH_ZAM_HH_CODEBOOK_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Survey- Codebook.xlsx\"\n\n# Baseline\nPATH_ZAM_HHB_HH_HOUSEINFO_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/census_phone_combine.csv\"\nPATH_ZAM_HHB_PR_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/household_member_phone_combine.csv\"\nPATH_ZAM_HHB_HH_DETAILED_HOUSEINFO_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/household_phone_combine.csv\"\nPATH_ZAM_HHB_HH_ITN_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/net_phone_combine.csv\"\nPATH_ZAM_HHB_HH_TEST_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/Rufunsa 1,7mRCT BASE-LINE MICROSCOPY RESULTS final.xlsx\"\nPATH_ZAM_HHB_HH_VISIT_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/visit_phone_combine.csv\"\n\n# Endline\nPATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-census.xlsx\"\nPATH_ZAM_HHE_PR_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline household_member_all.csv\"\nPATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-household.xlsx\"\nPATH_ZAM_HHE_HH_ITN_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-net.xlsx\"\nPATH_ZAM_HHE_HH_TEST_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/1,7 Parasite Microscope endline survey 2023 results_updated Rufunsa_version.xlsx\"\nPATH_ZAM_HHE_HH_VISIT_RAW_240723 &lt;- \"2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-visit.xlsx\"\n\n\n6.1.2 Load Data\n\n# DHIS2\nzam_dh_hf_raw &lt;- read_excel(here(PATH_ZAM_DH_HF_RAW_240723) , skip = 1)\nzam_dh_vl_raw &lt;- read_excel(here(PATH_ZAM_DH_VL_RAW_240723) , skip = 2)\n\n# Survey\nzam_hh_hh_raw &lt;- read_excel(here(PATH_ZAM_HH_HH_RAW_240723))\nzam_hh_codebook_raw &lt;- read_excel(here(PATH_ZAM_HH_CODEBOOK_RAW_240723))\n\n## Baseline\nzam_hhb_hh_houseinfo_raw &lt;- fread(here(PATH_ZAM_HHB_HH_HOUSEINFO_RAW_240723))\nzam_hhb_pr_raw &lt;- fread(here(PATH_ZAM_HHB_PR_RAW_240723))\nzam_hhb_hh_detailed_houseinfo_raw &lt;- fread(here(PATH_ZAM_HHB_HH_DETAILED_HOUSEINFO_RAW_240723))\nzam_hhb_hh_itn_raw &lt;- fread(here(PATH_ZAM_HHB_HH_ITN_RAW_240723))\nzam_hhb_hh_test_raw &lt;- read_excel(here(PATH_ZAM_HHB_HH_TEST_RAW_240723))\nzam_hhb_hh_visit_raw &lt;- fread(here(PATH_ZAM_HHB_HH_VISIT_RAW_240723))\n\n## Endline\nzam_hhe_hh_houseinfo_raw &lt;- read_excel(here(PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723))\nzam_hhe_pr_raw &lt;- fread(here(PATH_ZAM_HHE_PR_RAW_240723))\nzam_hhe_hh_detailed_houseinfo_raw &lt;- read_excel(here(PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723))\nzam_hhe_hh_itn_raw &lt;- read_excel(here(PATH_ZAM_HHE_HH_ITN_RAW_240723))\nzam_hhe_hh_test_raw &lt;- read_excel(here(PATH_ZAM_HHE_HH_TEST_RAW_240723))\nzam_hhe_hh_visit_raw &lt;- read_excel(here(PATH_ZAM_HHE_HH_VISIT_RAW_240723))\n\n\nzam_dh_hf &lt;- upData(\n  zam_dh_hf_raw,\n  YEAR = my(periodname) |&gt; year(),\n  MONTH = my(periodname) |&gt; month(),\n  rename = .q(organisationunitname = HFCA,\n              \"Malaria Clinical Cases\" = MC_CLN,\n              \"Malaria Confirmed Cases\" = MC_CFM \n              )\n)\n\nInput object size:   7832 bytes;     11 variables    48 observations\nRenamed variable     organisationunitname   to HFCA \nRenamed variable     Malaria Clinical Cases     to MC_CLN \nRenamed variable     Malaria Confirmed Cases    to MC_CFM \nAdded variable      YEAR\nAdded variable      MONTH\nNew object size:    7776 bytes; 13 variables    48 observations\n\n\nsee ?sec-data-meta-date, ?sec-data-meta-administrative, ?sec-meta-data-malaria for more information.",
+    "crumbs": [
+      "Zambia",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Analysis File Creation</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/01_data/01_00_data.html#footnotes",
+    "href": "qmd/01_data/01_00_data.html#footnotes",
+    "title": "Data",
+    "section": "",
+    "text": "Rinker TW, Kurkiewicz D (2018). pacman: Package Management for R. version 0.5.0, http://github.com/trinker/pacman.↩︎\nhttps://doi.org/10.32614/CRAN.package.Hmisc↩︎\nhttps://doi.org/10.32614/CRAN.package.qreport↩︎\nBarrett T, Dowle M, Srinivasan A, Gorecki J, Chirico M, Hocking T, Schwendinger B (2024). data.table: Extension of ‘data.frame’. R package version 1.15.99, https://Rdatatable.gitlab.io/data.table, https://github.com/Rdatatable/data.table, https://r-datatable.com.↩︎\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.↩︎\nhttps://doi.org/10.32614/CRAN.package.here↩︎",
+    "crumbs": [
+      "Data"
+    ]
+  }
+]
