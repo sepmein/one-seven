@@ -20,7 +20,8 @@ book:
 
     - part: qmd/01_data/01_00_data.qmd
       chapters:
-        - qmd/01_data/01_01_data_code.qmd
+        - qmd/01_data/01_01_meta_data.qmd
+        - qmd/01_data/01_02_data_code.qmd
 
 format:
   html:

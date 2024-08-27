@@ -1,0 +1,22 @@
+## Data Code Structure
+
+### Data Code for files names
+
+General structure:
+
+Country codes + data source files + data file naming + version code
+
+### Country codes
+
+Country codes follows ISO3 naming conversion[^01_02_data_code-1].
+
+[^01_02_data_code-1]: Country codes, worldbank, <https://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm>
+
+The study countries followed the current naming:
+
+| Country                      | Alpha-3 code |
+|------------------------------|--------------|
+| Tanzania, United Republic of | TZA          |
+| Zambia                       | ZAM          |
+
+: Country Codes ALPHA-3 in the 1,7 mCTRC project
