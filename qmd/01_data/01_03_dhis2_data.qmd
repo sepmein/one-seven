@@ -142,7 +142,7 @@ Optional Metadata Fields
 
 ## Malaria {#sec-meta-data-malaria}
 
-### Reported Clinical Cases, MC_CLN
+### Reported Clinical Cases, MC_CLN {#sec-meta-data-mc_cln}
 
 -   **Definition**:
 
@@ -196,7 +196,7 @@ Optional Metadata Fields
 
 -   **Disaggregation**: Weekly, Montly, @sec-data-meta-hfca, village level
 
-### Reported Confirmed Cases, MC_CFM
+### Reported Confirmed Cases, MC_CFM {#sec-meta-data-mc_cfm}
 
 -   **Definition**:
 
@@ -271,3 +271,196 @@ Optional Metadata Fields
     Different disaggregation should be consistent with each other.
 
 -   **Disaggregation**: Weekly, Montly, HFCA(see @sec-data-meta-hfca), village level
+
+### Reported clinical diagnosed malaria cases in pregnant women, MPC_CLN
+
+-   **Definition**:
+
+    Clinical diagnosed malaria cases in pregnant women. See @sec-meta-data-mc_cln for more infomation.
+
+-   **Data Type**: continuous
+
+-   **Data Element Code**: MPC_CLN
+
+-   **Format**: integer
+
+-   **Allowed Values**: \>= 0
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: provided by the country
+
+-   **Data Source**: @zam-updata-dh-hf
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any):
+
+    -   **MPC_CLN** should less than total clinical malaria cases.
+
+    -   Aggregated by HFCA should be the same as village level.
+
+    -   Monthly aggregation should equal to weekly data.
+
+-   **Potential Sources of Error**(if any):
+
+    -   Databases across different files has different summation, if not, should contact country and confirm the data.
+    -   MPC_CLN \> MC_CLN
+
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**:
+
+    Different disaggregation should be consistent with each other.
+
+-   **Disaggregation**: Weekly, Montly, HFCA(see @sec-data-meta-hfca), village level
+
+### Reported confirmed malaria cases in pregnant women, MPC_CFM
+
+-   **Definition**:
+
+    Confirmed malaria cases in pregnant women. See @sec-meta-data-mc_cfm for more infomation.
+
+-   **Data Type**: continuous
+
+-   **Data Element Code**: MPC_CFM
+
+-   **Format**: integer
+
+-   **Allowed Values**: \>= 0
+
+-   **Unit of Measurement**: NA
+
+-   **Data Collection Method**: provided by the country
+
+-   **Data Source**: @zam-updata-dh-hf
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**: NA
+
+-   **Calculations**: NA
+
+-   **Formula or Equation**: NA
+
+-   **Assumptions**(if any): NA
+
+-   **Validation and Verification**(if any):
+
+    -   **MPC_CFM** should less than total confirmed malaria cases.
+
+    -   Aggregated by HFCA should be the same as village level.
+
+    -   Monthly aggregation should equal to weekly data.
+
+-   **Potential Sources of Error**(if any):
+
+    -   Databases across different files has different summation, if not, should contact country and confirm the data.
+    -   **MPC_CFM** \> MC_CFM
+
+-   **Changes Over Time**: NA
+
+-   **Validation Rules**:
+
+    Different disaggregation should be consistent with each other.
+
+-   **Disaggregation**: Weekly, Montly, HFCA(see @sec-data-meta-hfca), village level
+
+### Malaria incidence, MI
+
+**Definition**:
+
+Malaria incidence refers to the frequency of new cases of malaria occurring within a defined population over a specified period of time. This metric is crucial for understanding the spread and impact of malaria across different regions and populations.
+Malaria incidence provides insights into the current status and trends of malaria transmission. It helps public health officials gauge the effectiveness of existing control and prevention measures and is essential for resource allocation and strategic planning in malaria control programs.
+
+According to global health reports, malaria continues to pose a significant health threat in many tropical and subtropical regions. The World Health Organization’s World Malaria Report highlights regions with high transmission rates and identifies changes in incidence over time due to interventions like mosquito control programs, the use of insecticide-treated nets, and antimalarial medications.
+
+Challenges and Research: Measuring malaria incidence accurately is challenging due to varying degrees of reporting and diagnostic practices across different countries and regions. Research often focuses on developing better diagnostic tools and surveillance systems to enhance the accuracy and timeliness of data on malaria incidence.
+
+Public Health Impact: Understanding malaria incidence helps in assessing the public health burden of the disease, guiding the development of more effective vaccines and treatments, and implementing targeted malaria control measures. It also assists in predicting outbreaks and evaluating the long-term success of eradication efforts.
+
+1.  **Data Type**: continuous
+
+2.  **Data Element Code**: MI
+
+3.  **Format**: float with two digits
+
+4.  **Allowed Values**: \>= 0
+
+5.  **Unit of Measurement**: cases per 1000 population
+
+6.  **Data Collection Method**: provided by the country
+
+7.  **Data Source**: @zam-updata-dh-hf
+
+Optional Metadata Fields
+
+-   **Numerators and Denominators**:
+
+    -   **Numerators**: The number of new confirmed cases of malaria during a specified time period.
+
+    -   **Denominators**: The total population at risk during the same time period.
+
+-   **Calculations**:
+
+    Divide the number of new cases by the population at risk and then multiply by a standard number (1,000) to express it per unit of population.
+
+-   **Formula or Equation**:
+
+    \[ \text{Malaria Incidence Rate} = \left(\frac{\text{Number of New Malaria Cases}}{\text{Population at Risk}}\right) \times 1,000 \]
+
+-   **Assumptions**: It is assumed that cases are diagnosed and reported accurately and that the population data is current and precise.
+
+-   **Validation and Verification**(if any):
+
+    -   Cross-checking reported cases with hospital records and confirmation through laboratory tests.
+
+    -   Random audits of reporting centers and comparison with other data sources such as regional health databases.
+
+-   **Potential Sources of Error**:
+
+    Underreporting of cases, inaccuracies in population estimates, misdiagnosis, and delays in reporting.
+
+-   **Changes Over Time**:
+
+    Incidence rates may fluctuate due to seasonal variations, effectiveness of malaria control measures, changes in diagnostic criteria, and shifts in the population at risk.
+
+-   **Validation Rules**:
+
+    All reported cases must be confirmed by a recognized diagnostic test. The data must be consistent with historical trends unless justified by interventions or natural events.
+
+-   **Disaggregation**:
+
+    Data can be disaggregated by age, sex, geographical location, and season to allow for more detailed analysis. This helps in identifying high-risk groups and areas needing targeted interventions.
+
+### Confirmed malaria incidence , MI_CFM
+
+**Definition**:
+
+Malaria incidence in reported malaria cases.
+
+-   **Numerators and Denominators**:
+
+    -   **Numerators**: The number of reported confirmed cases of malaria during a specified time period.
+
+    -   **Denominators**: The total population at risk during the same time period.
+
+-   **Calculations**:
+
+    Divide the number of new cases by the population at risk and then multiply by a standard number (1,000) to express it per unit of population.
+
+-   **Formula or Equation**:
+
+    \[ \text{Malaria Incidence Rate} = \left(\frac{\text{Number of Reported Confirmed Malaria Cases}}{\text{Population at Risk}}\right) \times 1,000 \]
+
+-   **Disaggregation**:
+
+    Data can be disaggregated by age, sex, geographical location, and season to allow for more detailed analysis.
