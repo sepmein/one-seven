@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>7&nbsp; Data Overview – One Seven Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link href="../../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../../site_libs/plotly-binding-4.10.4/plotly.js"></script><script src="../../../site_libs/typedarray-0.1/typedarray.min.js"></script><script src="../../../site_libs/jquery-3.5.1/jquery.min.js"></script><link href="../../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><link href="../../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link href="../../../site_libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet">
+<script src="../../../site_libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script><script src="../../../site_libs/sparkline-binding-2.0/sparkline.js"></script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html">Zambia</a></li><li class="breadcrumb-item"><a href="../../../qmd/02_analysis/02_11_zam/02_11_04_data_overview.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Overview</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">One Seven Project</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/sepmein/one-seven" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">One Seven Project</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/01_data/01_00_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/01_data/01_01_meta_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Meta Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/01_data/01_02_data_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Codes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/01_data/01_03_dhis2_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DHIS2 Data codes</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/02_analysis/02_00_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/02_analysis/02_01_methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">02_01_methodology.html</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Zambia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Analysis File Creation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/02_analysis/02_11_zam/02_11_04_data_overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Overview</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#dhis2" id="toc-dhis2" class="nav-link active" data-scroll-target="#dhis2"><span class="header-section-number">7.1</span> DHIS2</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sepmein/one-seven/edit/master/qmd/02_analysis/02_11_zam/02_11_04_data_overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sepmein/one-seven/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html">Zambia</a></li><li class="breadcrumb-item"><a href="../../../qmd/02_analysis/02_11_zam/02_11_04_data_overview.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Overview</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Overview</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: zam_analysis_file_creation_library</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">require(Hmisc)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">require(qreport)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">require(qs)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">require(here)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">source(here("R/paths.r"))</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">options(prType = 'html')</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">hookaddcap()</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="dhis2" class="level2 page-columns page-full" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="dhis2">
+<span class="header-section-number">7.1</span> DHIS2</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">zam_dh_hf</span> <span class="op">&lt;-</span> <span class="fu">qread</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="va">PATH_ZAM_DH_HF</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">dataOverview</span><span class="op">(</span><span class="va">zam_dh_hf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>zam_dh_hf has 48 observations (0 complete) and 13 variables (4 complete)</p>
+<pre><code>Warning in rbindlist(z, idcol = "variable"): Column 6 ['mincat'] of item 5 is
+length 0. This (and 11 others like it) has been filled with NA (NULL for list
+columns) to make each item uniform.</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 3%">
+<col style="width: 11%">
+<col style="width: 22%">
+<col style="width: 9%">
+<col style="width: 15%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">Distinct</th>
+<th style="text-align: right;">Info</th>
+<th style="text-align: right;">Symmetry</th>
+<th style="text-align: right;">NAs</th>
+<th style="text-align: left;">Rarest Value</th>
+<th style="text-align: right;">Frequency of Rarest Value</th>
+<th style="text-align: left;">Mode</th>
+<th style="text-align: right;">Frequency of Mode</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">periodname</td>
+<td style="text-align: left;">Nonnumeric</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0.999</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">April 2022</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">April 2022</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HFCA</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.750</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Kankumba</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">Kankumba</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MC_CLN</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MC_CFM</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">2.152</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MPC_CLN</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MPC_CFM</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.951</td>
+<td style="text-align: right;">0.917</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MI</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">3.124</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MI_CFM</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">3.126</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2.9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MD_OV5</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MD_U5</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MC_CFR</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.521</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">96.7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YEAR</td>
+<td style="text-align: left;">Discrete</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.750</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MONTH</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.993</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<pre><code>Warning in min(xx[xx &gt; upper]): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>Loading required namespace: plotly</code></pre>
+<table class="kable_wrapper"><tbody><tr>
+<td>
+<table class="caption-top table"><tbody><tr class="odd">
+<td style="text-align: left;">0 1 23 47 48</td>
+</tr></tbody></table>
+</td>
+<td>
+<table class="caption-top table"><tbody><tr class="odd">
+<td style="text-align: left;">Intervals of frequencies of NAs used for color-coding plots</td>
+</tr></tbody></table>
+</td>
+</tr></tbody></table>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Continuous</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Discrete</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Nonnumeric</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-9f55d3466d9b4472eb03" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9f55d3466d9b4472eb03">{"x":{"data":[{"x":[6.9282032302755088,6.7823299831252681,6.7823299831252681,3.4641016151377544],"y":[2.1518896249063597,3.1244933339344332,3.1258460869886062,1],"text":["MC_CFM<br>distinct values: 48<br>NAs: 1<br>Info: 1<br>Symmetry: 2.152<br>lowest frequency (1) value:18<br>highest frequency (1) value:18","MI<br>distinct values: 46<br>NAs: 1<br>Info: 1<br>Symmetry: 3.124<br>lowest frequency (1) value:2.9<br>highest frequency (2) value:4","MI_CFM<br>distinct values: 46<br>NAs: 1<br>Info: 1<br>Symmetry: 3.126<br>lowest frequency (1) value:2.9<br>highest frequency (2) value:4","MONTH<br>distinct values: 12<br>NAs: 0<br>Info: 0.993<br>Symmetry: 1<br>lowest frequency (4) value:1<br>highest frequency (4) value:1"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(68,1,84,1)"],"opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(68,1,84,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283108,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[3.2908965343808667,7.1014083110323964],"tickmode":"array","ticktext":["15","20","25","30","35","40","45","50"],"tickvals":[3.872983346207417,4.4721359549995796,5,5.4772255750516612,5.9160797830996161,6.324555320336759,6.7082039324993694,7.0710678118654755],"categoryorder":"array","categoryarray":["15","20","25","30","35","40","45","50"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Number of Distinct Values","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.89370769565056962,3.2321383913380366],"tickmode":"array","ticktext":["1.0","1.5","2.0","2.5","3.0"],"tickvals":[1,1.5,2,2.5,3],"categoryorder":"array","categoryarray":["1.0","1.5","2.0","2.5","3.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Symmetry","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"NAs","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"28e3be5226c":{"x":{},"y":{},"colour":{},"label":{},"type":"scatter"}},"cur_data":"28e3be5226c","visdat":{"28e3be5226c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p>Plot of the degree of symmetry of the distribution of a variable (value of 1.0 is most symmetric) vs.&nbsp;the number of distinct values of the variable. Hover over a point to see the variable name and detailed characteristics.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-99752bd2537b56369549" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-99752bd2537b56369549">{"x":{"data":[{"x":[1.4142135623730951,1.4142135623730951,1,2.8284271247461903,1,1,1.7320508075688772,1.4142135623730951],"y":[1,1,null,0.91673469387755102,null,null,0.52127659574468088,1],"text":["HFCA<br>distinct values: 2<br>NAs: 0<br>Info: 0.75<br>Symmetry: 1<br>lowest frequency (24) value:Kankumba<br>highest frequency (24) value:Kankumba","MC_CLN<br>distinct values: 2<br>NAs: 47<br>Info: NaN<br>Symmetry: 1<br>lowest frequency (1) value:2<br>highest frequency (1) value:2","MPC_CLN<br>distinct values: 1<br>NAs: 48<br>Info: 0<br>Symmetry: NaN<br>lowest frequency (NA) value:NA<br>highest frequency (NA) value:NA","MPC_CFM<br>distinct values: 8<br>NAs: 23<br>Info: 0.951<br>Symmetry: 0.917<br>lowest frequency (1) value:5<br>highest frequency (7) value:1","MD_OV5<br>distinct values: 1<br>NAs: 48<br>Info: 0<br>Symmetry: NaN<br>lowest frequency (NA) value:NA<br>highest frequency (NA) value:NA","MD_U5<br>distinct values: 1<br>NAs: 48<br>Info: 0<br>Symmetry: NaN<br>lowest frequency (NA) value:NA<br>highest frequency (NA) value:NA","MC_CFR<br>distinct values: 3<br>NAs: 1<br>Info: 0.063<br>Symmetry: 0.521<br>lowest frequency (1) value:96.7<br>highest frequency (46) value:100","YEAR<br>distinct values: 2<br>NAs: 0<br>Info: 0.75<br>Symmetry: 1<br>lowest frequency (24) value:2022<br>highest frequency (24) value:2022"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(68,1,84,1)","rgba(93,200,99,1)","rgba(253,231,37,1)","rgba(33,144,140,1)","rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(59,82,139,1)","rgba(68,1,84,1)"],"opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(68,1,84,1)","rgba(93,200,99,1)","rgba(253,231,37,1)","rgba(33,144,140,1)","rgba(253,231,37,1)","rgba(253,231,37,1)","rgba(59,82,139,1)","rgba(68,1,84,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283108,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.90857864376269049,2.9198484809834997],"tickmode":"array","ticktext":["5"],"tickvals":[2.2360679774997898],"categoryorder":"array","categoryarray":["5"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Number of Distinct Values","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.49734042553191493,1.0239361702127661],"tickmode":"array","ticktext":["0.5","0.6","0.7","0.8","0.9","1.0"],"tickvals":[0.5,0.59999999999999998,0.69999999999999996,0.80000000000000004,0.90000000000000013,1],"categoryorder":"array","categoryarray":["0.5","0.6","0.7","0.8","0.9","1.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Symmetry","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"NAs","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"28e32c8ba904":{"x":{},"y":{},"colour":{},"label":{},"type":"scatter"}},"cur_data":"28e32c8ba904","visdat":{"28e32c8ba904":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1b766f128674b7a675b1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1b766f128674b7a675b1">{"x":{"data":[{"x":[4.8989794855663558],"y":[1],"text":"periodname<br>distinct values: 24<br>NAs: 0<br>Info: 0.999<br>Symmetry: 1<br>lowest frequency (2) value:April 2022<br>highest frequency (2) value:April 2022","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283108,"r":7.3059360730593621,"b":28.493150684931514,"l":54.794520547945211},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[4.8489794855663559,4.9489794855663556],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Number of Distinct Values","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.94999999999999996,1.05],"tickmode":"array","ticktext":["0.950","0.975","1.000","1.025","1.050"],"tickvals":[0.95000000000000007,0.97500000000000009,1,1.0250000000000001,1.05],"categoryorder":"array","categoryarray":["0.950","0.975","1.000","1.025","1.050"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Symmetry","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"28e3b759efa":{"x":{},"y":{},"label":{},"type":"scatter"}},"cur_data":"28e3b759efa","visdat":{"28e3b759efa":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="margin-overview">
+<p>The `contents` function displays the data dictionary and number of missing values for each variable. We can go deeper in summarizing a dataset as a whole. The `qreport` `dataOverview` function first produces a brief overview of the dataset with regard to number of variables, observations, and unique subject identifiers (if present). Then it provides a table, and a graphical report with one graph (in one report tab) per type of variable: continuous, discrete, or non-discrete non-numeric. Variable characteristics summarized are the number of distinct values, number of `NA`s, information measure (see `describe`), symmetry, modal variable value (most frequent value), frequency of modal value, minimum frequency value, and frequency of that value. When there are tied frequencies the first value is reported. The default display is an interactive `plotly` scatterplot with the number of distinct values on the x-axis and symmetry on the y-axis. The other data characteristics are shown as hover text. The points are color-coded for intervals of the number of `NA`s.[`Info` is the information in a variable relative to the information (1.0) in a variable having no tied values. _Symmetry_ is defined as follows. For non-numeric variables, symmetry is one minus the mean absolute difference between relative category frequencies and the reciprocal of the number of categories. It has a value of 1.0 when the frequencies of all the categories are the same. For continuous variables symmetry is the ratio of the 0.95 quantile minus the mean to the mean minus the 0.05 quantile. This symmetry measure is &lt; 1.0 when the left tail is heavy and &gt; 1 when the right tail of the distribution is heavy.]</p>
+</div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">describe_zam_dh_hf</span> <span class="op">&lt;-</span> <span class="fu">describe</span><span class="op">(</span><span class="va">zam_dh_hf</span><span class="op">)</span></span>
+<span><span class="fu">sparkline</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/sparkline/man/sparkline.html">sparkline</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="htmlwidget-ba81a8ad56c04a41abaa" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-ba81a8ad56c04a41abaa">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">maketabs</span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">describe_zam_dh_hf</span>, <span class="st">'both'</span><span class="op">)</span>,</span>
+<span>  wide <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  initblank <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset column-page">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Continuous</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Categorical</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="pibphpdvgj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pibphpdvgj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pibphpdvgj thead, #pibphpdvgj tbody, #pibphpdvgj tfoot, #pibphpdvgj tr, #pibphpdvgj td, #pibphpdvgj th {
+  border-style: none;
+}
+
+#pibphpdvgj p {
+  margin: 0;
+  padding: 0;
+}
+
+#pibphpdvgj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#pibphpdvgj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pibphpdvgj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pibphpdvgj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pibphpdvgj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pibphpdvgj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pibphpdvgj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pibphpdvgj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pibphpdvgj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#pibphpdvgj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#pibphpdvgj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pibphpdvgj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pibphpdvgj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pibphpdvgj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pibphpdvgj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pibphpdvgj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pibphpdvgj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pibphpdvgj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#pibphpdvgj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pibphpdvgj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pibphpdvgj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pibphpdvgj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pibphpdvgj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pibphpdvgj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pibphpdvgj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pibphpdvgj .gt_left {
+  text-align: left;
+}
+
+#pibphpdvgj .gt_center {
+  text-align: center;
+}
+
+#pibphpdvgj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pibphpdvgj .gt_font_normal {
+  font-weight: normal;
+}
+
+#pibphpdvgj .gt_font_bold {
+  font-weight: bold;
+}
+
+#pibphpdvgj .gt_font_italic {
+  font-style: italic;
+}
+
+#pibphpdvgj .gt_super {
+  font-size: 65%;
+}
+
+#pibphpdvgj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#pibphpdvgj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pibphpdvgj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#pibphpdvgj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#pibphpdvgj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#pibphpdvgj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#pibphpdvgj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#pibphpdvgj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pibphpdvgj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="11" class="gt_heading gt_title gt_font_normal"><p><strong><code>zam_dh_hf</code> Descriptives</strong></p></th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="11" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">4 Continous Variables of 13 Variables, 48 Observations</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
+<th id="Label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Label</th>
+<th id="Units" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Units</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="Missing" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Missing</th>
+<th id="Distinct" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Distinct</th>
+<th id="Info" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Info</th>
+<th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Mean</th>
+<th id="Gini <span style=&quot;text-decoration: overline&quot;>|Δ|</span>" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Gini <span style="text-decoration: overline">|Δ|</span>
+</th>
+<th id=" " class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Quantiles<br><font size=&quot;1&quot;> .05 </font><font size=&quot;2&quot;> .10 </font><font size=&quot;3&quot;> .25 </font><font size=&quot;4&quot;><strong> .50 </strong></font><font size=&quot;3&quot;> .75 </font><font size=&quot;2&quot;> .90 </font><font size=&quot;1&quot;> .95 </font>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Quantiles<br><font size="1"> .05 </font><font size="2"> .10 </font><font size="3"> .25 </font><font size="4"> <strong>.50</strong> </font><font size="3"> .75 </font><font size="2"> .90 </font><font size="1"> .95 </font>
+</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">MC_CFM</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Reported confirmed malaria cases in the HFCA</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">cases</td>
+<td class="gt_row gt_right" headers="n">47</td>
+<td class="gt_row gt_right" headers="Missing">1</td>
+<td class="gt_row gt_right" headers="Distinct">47</td>
+<td class="gt_row gt_right" headers="Info">1.000</td>
+<td class="gt_row gt_right" headers="Mean">200.7</td>
+<td class="gt_row gt_right" headers="Gmd">186.4</td>
+<td class="gt_row gt_right" headers=" ">
+<span id="htmlwidget-adfb6e17a51cbd3e426f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-adfb6e17a51cbd3e426f">{"x":{"values":[2,0,1,1,0,1,1,3,2,0,2,0,1,3,0,1,0,0,2,1,1,1,0,1,1,0,0,1,0,0,0,1,1,0,1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,2,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,2],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":1,"barSpacing":1,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"Bin: [15, 20)<br>Observed:<br>18<br>19<br>Proportion:0.0426 (n=2)<br>Cumulative:0.0426\",\"\",\"Bin: [25, 30)<br>Observed:<br>28<br>Proportion:0.0213 (n=1)<br>Cumulative:0.0638\",\"Bin: [30, 35)<br>Observed:<br>33<br>Proportion:0.0213 (n=1)<br>Cumulative:0.0851\",\"\",\"Bin: [40, 45)<br>Observed:<br>42<br>Proportion:0.0213 (n=1)<br>Cumulative:0.1064\",\"Bin: [45, 50)<br>Observed:<br>47<br>Proportion:0.0213 (n=1)<br>Cumulative:0.1277\",\"Bin: [50, 55)<br>Observed:<br>51<br>52<br>53<br>Proportion:0.0638 (n=3)<br>Cumulative:0.1915\",\"Bin: [55, 60)<br>Observed:<br>57<br>59<br>Proportion:0.0426 (n=2)<br>Cumulative:0.234\",\"\",\"Bin: [65, 70)<br>Observed:<br>65<br>66<br>Proportion:0.0426 (n=2)<br>Cumulative:0.2766\",\"\",\"Bin: [75, 80)<br>Observed:<br>78<br>Proportion:0.0213 (n=1)<br>Cumulative:0.2979\",\"Bin: [80, 85)<br>Observed:<br>80<br>81<br>83<br>Proportion:0.0638 (n=3)<br>Cumulative:0.3617\",\"\",\"Bin: [90, 95)<br>Observed:<br>93<br>Proportion:0.0213 (n=1)<br>Cumulative:0.383\",\"\",\"\",\"Bin: [105, 110)<br>Observed:<br>105<br>106<br>Proportion:0.0426 (n=2)<br>Cumulative:0.4255\",\"Bin: [110, 115)<br>Observed:<br>111<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4468\",\"Bin: [115, 120)<br>Observed:<br>119<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4681\",\"Bin: [120, 125)<br>Observed:<br>123<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4894\",\"\",\"Bin: [130, 135)<br>Observed:<br>134<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5106\",\"Bin: [135, 140)<br>Observed:<br>136<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5319\",\"\",\"\",\"Bin: [150, 155)<br>Observed:<br>153<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5532\",\"\",\"\",\"\",\"Bin: [170, 175)<br>Observed:<br>174<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5745\",\"Bin: [175, 180)<br>Observed:<br>176<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5957\",\"\",\"Bin: [185, 190)<br>Observed:<br>186<br>Proportion:0.0213 (n=1)<br>Cumulative:0.617\",\"\",\"\",\"Bin: [200, 205)<br>Observed:<br>201<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6383\",\"Bin: [205, 210)<br>Observed:<br>206<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6596\",\"Bin: [210, 215)<br>Observed:<br>213<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6809\",\"\",\"\",\"\",\"Bin: [230, 235)<br>Observed:<br>231<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7021\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [285, 290)<br>Observed:<br>288<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7234\",\"\",\"Bin: [295, 300)<br>Observed:<br>299<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7447\",\"\",\"\",\"\",\"Bin: [315, 320)<br>Observed:<br>315<br>Proportion:0.0213 (n=1)<br>Cumulative:0.766\",\"\",\"\",\"\",\"\",\"\",\"Bin: [345, 350)<br>Observed:<br>345<br>349<br>Proportion:0.0426 (n=2)<br>Cumulative:0.8085\",\"\",\"\",\"\",\"Bin: [365, 370)<br>Observed:<br>368<br>Proportion:0.0213 (n=1)<br>Cumulative:0.8298\",\"\",\"\",\"Bin: [380, 385)<br>Observed:<br>380<br>Proportion:0.0213 (n=1)<br>Cumulative:0.8511\",\"\",\"\",\"\",\"Bin: [400, 405)<br>Observed:<br>404<br>Proportion:0.0213 (n=1)<br>Cumulative:0.8723\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [505, 510)<br>Observed:<br>508<br>509<br>Proportion:0.0426 (n=2)<br>Cumulative:0.9149\",\"\",\"\",\"Bin: [520, 525)<br>Observed:<br>522<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9362\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [580, 585)<br>Observed:<br>582<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9574\",\"\",\"Bin: [590, 595]<br>Observed:<br>590<br>595<br>Proportion:0.0426 (n=2)<br>Cumulative:1\"][field[0].offset];\n       }","height":20,"width":200},"width":200,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+<td class="gt_row gt_center" headers="Quantiles">
+<font size="1"> 29.5 </font><font size="2"> 45.0 </font><font size="3"> 65.5 </font><font size="4"> <strong>134.0</strong> </font><font size="3"> 307.0 </font><font size="2"> 508.4 </font><font size="1"> 564.0 </font>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">MI</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Malaria incidence in the HFCA, clinical+confirmed cases, all ages</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">cases per 1000 people</td>
+<td class="gt_row gt_right" headers="n">47</td>
+<td class="gt_row gt_right" headers="Missing">1</td>
+<td class="gt_row gt_right" headers="Distinct">45</td>
+<td class="gt_row gt_right" headers="Info">1.000</td>
+<td class="gt_row gt_right" headers="Mean">29.5</td>
+<td class="gt_row gt_right" headers="Gmd">31.58</td>
+<td class="gt_row gt_right" headers=" ">
+<span id="htmlwidget-031ea681789bff34a6d4" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-031ea681789bff34a6d4">{"x":{"values":[1,2,4,3,2,1,1,3,2,1,1,0,1,0,1,2,1,1,0,0,0,0,1,0,1,0,1,1,0,0,1,0,0,0,0,1,2,0,0,0,0,1,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":1,"barSpacing":1,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"Bin: [2, 3)<br>Observed:<br>2.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.0213\",\"Bin: [3, 4)<br>Observed:<br>3.5<br>3.8<br>Proportion:0.0426 (n=2)<br>Cumulative:0.0638\",\"Bin: [4, 5)<br>Observed:<br>4 (2)<br>4.1<br>4.5<br>Proportion:0.0851 (n=4)<br>Cumulative:0.1489\",\"Bin: [5, 6)<br>Observed:<br>5.1<br>5.2<br>5.9<br>Proportion:0.0638 (n=3)<br>Cumulative:0.2128\",\"Bin: [6, 7)<br>Observed:<br>6.3<br>6.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.2553\",\"Bin: [7, 8)<br>Observed:<br>7.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.2766\",\"Bin: [8, 9)<br>Observed:<br>8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.2979\",\"Bin: [9, 10)<br>Observed:<br>9.2<br>9.8 (2)<br>Proportion:0.0638 (n=3)<br>Cumulative:0.3617\",\"Bin: [10, 11)<br>Observed:<br>10.7<br>10.8<br>Proportion:0.0426 (n=2)<br>Cumulative:0.4043\",\"Bin: [11, 12)<br>Observed:<br>11.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4255\",\"Bin: [12, 13)<br>Observed:<br>12.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4468\",\"\",\"Bin: [14, 15)<br>Observed:<br>14.3<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4681\",\"\",\"Bin: [16, 17)<br>Observed:<br>16.1<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4894\",\"Bin: [17, 18)<br>Observed:<br>17.2<br>17.6<br>Proportion:0.0426 (n=2)<br>Cumulative:0.5319\",\"Bin: [18, 19)<br>Observed:<br>18.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5532\",\"Bin: [19, 20)<br>Observed:<br>19.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5745\",\"\",\"\",\"\",\"\",\"Bin: [24, 25)<br>Observed:<br>24.2<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5957\",\"\",\"Bin: [26, 27)<br>Observed:<br>26.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.617\",\"\",\"Bin: [28, 29)<br>Observed:<br>28.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6383\",\"Bin: [29, 30)<br>Observed:<br>29.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6596\",\"\",\"\",\"Bin: [32, 33)<br>Observed:<br>32.4<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6809\",\"\",\"\",\"\",\"\",\"Bin: [37, 38)<br>Observed:<br>37.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7021\",\"Bin: [38, 39)<br>Observed:<br>38.3<br>38.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.7447\",\"\",\"\",\"\",\"\",\"Bin: [43, 44)<br>Observed:<br>43.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.766\",\"\",\"Bin: [45, 46)<br>Observed:<br>45.1<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7872\",\"Bin: [46, 47)<br>Observed:<br>46.1<br>46.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.8298\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [60, 61)<br>Observed:<br>60.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.8511\",\"\",\"\",\"\",\"\",\"Bin: [65, 66)<br>Observed:<br>65.1<br>65.9<br>Proportion:0.0426 (n=2)<br>Cumulative:0.8936\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [72, 73)<br>Observed:<br>72.6<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9149\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [87, 88)<br>Observed:<br>87.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9362\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [109, 110)<br>Observed:<br>109.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9574\",\"Bin: [110, 111)<br>Observed:<br>110.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9787\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [127, 128]<br>Observed:<br>127.1<br>Proportion:0.0213 (n=1)<br>Cumulative:1\"][field[0].offset];\n       }","height":20,"width":200},"width":200,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+<td class="gt_row gt_center" headers="Quantiles">
+<font size="1"> 3.86 </font><font size="2"> 4.06 </font><font size="3"> 7.15 </font><font size="4"> <strong>17.20</strong> </font><font size="3"> 41.10 </font><font size="2"> 68.58 </font><font size="1"> 103.02 </font>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">MI_CFM</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Malaria incidence in the HFCA, confirmed cases, all ages</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">cases per 1000 people</td>
+<td class="gt_row gt_right" headers="n">47</td>
+<td class="gt_row gt_right" headers="Missing">1</td>
+<td class="gt_row gt_right" headers="Distinct">45</td>
+<td class="gt_row gt_right" headers="Info">1.000</td>
+<td class="gt_row gt_right" headers="Mean">29.49</td>
+<td class="gt_row gt_right" headers="Gmd">31.58</td>
+<td class="gt_row gt_right" headers=" ">
+<span id="htmlwidget-29374bc3f35821ce98d9" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-29374bc3f35821ce98d9">{"x":{"values":[1,2,4,3,2,1,1,3,2,1,1,0,1,0,1,2,1,1,0,0,0,0,1,0,1,0,1,1,0,0,1,0,0,0,0,1,2,0,0,0,0,1,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":1,"barSpacing":1,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"Bin: [2, 3)<br>Observed:<br>2.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.0213\",\"Bin: [3, 4)<br>Observed:<br>3.5<br>3.8<br>Proportion:0.0426 (n=2)<br>Cumulative:0.0638\",\"Bin: [4, 5)<br>Observed:<br>4 (2)<br>4.1<br>4.5<br>Proportion:0.0851 (n=4)<br>Cumulative:0.1489\",\"Bin: [5, 6)<br>Observed:<br>5.1<br>5.2<br>5.9<br>Proportion:0.0638 (n=3)<br>Cumulative:0.2128\",\"Bin: [6, 7)<br>Observed:<br>6.3<br>6.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.2553\",\"Bin: [7, 8)<br>Observed:<br>7.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.2766\",\"Bin: [8, 9)<br>Observed:<br>8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.2979\",\"Bin: [9, 10)<br>Observed:<br>9.2<br>9.8 (2)<br>Proportion:0.0638 (n=3)<br>Cumulative:0.3617\",\"Bin: [10, 11)<br>Observed:<br>10.7<br>10.8<br>Proportion:0.0426 (n=2)<br>Cumulative:0.4043\",\"Bin: [11, 12)<br>Observed:<br>11.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4255\",\"Bin: [12, 13)<br>Observed:<br>12.4<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4468\",\"\",\"Bin: [14, 15)<br>Observed:<br>14.3<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4681\",\"\",\"Bin: [16, 17)<br>Observed:<br>16.1<br>Proportion:0.0213 (n=1)<br>Cumulative:0.4894\",\"Bin: [17, 18)<br>Observed:<br>17.2<br>17.6<br>Proportion:0.0426 (n=2)<br>Cumulative:0.5319\",\"Bin: [18, 19)<br>Observed:<br>18.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5532\",\"Bin: [19, 20)<br>Observed:<br>19.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5745\",\"\",\"\",\"\",\"\",\"Bin: [24, 25)<br>Observed:<br>24.2<br>Proportion:0.0213 (n=1)<br>Cumulative:0.5957\",\"\",\"Bin: [26, 27)<br>Observed:<br>26.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.617\",\"\",\"Bin: [28, 29)<br>Observed:<br>28.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6383\",\"Bin: [29, 30)<br>Observed:<br>29.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6596\",\"\",\"\",\"Bin: [32, 33)<br>Observed:<br>32.4<br>Proportion:0.0213 (n=1)<br>Cumulative:0.6809\",\"\",\"\",\"\",\"\",\"Bin: [37, 38)<br>Observed:<br>37.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7021\",\"Bin: [38, 39)<br>Observed:<br>38.3<br>38.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.7447\",\"\",\"\",\"\",\"\",\"Bin: [43, 44)<br>Observed:<br>43.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.766\",\"\",\"Bin: [45, 46)<br>Observed:<br>45.1<br>Proportion:0.0213 (n=1)<br>Cumulative:0.7872\",\"Bin: [46, 47)<br>Observed:<br>46.1<br>46.4<br>Proportion:0.0426 (n=2)<br>Cumulative:0.8298\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [60, 61)<br>Observed:<br>60.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.8511\",\"\",\"\",\"\",\"\",\"Bin: [65, 66)<br>Observed:<br>65.1<br>65.9<br>Proportion:0.0426 (n=2)<br>Cumulative:0.8936\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [72, 73)<br>Observed:<br>72.6<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9149\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [87, 88)<br>Observed:<br>87.9<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9362\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [109, 110)<br>Observed:<br>109.5<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9574\",\"Bin: [110, 111)<br>Observed:<br>110.8<br>Proportion:0.0213 (n=1)<br>Cumulative:0.9787\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"Bin: [127, 128]<br>Observed:<br>127.1<br>Proportion:0.0213 (n=1)<br>Cumulative:1\"][field[0].offset];\n       }","height":20,"width":200},"width":200,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+<td class="gt_row gt_center" headers="Quantiles">
+<font size="1"> 3.86 </font><font size="2"> 4.06 </font><font size="3"> 7.15 </font><font size="4"> <strong>17.20</strong> </font><font size="3"> 41.10 </font><font size="2"> 68.58 </font><font size="1"> 103.02 </font>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">MONTH</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small"></td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">months</td>
+<td class="gt_row gt_right" headers="n">48</td>
+<td class="gt_row gt_right" headers="Missing">0</td>
+<td class="gt_row gt_right" headers="Distinct">12</td>
+<td class="gt_row gt_right" headers="Info">0.993</td>
+<td class="gt_row gt_right" headers="Mean">6.5</td>
+<td class="gt_row gt_right" headers="Gmd">4.057</td>
+<td class="gt_row gt_right" headers=" ">
+<span id="htmlwidget-826b8eff645fb6b3df47" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-826b8eff645fb6b3df47">{"x":{"values":[4,4,4,4,4,4,4,4,4,4,8],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":1,"barSpacing":1,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"Bin: [1, 2)<br>Observed:<br>1 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.0833\",\"Bin: [2, 3)<br>Observed:<br>2 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.1667\",\"Bin: [3, 4)<br>Observed:<br>3 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.25\",\"Bin: [4, 5)<br>Observed:<br>4 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.3333\",\"Bin: [5, 6)<br>Observed:<br>5 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.4167\",\"Bin: [6, 7)<br>Observed:<br>6 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.5\",\"Bin: [7, 8)<br>Observed:<br>7 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.5833\",\"Bin: [8, 9)<br>Observed:<br>8 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.6667\",\"Bin: [9, 10)<br>Observed:<br>9 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.75\",\"Bin: [10, 11)<br>Observed:<br>10 (4)<br>Proportion:0.0833 (n=4)<br>Cumulative:0.8333\",\"Bin: [11, 12]<br>Observed:<br>11 (4)<br>12 (4)<br>Proportion:0.1667 (n=8)<br>Cumulative:1\"][field[0].offset];\n       }","height":20,"width":200},"width":200,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+<td class="gt_row gt_center" headers="Quantiles">
+<font size="1"> 1.00 </font><font size="2"> 2.00 </font><font size="3"> 3.75 </font><font size="4"> <strong>6.50</strong> </font><font size="3"> 9.25 </font><font size="2"> 11.00 </font><font size="1"> 12.00 </font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="yxdltievew" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yxdltievew table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#yxdltievew thead, #yxdltievew tbody, #yxdltievew tfoot, #yxdltievew tr, #yxdltievew td, #yxdltievew th {
+  border-style: none;
+}
+
+#yxdltievew p {
+  margin: 0;
+  padding: 0;
+}
+
+#yxdltievew .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#yxdltievew .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#yxdltievew .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#yxdltievew .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#yxdltievew .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#yxdltievew .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yxdltievew .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#yxdltievew .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#yxdltievew .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#yxdltievew .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#yxdltievew .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#yxdltievew .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#yxdltievew .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#yxdltievew .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#yxdltievew .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#yxdltievew .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#yxdltievew .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#yxdltievew .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#yxdltievew .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yxdltievew .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#yxdltievew .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#yxdltievew .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#yxdltievew .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yxdltievew .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#yxdltievew .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#yxdltievew .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yxdltievew .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yxdltievew .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#yxdltievew .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yxdltievew .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#yxdltievew .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#yxdltievew .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#yxdltievew .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yxdltievew .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#yxdltievew .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#yxdltievew .gt_left {
+  text-align: left;
+}
+
+#yxdltievew .gt_center {
+  text-align: center;
+}
+
+#yxdltievew .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#yxdltievew .gt_font_normal {
+  font-weight: normal;
+}
+
+#yxdltievew .gt_font_bold {
+  font-weight: bold;
+}
+
+#yxdltievew .gt_font_italic {
+  font-style: italic;
+}
+
+#yxdltievew .gt_super {
+  font-size: 65%;
+}
+
+#yxdltievew .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#yxdltievew .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#yxdltievew .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#yxdltievew .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#yxdltievew .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#yxdltievew .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#yxdltievew .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#yxdltievew .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#yxdltievew div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="10" class="gt_heading gt_title gt_font_normal"><p><strong><code>zam_dh_hf</code> Descriptives</strong></p></th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="10" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">6 Categorical Variables of 13 Variables, 48 Observations</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
+<th id="Label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Label</th>
+<th id="Units" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Units</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="Missing" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Missing</th>
+<th id="Distinct" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Distinct</th>
+<th id="Info" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Info</th>
+<th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Mean</th>
+<th id="Gini <span style=&quot;text-decoration: overline&quot;>|Δ|</span>" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Gini <span style="text-decoration: overline">|Δ|</span>
+</th>
+<th id=" " class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">periodname</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small"></td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small"></td>
+<td class="gt_row gt_right" headers="n">48</td>
+<td class="gt_row gt_right" headers="Missing">0</td>
+<td class="gt_row gt_right" headers="Distinct">24</td>
+<td class="gt_row gt_right" headers="Info"><br></td>
+<td class="gt_row gt_right" headers="Mean"><br></td>
+<td class="gt_row gt_left" headers="Gmd"><br></td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-0f8045c7f55dd12eee3f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-0f8045c7f55dd12eee3f">{"x":{"values":[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"April 2022<br>Proportion:0.0417 (n=2)\",\"April 2023<br>Proportion:0.0417 (n=2)\",\"August 2022<br>Proportion:0.0417 (n=2)\",\"August 2023<br>Proportion:0.0417 (n=2)\",\"December 2022<br>Proportion:0.0417 (n=2)\",\"December 2023<br>Proportion:0.0417 (n=2)\",\"February 2022<br>Proportion:0.0417 (n=2)\",\"February 2023<br>Proportion:0.0417 (n=2)\",\"January 2022<br>Proportion:0.0417 (n=2)\",\"January 2023<br>Proportion:0.0417 (n=2)\",\"July 2022<br>Proportion:0.0417 (n=2)\",\"July 2023<br>Proportion:0.0417 (n=2)\",\"June 2022<br>Proportion:0.0417 (n=2)\",\"June 2023<br>Proportion:0.0417 (n=2)\",\"March 2022<br>Proportion:0.0417 (n=2)\",\"March 2023<br>Proportion:0.0417 (n=2)\",\"May 2022<br>Proportion:0.0417 (n=2)\",\"May 2023<br>Proportion:0.0417 (n=2)\",\"November 2022<br>Proportion:0.0417 (n=2)\",\"November 2023<br>Proportion:0.0417 (n=2)\",\"October 2022<br>Proportion:0.0417 (n=2)\",\"October 2023<br>Proportion:0.0417 (n=2)\",\"September 2022<br>Proportion:0.0417 (n=2)\",\"September 2023<br>Proportion:0.0417 (n=2)\"][field[0].offset];\n       }","height":20,"width":125},"width":125,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">HFCA</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Health facility catchment area</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small"></td>
+<td class="gt_row gt_right" headers="n">48</td>
+<td class="gt_row gt_right" headers="Missing">0</td>
+<td class="gt_row gt_right" headers="Distinct">2</td>
+<td class="gt_row gt_right" headers="Info"><br></td>
+<td class="gt_row gt_right" headers="Mean"><br></td>
+<td class="gt_row gt_left" headers="Gmd"><br></td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-84e1a74967604f220219" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-84e1a74967604f220219">{"x":{"values":[24,24],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"Kankumba<br>Proportion:0.5 (n=24)\",\"Lukwipa Rural Health Centre<br>Proportion:0.5 (n=24)\"][field[0].offset];\n       }","height":20,"width":15},"width":15,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">MC_CLN</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Reported clinical diagnosed malaria cases in the HFCA</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">cases</td>
+<td class="gt_row gt_right" headers="n">1</td>
+<td class="gt_row gt_right" headers="Missing">47</td>
+<td class="gt_row gt_right" headers="Distinct">1</td>
+<td class="gt_row gt_right" headers="Info">0.000</td>
+<td class="gt_row gt_right" headers="Mean">2</td>
+<td class="gt_row gt_left" headers="Gmd">NA</td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-9ff8343459d284f64310" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-9ff8343459d284f64310">{"x":{"values":1,"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"2<br>Proportion:1 (n=1)\"][field[0].offset];\n       }","height":20,"width":10},"width":10,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">MPC_CFM</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Reported confirmed malaria cases in pregnant women in the HFCA</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">cases</td>
+<td class="gt_row gt_right" headers="n">25</td>
+<td class="gt_row gt_right" headers="Missing">23</td>
+<td class="gt_row gt_right" headers="Distinct">7</td>
+<td class="gt_row gt_right" headers="Info">0.951</td>
+<td class="gt_row gt_right" headers="Mean">2.76</td>
+<td class="gt_row gt_left" headers="Gmd">1.933</td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-afe504d07fb02e61b321" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-afe504d07fb02e61b321">{"x":{"values":[7,7,4,3,1,2,1],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"1<br>Proportion:0.28 (n=7)\",\"2<br>Proportion:0.28 (n=7)\",\"3<br>Proportion:0.16 (n=4)\",\"4<br>Proportion:0.12 (n=3)\",\"5<br>Proportion:0.04 (n=1)\",\"6<br>Proportion:0.08 (n=2)\",\"7<br>Proportion:0.04 (n=1)\"][field[0].offset];\n       }","height":20,"width":40},"width":40,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">MC_CFR</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small">Malaria case confirmation rate</td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">percent</td>
+<td class="gt_row gt_right" headers="n">47</td>
+<td class="gt_row gt_right" headers="Missing">1</td>
+<td class="gt_row gt_right" headers="Distinct">2</td>
+<td class="gt_row gt_right" headers="Info">0.063</td>
+<td class="gt_row gt_right" headers="Mean">99.93</td>
+<td class="gt_row gt_left" headers="Gmd">0.1404</td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-18f64c9fd84bf65df5c5" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-18f64c9fd84bf65df5c5">{"x":{"values":[1,46],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"96.7<br>Proportion:0.0213 (n=1)\",\"100<br>Proportion:0.9787 (n=46)\"][field[0].offset];\n       }","height":20,"width":15},"width":15,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">YEAR</td>
+<td class="gt_row gt_left" headers="Label" style="font-size: small"></td>
+<td class="gt_row gt_left" headers="Units" style="font-family: arial; font-size: small">years</td>
+<td class="gt_row gt_right" headers="n">48</td>
+<td class="gt_row gt_right" headers="Missing">0</td>
+<td class="gt_row gt_right" headers="Distinct">2</td>
+<td class="gt_row gt_right" headers="Info">0.750</td>
+<td class="gt_row gt_right" headers="Mean">2022</td>
+<td class="gt_row gt_left" headers="Gmd">0.5106</td>
+<td class="gt_row gt_left" headers="tab" style="font-size: x-small">
+<span id="htmlwidget-3ff3005670da059be351" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-3ff3005670da059be351">{"x":{"values":[24,24],"options":{"type":"bar","chartRangeMin":0,"zeroColor":"lightgray","barWidth":3,"barSpacing":2,"tooltipFormatter":"function(sparkline, options, field){\n       debugger;\n       return [\"2022<br>Proportion:0.5 (n=24)\",\"2023<br>Proportion:0.5 (n=24)\"][field[0].offset];\n       }","height":20,"width":15},"width":15,"height":20},"evals":["options.tooltipFormatter"],"jsHooks":[]}</script>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html" class="pagination-link" aria-label="Analysis File Creation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Analysis File Creation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>One seven project.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sepmein/one-seven/edit/master/qmd/02_analysis/02_11_zam/02_11_04_data_overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sepmein/one-seven/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This site was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
