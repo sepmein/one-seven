@@ -313,7 +313,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">6.1.2</span> Load Data</h3>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># DHIS2</span></span>
-<span><span class="va">zam_dh_hf_raw</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="va">PATH_ZAM_DH_HF_RAW_240723</span><span class="op">)</span> , skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">zam_dh_hf_raw</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span><span class="op">(</span></span>
+<span>  <span class="fu">here</span><span class="op">(</span><span class="va">PATH_ZAM_DH_HF_RAW_240723</span><span class="op">)</span>,</span>
+<span>  skip <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  col_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"text"</span>,</span>
+<span>                <span class="st">"text"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span>,</span>
+<span>                <span class="st">"numeric"</span></span>
+<span>                <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
 <span><span class="va">zam_dh_vl_raw</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="va">PATH_ZAM_DH_VL_RAW_240723</span><span class="op">)</span> , skip <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Survey</span></span>
@@ -380,10 +395,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    MD_OV5 <span class="op">=</span> <span class="va">deaths</span>,</span>
 <span>    MD_U5 <span class="op">=</span> <span class="va">deaths</span>,</span>
 <span>    MC_CFR <span class="op">=</span> <span class="va">percent</span></span>
-<span>  <span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  drop <span class="op">=</span> <span class="fu">.q</span><span class="op">(</span></span>
+<span>    <span class="va">periodname</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  HFCA <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">HFCA</span><span class="op">)</span></span>
 <span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/as.data.table.html">as.data.table</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Input object size:   7832 bytes;     11 variables    48 observations
+<pre><code>Input object size:   8408 bytes;     11 variables    48 observations
 Renamed variable     organisationunitname   to HFCA 
 Renamed variable     Malaria Clinical Cases     to MC_CLN 
 Renamed variable     Malaria Confirmed Cases    to MC_CFM 
@@ -396,43 +415,49 @@ Renamed variable     Malaria death under 5 years - total    to MD_U5
 Renamed variable     Malaria case confirmation rate (%)     to MC_CFR 
 Added variable      YEAR
 Added variable      MONTH
-New object size:    15792 bytes;    13 variables    48 observations</code></pre>
+Modified variable   HFCA
+Dropped variable    periodname
+New object size:    13736 bytes;    12 variables    48 observations</code></pre>
 </div>
 <div class="sourceCode" id="zam-updata-dh-hf" data-lst-cap="Recode HFCA data from DHIS2, Zambia"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">qsave</span><span class="op">(</span><span class="va">zam_dh_hf</span>, <span class="fu">here</span><span class="op">(</span><span class="va">PATH_ZAM_DH_HF</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">contents</span><span class="op">(</span><span class="va">zam_dh_hf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Data frame:zam_dh_hf    48 observations and 13 variables    Maximum # NAs:48
+Data frame:zam_dh_hf    48 observations and 12 variables    Maximum # NAs:48
 
-                                                                            Labels
-periodname                                                                        
-HFCA                                                Health facility catchment area
-MC_CLN                       Reported clinical diagnosed malaria cases in the HFCA
-MC_CFM                                Reported confirmed malaria cases in the HFCA
-MPC_CLN    Reported clinical diagnosed malaria cases in pregnant women in the HFCA
-MPC_CFM             Reported confirmed malaria cases in pregnant women in the HFCA
-MI               Malaria incidence in the HFCA, clinical+confirmed cases, all ages
-MI_CFM                    Malaria incidence in the HFCA, confirmed cases, all ages
-MD_OV5                                Malaria death in the HFCA, 5 years and older
-MD_U5                                     Malaria death in the HFCA, under 5 years
-MC_CFR                                              Malaria case confirmation rate
-YEAR                                                                              
-MONTH                                                                             
-                           Units     Class   Storage NAs
-periodname                                 character   0
-HFCA                             character character   0
-MC_CLN                     cases   integer   integer  47
-MC_CFM                     cases   integer   integer   1
-MPC_CLN                    cases   logical   logical  48
-MPC_CFM                    cases   integer   integer  23
-MI         cases per 1000 people   numeric    double   1
-MI_CFM     cases per 1000 people   numeric    double   1
-MD_OV5                    deaths   logical   logical  48
-MD_U5                     deaths   logical   logical  48
-MC_CFR                   percent   numeric    double   1
-YEAR                       years             integer   0
-MONTH                     months             integer   0</code></pre>
+                                                                         Labels
+HFCA                                             Health facility catchment area
+MC_CLN                    Reported clinical diagnosed malaria cases in the HFCA
+MC_CFM                             Reported confirmed malaria cases in the HFCA
+MPC_CLN Reported clinical diagnosed malaria cases in pregnant women in the HFCA
+MPC_CFM          Reported confirmed malaria cases in pregnant women in the HFCA
+MI            Malaria incidence in the HFCA, clinical+confirmed cases, all ages
+MI_CFM                 Malaria incidence in the HFCA, confirmed cases, all ages
+MD_OV5                             Malaria death in the HFCA, 5 years and older
+MD_U5                                  Malaria death in the HFCA, under 5 years
+MC_CFR                                           Malaria case confirmation rate
+YEAR                                                                           
+MONTH                                                                          
+                        Units Levels   Class Storage NAs
+HFCA                               2         integer   0
+MC_CLN                  cases        integer integer  47
+MC_CFM                  cases        integer integer   1
+MPC_CLN                 cases        integer integer  48
+MPC_CFM                 cases        integer integer  23
+MI      cases per 1000 people        numeric  double   1
+MI_CFM  cases per 1000 people        numeric  double   1
+MD_OV5                 deaths        integer integer  48
+MD_U5                  deaths        integer integer  48
+MC_CFR                percent        numeric  double   1
+YEAR                    years                integer   0
+MONTH                  months                integer   0
+
++--------+------------------------------------+
+|Variable|Levels                              |
++--------+------------------------------------+
+|  HFCA  |Kankumba,Lukwipa Rural Health Centre|
++--------+------------------------------------+</code></pre>
 </div>
 </div>
 <p>see <a href="../../01_data/01_03_dhis2_data.html#sec-meta-data-date" class="quarto-xref"><span>Section 4.1</span></a>, <a href="../../01_data/01_03_dhis2_data.html#sec-meta-data-administrative" class="quarto-xref"><span>Section 4.2</span></a>, <a href="../../01_data/01_03_dhis2_data.html#sec-meta-data-malaria" class="quarto-xref"><span>Section 4.3</span></a> for more information.</p>
