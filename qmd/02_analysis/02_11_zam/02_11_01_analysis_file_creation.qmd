@@ -11,6 +11,7 @@ require(Hmisc)
 require(here)
 require(data.table)
 require(lubridate)
+require(qs)
 ```
 
 ## Raw data
@@ -62,31 +63,7 @@ Zambia submitted data to WHO at 23th, July, 2024.
 ### Data Pathes
 
 ```{r}
-#| label: zam_raw_data_path
-# DHIS2
-PATH_ZAM_DH_HF_RAW_240723 <- "2_data/zam/1_raw/HMIS data Lukwipa and Kankumba.xls"
-PATH_ZAM_DH_VL_RAW_240723 <- "2_data/zam/1_raw/Weekly data.xlsx"
-
-# Survey
-PATH_ZAM_HH_HH_RAW_240723 <- "2_data/zam/1_raw/1,7_experiment_data_status.xlsx"
-PATH_ZAM_HH_CODEBOOK_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Survey- Codebook.xlsx"
-
-# Baseline
-PATH_ZAM_HHB_HH_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/census_phone_combine.csv"
-PATH_ZAM_HHB_PR_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/household_member_phone_combine.csv"
-PATH_ZAM_HHB_HH_DETAILED_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/household_phone_combine.csv"
-PATH_ZAM_HHB_HH_ITN_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/net_phone_combine.csv"
-PATH_ZAM_HHB_HH_TEST_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/Rufunsa 1,7mRCT BASE-LINE MICROSCOPY RESULTS final.xlsx"
-PATH_ZAM_HHB_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Baseline Survey Dataset/visit_phone_combine.csv"
-
-# Endline
-PATH_ZAM_HHE_HH_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-census.xlsx"
-PATH_ZAM_HHE_PR_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline household_member_all.csv"
-PATH_ZAM_HHE_HH_DETAILED_HOUSEINFO_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-household.xlsx"
-PATH_ZAM_HHE_HH_ITN_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-net.xlsx"
-PATH_ZAM_HHE_HH_TEST_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/1,7 Parasite Microscope endline survey 2023 results_updated Rufunsa_version.xlsx"
-PATH_ZAM_HHE_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/Endline Survey Dataset/Endline-visit.xlsx"
-
+source(here("R/paths.R"))
 ```
 
 ### Load Data
@@ -121,6 +98,10 @@ zam_hhe_hh_test_raw <- read_excel(here(PATH_ZAM_HHE_HH_TEST_RAW_240723))
 zam_hhe_hh_visit_raw <- read_excel(here(PATH_ZAM_HHE_HH_VISIT_RAW_240723))
 ```
 
+## DHIS2 data
+
+### Monthly HFCA Malaria
+
 ```{r}
 #| label: zam-updata-dh-hf
 #| lst-label: zam-updata-dh-hf
@@ -131,9 +112,45 @@ zam_dh_hf <- upData(
   MONTH = my(periodname) |> month(),
   rename = .q(organisationunitname = HFCA,
               "Malaria Clinical Cases" = MC_CLN,
-              "Malaria Confirmed Cases" = MC_CFM 
-              )
-)
+              "Malaria Confirmed Cases" = MC_CFM,
+              "Malaria in Pregnancy Clinical Cases" = MPC_CLN,
+              "Malaria in Pregnancy Confirmed Cases" = MPC_CFM,
+              "Malaria Incidence Clinical+Confirmed all ages" = MI,
+              "Malaria incidence _Confirmed rate all ages" = MI_CFM,
+              "Malaria death 5 years and older - total" = MD_OV5,
+              "Malaria death under 5 years - total" = MD_U5,
+              "Malaria case confirmation rate (%)" = MC_CFR
+              ),
+  labels = c(
+    HFCA = "Health facility catchment area",
+    MC_CLN = "Reported clinical diagnosed malaria cases in the HFCA",
+    MC_CFM = "Reported confirmed malaria cases in the HFCA",
+    MPC_CLN = "Reported clinical diagnosed malaria cases in pregnant women in the HFCA",
+    MPC_CFM = "Reported confirmed malaria cases in pregnant women in the HFCA",
+    MI = "Malaria incidence in the HFCA, clinical+confirmed cases, all ages",
+    MI_CFM = "Malaria incidence in the HFCA, confirmed cases, all ages",
+    MD_OV5 = "Malaria death in the HFCA, 5 years and older",
+    MD_U5 = "Malaria death in the HFCA, under 5 years",
+    MC_CFR = "Malaria case confirmation rate"
+  ),
+  units = .q(
+    YEAR = years,
+    MONTH = months,
+    MC_CLN = cases,
+    MC_CFM = cases,
+    MPC_CLN = cases,
+    MPC_CFM = cases,
+    MI = "cases per 1000 people",
+    MI_CFM = "cases per 1000 people",
+    MD_OV5 = deaths,
+    MD_U5 = deaths,
+    MC_CFR = percent
+  )
+) |> data.table::as.data.table()
+
+qsave(zam_dh_hf, here(PATH_ZAM_DH_HF))
+
+contents(zam_dh_hf)
 ```
 
-see @sec-data-meta-date, @sec-data-meta-administrative, @sec-meta-data-malaria for more information.
+see @sec-meta-data-date, @sec-meta-data-administrative, @sec-meta-data-malaria for more information.

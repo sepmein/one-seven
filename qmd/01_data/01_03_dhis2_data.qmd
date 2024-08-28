@@ -1,6 +1,6 @@
 # DHIS2 Data codes
 
-## Date
+## Date {#sec-meta-data-date}
 
 ### Year
 
@@ -82,11 +82,11 @@ Optional Metadata Fields
 
 Related codes: @zam-updata-dh-hf,
 
-## Administrative unit
+## Administrative unit {#sec-meta-data-administrative}
 
 Related codes: @zam-updata-dh-hf,
 
-### Health facility catchment area
+### Health facility catchment area {#sec-meta-data-hfca}
 
 -   **Title**: Health facility catchment area
 
@@ -140,7 +140,7 @@ Optional Metadata Fields
 
 -   **Disaggregation**: NA
 
-## Malaria
+## Malaria {#sec-meta-data-malaria}
 
 ### Reported Clinical Cases, MC_CLN
 
@@ -270,4 +270,4 @@ Optional Metadata Fields
 
     Different disaggregation should be consistent with each other.
 
--   **Disaggregation**: Weekly, Montly, @sec-data-meta-hfca, village level
+-   **Disaggregation**: Weekly, Montly, HFCA(see @sec-data-meta-hfca), village level

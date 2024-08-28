@@ -11,7 +11,7 @@ book:
       One seven project.
     right: |
       This site was built with <a href="https://quarto.org/">Quarto</a>.
-  repo-url: https://github.com/sepmein/one_seven
+  repo-url: https://github.com/sepmein/one-seven
   repo-branch: master
   repo-actions: [edit, issue]
   chapters:
@@ -30,6 +30,7 @@ book:
     - part: Zambia
       chapters:
         - qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.qmd
+        - qmd/02_analysis/02_11_zam/02_11_04_data_overview.qmd
 
 format:
   html:

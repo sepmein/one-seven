@@ -1,1 +1,36 @@
+# Data Overview
 
+```{r}
+#| label: zam_analysis_file_creation_library
+#| message: false
+#| echo: fenced
+#| warning: false
+require(Hmisc)
+require(qreport)
+require(qs)
+require(here)
+source(here("R/paths.r"))
+options(prType = 'html')
+hookaddcap()
+```
+
+## DHIS2
+
+```{r, results='asis'}
+zam_dh_hf <- qread(here(PATH_ZAM_DH_HF))
+dataOverview(zam_dh_hf)
+```
+
+::: margin-overview
+The \`contents\` function displays the data dictionary and number of missing values for each variable. We can go deeper in summarizing a dataset as a whole. The \`qreport\` \`dataOverview\` function first produces a brief overview of the dataset with regard to number of variables, observations, and unique subject identifiers (if present). Then it provides a table, and a graphical report with one graph (in one report tab) per type of variable: continuous, discrete, or non-discrete non-numeric. Variable characteristics summarized are the number of distinct values, number of \`NA\`s, information measure (see \`describe\`), symmetry, modal variable value (most frequent value), frequency of modal value, minimum frequency value, and frequency of that value. When there are tied frequencies the first value is reported. The default display is an interactive \`plotly\` scatterplot with the number of distinct values on the x-axis and symmetry on the y-axis. The other data characteristics are shown as hover text. The points are color-coded for intervals of the number of \`NA\`s.\[\`Info\` is the information in a variable relative to the information (1.0) in a variable having no tied values. \_Symmetry\_ is defined as follows. For non-numeric variables, symmetry is one minus the mean absolute difference between relative category frequencies and the reciprocal of the number of categories. It has a value of 1.0 when the frequencies of all the categories are the same. For continuous variables symmetry is the ratio of the 0.95 quantile minus the mean to the mean minus the 0.05 quantile. This symmetry measure is \< 1.0 when the left tail is heavy and \> 1 when the right tail of the distribution is heavy.\]
+:::
+
+```{r, results='asis'}
+describe_zam_dh_hf <- describe(zam_dh_hf)
+sparkline::sparkline(0)
+maketabs(
+  print(describe_zam_dh_hf, 'both'),
+  wide = TRUE,
+  initblank = TRUE
+)
+```
