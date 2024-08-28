@@ -86,7 +86,7 @@ Related codes: @zam-updata-dh-hf,
 
 Related codes: @zam-updata-dh-hf,
 
-### Health facility catchment area {#sec-meta-data-hfca}
+### Health facility catchment area {#sec-data-meta-hfca}
 
 -   **Title**: Health facility catchment area
 

@@ -74,7 +74,22 @@ source(here("R/paths.R"))
 #| message: false
 
 # DHIS2
-zam_dh_hf_raw <- read_excel(here(PATH_ZAM_DH_HF_RAW_240723) , skip = 1)
+zam_dh_hf_raw <- read_excel(
+  here(PATH_ZAM_DH_HF_RAW_240723),
+  skip = 1,
+  col_types = c("text",
+                "text",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric",
+                "numeric"
+                )
+  )
 zam_dh_vl_raw <- read_excel(here(PATH_ZAM_DH_VL_RAW_240723) , skip = 2)
 
 # Survey
@@ -145,7 +160,11 @@ zam_dh_hf <- upData(
     MD_OV5 = deaths,
     MD_U5 = deaths,
     MC_CFR = percent
-  )
+  ),
+  drop = .q(
+    periodname
+  ),
+  HFCA = as.factor(HFCA)
 ) |> data.table::as.data.table()
 
 qsave(zam_dh_hf, here(PATH_ZAM_DH_HF))

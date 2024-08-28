@@ -9,7 +9,12 @@ require(Hmisc)
 require(qreport)
 require(qs)
 require(here)
+require(ggplot2)
+require(wesanderson)
+require(cowplot)
+require(lubridate)
 source(here("R/paths.r"))
+source(here("R/plot.r"))
 options(prType = 'html')
 hookaddcap()
 ```
@@ -33,4 +38,64 @@ maketabs(
   wide = TRUE,
   initblank = TRUE
 )
+```
+
+Line plot
+
+```{r}
+#| label: plot_zam_dh_hf_confirmed_cases
+#| fig-cap: Montly reported confirmed malaria cases for intervention(green, Kankumba HFCA) and control(red, Lukwipa HFCA) group of 1,7 mCTRC project, Zambia, 2022 - 2023
+#| warning: false
+#| column: page
+#| fig-width: 16
+#| fig-height: 9
+#| fig-align: "center"
+#| fig-dpi: 200
+#| tidy: true
+addCap()
+
+date_column <- make_date(zam_dh_hf$YEAR, zam_dh_hf$MONTH, 1)
+scale_x_limit <- c(min(date_column), max(date_column))
+plot_zam_dh_hf_confirmed_cases <- zam_dh_hf |>
+  ggplot(
+    aes(
+      x = make_date(YEAR, MONTH, 1),
+      y = MC_CFM,
+      group = HFCA,
+      colour = HFCA
+    )) +
+    geom_line(
+      linewidth = 2
+    ) +
+    geom_point(
+      fill = "white",
+      shape = 21,
+      size = 3,
+      stroke = 1
+    ) +
+    scale_colour_manual(values = wes_palette("Darjeeling1", n = 5)) + 
+    scale_y_continuous(n.breaks = 6) +
+    scale_x_date(
+      date_breaks = "month", date_labels = "%Y-%m",
+      limits = scale_x_limit
+      ) +
+    cowplot::theme_cowplot() +
+    theme(
+      plot.margin = unit(c(0, 0, 0, 7.6), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "top",
+      legend.justification = "right",
+      axis.text = element_text(size = 6.6),
+      axis.line = element_blank(),
+      axis.ticks = element_blank()
+    )
+
+plotly::ggplotly(plot_zam_dh_hf_confirmed_cases) |>
+    plotly::layout(
+      legend = list(
+        x = 1, y = 1.1, orientation = "h",
+        xanchor = "right", yanchor = "top"
+        )
+    )
 ```
