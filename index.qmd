@@ -23,3 +23,23 @@ This strategy has been locally tailored to the high transmission settings in Afr
 ## Project Objectives
 
 The primary objective of the One Seven Project is to validate the effectiveness of the 17-mRCTR approach in different epidemiological settings. By doing so, the project seeks to establish a scalable model for malaria control that can be implemented across other high-burden regions. Specific goals include: - Reducing malaria prevalence and incidence in the intervention areas. - Enhancing the capacity of local health systems to respond to malaria outbreaks. - Engaging communities in proactive health-seeking behaviors and adherence to malaria prevention measures.
+
+```{r}
+#| label: install_packages
+#| echo: false
+#| message: false
+#| warning: false
+
+# make sure the required packages were installed
+
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
+
+library(pacman)
+
+pacman::p_load('here')
+pacman::p_load('plotly')
+pacman::p_load('sparkline')
+pacman::p_load('gt')
+```
