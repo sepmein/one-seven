@@ -378,8 +378,7 @@ Optional Metadata Fields
 
 **Definition**:
 
-Malaria incidence refers to the frequency of new cases of malaria occurring within a defined population over a specified period of time. This metric is crucial for understanding the spread and impact of malaria across different regions and populations.
-Malaria incidence provides insights into the current status and trends of malaria transmission. It helps public health officials gauge the effectiveness of existing control and prevention measures and is essential for resource allocation and strategic planning in malaria control programs.
+Malaria incidence refers to the frequency of new cases of malaria occurring within a defined population over a specified period of time. This metric is crucial for understanding the spread and impact of malaria across different regions and populations. Malaria incidence provides insights into the current status and trends of malaria transmission. It helps public health officials gauge the effectiveness of existing control and prevention measures and is essential for resource allocation and strategic planning in malaria control programs.
 
 According to global health reports, malaria continues to pose a significant health threat in many tropical and subtropical regions. The World Health Organization’s World Malaria Report highlights regions with high transmission rates and identifies changes in incidence over time due to interventions like mosquito control programs, the use of insecticide-treated nets, and antimalarial medications.
 
