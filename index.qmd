@@ -2,10 +2,6 @@
 title: "One Seven Project"
 ---
 
-Based on the content of the provided document, here’s an introduction for the One Seven Project tailored for a Quarto project:
-
-------------------------------------------------------------------------
-
 # Introduction
 
 The One Seven Project is a multi-country initiative aimed at reducing the malaria disease burden through the implementation of an innovative strategy known as the 17-malaria Reactive Community-based Testing and Response (17-mRCTR) approach. This approach builds upon previous successful malaria control interventions, adapting them to the unique epidemiological contexts of four African countries: Burkina Faso, Zambia, Senegal, and Tanzania.
@@ -42,4 +38,6 @@ pacman::p_load('here')
 pacman::p_load('plotly')
 pacman::p_load('sparkline')
 pacman::p_load('gt')
+pacman::p_load('qs')
+pacman::p_load('formatR')
 ```
