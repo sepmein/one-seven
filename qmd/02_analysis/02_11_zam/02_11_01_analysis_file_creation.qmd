@@ -176,7 +176,37 @@ contents(zam_dh_hf)
 
 see @sec-meta-data-date, @sec-meta-data-administrative, @sec-meta-data-malaria for more information.
 
+
+### Village Population Table
+
+```{r}
+#| label: zam-updata-dh-vl-pop
+#| lst-label: zam-updata-dh-vl-pop
+#| lst-cap: Recode Village population table from DHIS2, Zambia
+zam_dh_vl_pop <- upData(
+  zam_dh_vl_pop,
+  labels = c(
+    VILLAGE = "Village name",
+    POPULATION = "Village population"
+  ),
+  units = c(
+    POPULATION = "people"
+  ),
+  VILLAGE = as.factor(VILLAGE)
+)
+
+qsave(zam_dh_vl_pop, here(PATH_ZAM_DH_VL_POP))
+```
+
 ### Weekly Village Level Malaria
+
+The village level data is reported by the health facilities. The raw data provided is aggregated by week and village.
+The raw data was organized:
+
+```{r}
+zam_dh_vl_raw
+```
+
 
 ```{r}
 #| label: zam-updata-dh-vl
@@ -185,27 +215,4 @@ see @sec-meta-data-date, @sec-meta-data-administrative, @sec-meta-data-malaria f
 
 
 
-```
-
-### Village Population Table
-
-```{r}
-zam_dh_vl_pop <- upData(
-  zam_dh_vl_raw,
-  rename = c(
-    VILLAGE = `Village Name`,
-    POP = `Population`
-  ),
-  labels = c(
-    VILLAGE = "Village name",
-    POP = "Village population"
-  ),
-  units = c(
-    POP = "people"
-  ),
-  VILLAGE = as.factor(VILLAGE)
-)
-
-# Remove duplicates and keep only unique village-population pairs
-zam_dh_vl_pop <- unique(zam_dh_vl_pop[, c("VILLAGE", "POP")])
 ```

@@ -31,6 +31,7 @@ PATH_ZAM_HHE_HH_VISIT_RAW_240723 <- "2_data/zam/1_raw/Baseline and Endline Data/
 ### DHIS2 ----
 PATH_ZAM_DH_HF <- "2_data/zam/2_clean/ZAM_DH_HF.qs"
 PATH_ZAM_DH_VL <- "2_data/zam/2_clean/ZAM_DH_VL.qs"
+PATH_ZAM_DH_VL_POP <- "2_data/zam/2_clean/ZAM_DH_VL_POP.qs"
 
 ### Survey ----
 PATH_ZAM_HH_HH <- "2_data/zam/2_clean/ZAM_HH_HH.qs"
