@@ -12,6 +12,7 @@ require(here)
 require(data.table)
 require(lubridate)
 require(qs)
+require(qreport)
 ```
 
 ## Raw data
@@ -91,7 +92,8 @@ zam_dh_hf_raw <- read_excel(
                 )
   )
 zam_dh_vl_raw <- read_excel(here(PATH_ZAM_DH_VL_RAW_240723) , skip = 2)
-
+zam_dh_vl_pop <- read_excel(here(PATH_ZAM_DH_VL_POP_240908))
+zam_dh_vl_raw <- read_excel(here(PATH_ZAM_DH_VL_PROCESSED_240908))
 # Survey
 zam_hh_hh_raw <- read_excel(here(PATH_ZAM_HH_HH_RAW_240723))
 zam_hh_codebook_raw <- read_excel(here(PATH_ZAM_HH_CODEBOOK_RAW_240723))
@@ -173,3 +175,44 @@ contents(zam_dh_hf)
 ```
 
 see @sec-meta-data-date, @sec-meta-data-administrative, @sec-meta-data-malaria for more information.
+
+
+### Village Population Table
+
+```{r}
+#| label: zam-updata-dh-vl-pop
+#| lst-label: zam-updata-dh-vl-pop
+#| lst-cap: Recode Village population table from DHIS2, Zambia
+zam_dh_vl_pop <- upData(
+  zam_dh_vl_pop,
+  labels = c(
+    VILLAGE = "Village name",
+    POPULATION = "Village population"
+  ),
+  units = c(
+    POPULATION = "people"
+  ),
+  VILLAGE = as.factor(VILLAGE)
+)
+
+qsave(zam_dh_vl_pop, here(PATH_ZAM_DH_VL_POP))
+```
+
+### Weekly Village Level Malaria
+
+The village level data is reported by the health facilities. The raw data provided is aggregated by week and village.
+The raw data was organized:
+
+```{r}
+zam_dh_vl_raw
+```
+
+
+```{r}
+#| label: zam-updata-dh-vl
+#| lst-label: zam-updata-dh-vl
+#| lst-cap: Recode Village level weekly data from DHIS2, Zambia
+
+
+
+```
