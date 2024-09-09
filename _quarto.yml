@@ -22,6 +22,11 @@ book:
         - qmd/01_data/01_01_meta_data.qmd
         - qmd/01_data/01_02_data_code.qmd
         - qmd/01_data/01_03_dhis2_data.qmd
+        - qmd/01_data/01_04_survey_household.qmd
+        - qmd/01_data/01_05_survey_household_member.qmd
+        - qmd/01_data/01_06_survey_net_use.qmd
+        - qmd/01_data/01_07_survey_child.qmd
+        - qmd/01_data/01_08_survey_visit.qmd
 
     - part: qmd/02_analysis/02_00_analysis.qmd
       chapters:

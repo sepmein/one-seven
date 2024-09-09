@@ -13,6 +13,7 @@ require(ggplot2)
 require(wesanderson)
 require(cowplot)
 require(lubridate)
+require(gt)
 source(here("R/paths.r"))
 source(here("R/plot.r"))
 options(prType = 'html')
@@ -21,8 +22,25 @@ hookaddcap()
 
 ## DHIS2
 
+DHIS2 is the District Health Information Software 2, an open-source, web-based health management information system (HMIS) platform. It is widely used for collection, validation, analysis, and presentation of aggregate and patient-based statistical data. In the context of this analysis, DHIS2 serves as the primary source of our health facility data, providing crucial information on malaria cases and interventions across different health facility catchment areas (HFCAs) in Zambia.
+
+#### Population
+
+```{r}
+#| warning: false
+zam_dh_vl_pop <- qread(here(PATH_ZAM_DH_VL_POP)) 
+```
+
+```{r}
+#| warning：false
+
+``` 
+
+### HFCA monthly data
+
+#### Overview
 ```{r, results='asis'}
-#| message: false
+#| message: fcalse
 #| warning: false
 zam_dh_hf <- qread(here(PATH_ZAM_DH_HF))
 dataOverview(zam_dh_hf)
@@ -44,7 +62,7 @@ maketabs(
 )
 ```
 
-Line plot
+#### Trend of HFCA montly data
 
 ```{r}
 #| label: plot_zam_dh_hf_confirmed_cases
@@ -163,3 +181,6 @@ plotly::ggplotly(plot_zam_dh_hf_mi) |>
         )
     )
 ```
+
+### Village weekly data
+

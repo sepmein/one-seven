@@ -1,7 +1,4 @@
-# Survey Child Data
-
-This section processes the child-specific survey data, including information about child health, diarrhea, and malaria treatment.
-
+# Household survey - Child situation
 ## household_id
 
 - **Title**: Household ID
