@@ -204,7 +204,7 @@ The village level data is reported by the health facilities. The raw data provid
 The raw data was organized:
 
 ```{r}
-zam_dh_vl_raw
+zam_dh_vl_raw <- zam_dh_vl_raw |> as.data.table()
 ```
 
 
@@ -213,6 +213,59 @@ zam_dh_vl_raw
 #| lst-label: zam-updata-dh-vl
 #| lst-cap: Recode Village level weekly data from DHIS2, Zambia
 
+# pivot longer based on DATE and VARIABLE columns, the other columns use names as VILLAGE
+# data.table::dcast function was used to pivot the data
 
+zam_dh_vl <- data.table::melt(zam_dh_vl_raw, 
+                              id.vars = c("DATE", "VARIABLE"), 
+                              variable.name = "VILLAGE",
+                              value.name = "VALUE"
+)
+
+zam_dh_vl <- zam_dh_vl[
+  , .(
+    DATE = as.Date(sapply(DATE, function(x) {
+      # Function to convert "19-25 Dec" to a date
+      convert_to_date <- function(date_str) {
+        # Extract year from the current system date
+        current_year <- format(Sys.Date(), "%Y")
+        
+        # Split the date range
+        date_parts <- strsplit(date_str, " ")[[1]]
+        
+        # Extract the end day and month
+        end_day <- strsplit(date_parts[1], "-")[[1]][2]
+        month <- date_parts[2]
+        
+        # Create the date string
+        date_string <- paste(end_day, month, current_year)
+        
+        # Convert to Date object
+        as.Date(date_string, format = "%d %b %Y")
+      }
+      
+      convert_to_date(x)
+    })),
+    VARIABLE = as.factor(VARIABLE),
+    VILLAGE = as.factor(VILLAGE),
+    VALUE = as.numeric(VALUE)
+  )
+
+] |> upData(
+  labels = c(
+    DATE = "Date",
+    VARIABLE = "two variables: tested and positive cases",
+    VILLAGE = "Village",
+    VALUE = "The value of the variable"
+  ),
+  units = c(
+    DATE = "Date",
+    VILLAGE = "Village",
+    VALUE = "cases"
+  )
+)
+
+qsave(zam_dh_vl, here(PATH_ZAM_DH_VL))
 
 ```
+
