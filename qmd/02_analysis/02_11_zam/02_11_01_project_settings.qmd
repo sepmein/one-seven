@@ -1,0 +1,116 @@
+# Project Settings
+
+```{r}
+#| label: zam_analysis_file_creation
+#| message: false
+#| echo: fenced
+#| warning: false
+require(Hmisc)
+require(qreport)
+require(qs)
+require(here)
+require(ggplot2)
+require(wesanderson)
+require(cowplot)
+require(lubridate)
+require(gt)
+source(here("R/paths.r"))
+source(here("R/plot.r"))
+options(prType = "html")
+hookaddcap()
+```
+
+## Population
+
+```{r}
+#| label: zam_dh_vl_pop
+#| warning: false
+#| message: false
+#| column: page
+#| tbl-cap: Overview of the village population data
+#| tbl-width: 100%
+#| tbl-align: "center"
+#| tbl-font-size: 12 
+zam_dh_vl_pop <- qread(here(PATH_ZAM_DH_VL_POP))
+
+zam_dh_vl_pop |>
+    gt() |>
+    tab_header(
+        title = "Zambia DH VL Population",
+        subtitle = "Overview of the village population data"
+    ) |>
+    fmt_number(
+        columns = where(is.numeric),
+        decimals = 0
+    ) |>
+    cols_align(
+        align = "center",
+        columns = everything()
+    ) |>
+    tab_style(
+        style = list(
+            cell_fill(color = "lightblue"),
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()
+    ) |>
+    opt_row_striping() |>
+    opt_table_font(
+        font = list(google_font("Roboto"))
+    ) |>
+    tab_options(
+        table.width = pct(100),
+        table.border.top.color = "black",
+        table.border.bottom.color = "black",
+        column_labels.border.bottom.color = "black",
+        column_labels.border.bottom.width = px(3)
+    )
+
+```
+
+
+::: {.callout-warning}
+## TODO
+The village list for each HFCA is still pending. We are waiting for Zambia to send this information back.
+:::
+
+
+## Date of project
+
+The project started in 2022 and ended in 2023.
+
+The DHIS2 data were collected from 2022 to 2023.
+
+The survey data were collected from 2022 to 2023.
+
+## Intervention group and control group settgings
+
+Two HFCA were selected based on the protocal of the 1,7 mCTRC project.
+
+In this analysis, we will focus on the following HFCA:
+
+-   Kankumba
+-   Lukwipa
+
+
+::: {.callout-note}
+## Intervention and Control Group Definition
+
+**TO BE CONFIRMED BY ZAMBIA**
+
+The selection process for the intervention and control groups was as follows:
+
+1. Two Health Facility Catchment Areas (HFCAs) were selected based on the protocol of the 1,7 mCTRC project.
+2. These HFCAs were then randomly assigned to either the intervention or control group.
+
+The final group assignments are:
+
+- **Intervention Group**: Kankumba HFCA
+- **Control Group**: Lukwipa HFCA
+
+The intervention group received the 1,7-mRCT (monthly reactive case treatment) intervention, while the control group continued with standard malaria control measures.
+
+This clear definition of intervention and control groups allows for a robust comparison of the effectiveness of the 1,7-mRCT intervention in reducing malaria transmission.
+:::
+
+## Geographical distribution

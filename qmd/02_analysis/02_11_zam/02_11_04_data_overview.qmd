@@ -31,16 +31,11 @@ DHIS2 is the District Health Information Software 2, an open-source, web-based h
 zam_dh_vl_pop <- qread(here(PATH_ZAM_DH_VL_POP)) 
 ```
 
-```{r}
-#| warning：false
-
-``` 
-
 ### HFCA monthly data
 
 #### Overview
 ```{r, results='asis'}
-#| message: fcalse
+#| message: false
 #| warning: false
 zam_dh_hf <- qread(here(PATH_ZAM_DH_HF))
 dataOverview(zam_dh_hf)
