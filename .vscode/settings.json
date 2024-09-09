@@ -1,0 +1,8 @@
+{
+    "workbench.editorAssociations": {
+        "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json": "default",
+        "*.ipynb": "jupyter.notebook.ipynb",
+        "*.pdf": "default",
+        "file:/**/*.csv": "jupyter-data-wrangler"
+    }
+}
