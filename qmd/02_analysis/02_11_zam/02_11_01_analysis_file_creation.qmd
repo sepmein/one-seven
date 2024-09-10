@@ -65,6 +65,7 @@ Zambia submitted data to WHO at 23th, July, 2024.
 
 ```{r}
 source(here("R/paths.R"))
+sourcr(here("R/data.R"))
 ```
 
 ### Load Data
@@ -269,3 +270,109 @@ qsave(zam_dh_vl, here(PATH_ZAM_DH_VL))
 
 ```
 
+### Household survey
+
+```{r}
+#| label: zam-updata-hh-hh
+#| lst-cap: Recode household survey data from Zambia
+
+
+# Clean and preprocess the data
+zam_hh_hh <- upData(
+    zam_hh_hh_raw,
+    ID = convert_uuid("_id"),
+    HOUSEHOLD_ID = convert_uuid("household_id"),
+    
+
+    .drop = .q(
+      _row_etag,
+      _sync_state,
+      _conflict_type,
+      _filter_type,
+      _filter_value,
+      _form_id,
+      _locale,
+      _savepoint_creator,
+      instance_name
+    ),
+    
+    # Convert date-time columns
+    SAVEPOINT_TIMESTAMP = ymd_hms("_savepoint_timestamp"),
+
+    # Convert numeric columns
+    gps_location_latitude = as.numeric(gps_location_latitude),
+    gps_location_longitude = as.numeric(gps_location_longitude),
+    gps_location_altitude = as.numeric(gps_location_altitude),
+    gps_location_accuracy = as.numeric(gps_location_accuracy),
+
+    # Convert categorical variables to factors
+    province = as.factor(province),
+    district = as.factor(district),
+    catchment = as.factor(catchment),
+    ea = as.factor(ea),
+    is_consent_given = as.factor(is_consent_given),
+    house_section_visited = as.factor(house_section_visited),
+    member_section_visited = as.factor(member_section_visited),
+
+    # Replace empty strings with NA
+    province = ifelse(province == "", NA, province),
+    district = ifelse(district == "", NA, district),
+    catchment = ifelse(catchment == "", NA, catchment),
+    ea = ifelse(ea == "", NA, ea),
+    household_head_name = ifelse(household_head_name == "", NA, household_head_name),
+
+
+    # Handle specific columns
+    head_attend_school = as.factor(head_attend_school),
+    highest_level_of_school_attend = as.factor(highest_level_of_school_attend),
+    drinking_water_source = as.factor(drinking_water_source),
+    toilet_facility = as.factor(toilet_facility),
+    fuel_hh_use = as.factor(fuel_hh_use),
+    floor_material = as.factor(floor_material),
+    wall_material = as.factor(wall_material),
+    roof_material = as.factor(roof_material),
+    eaves_open_close = as.factor(eaves_open_close),
+    have_ceiling = as.factor(have_ceiling),
+    type_of_ceiling = as.factor(type_of_ceiling),
+
+    # Convert binary variables to logical
+    have_electricity = as.logical(have_electricity == 1),
+    have_radio = as.logical(have_radio == 1),
+    have_tv = as.logical(have_tv == 1),
+    have_mobile = as.logical(have_mobile == 1),
+    have_non_mobile = as.logical(have_non_mobile == 1),
+    have_refrigerator = as.logical(have_refrigerator == 1),
+    have_bed = as.logical(have_bed == 1),
+    have_chair = as.logical(have_chair == 1),
+    have_table = as.logical(have_table == 1),
+    have_cupboard = as.logical(have_cupboard == 1),
+    have_sofa = as.logical(have_sofa == 1),
+    have_clock = as.logical(have_clock == 1),
+    have_fan = as.logical(have_fan == 1),
+    have_sewing_machine = as.logical(have_sewing_machine == 1),
+    have_cassette_player = as.logical(have_cassette_player == 1),
+    have_plough = as.logical(have_plough == 1),
+    have_grain_grinder = as.logical(have_grain_grinder == 1),
+    have_vcr_dvd = as.logical(have_vcr_dvd == 1),
+    have_tractor = as.logical(have_tractor == 1),
+    have_vehicle = as.logical(have_vehicle == 1),
+    have_hammer_mill = as.logical(have_hammer_mill == 1),
+
+    # Handle time variables
+    check = function(x) if (grepl("_time$", x)) parse_time(get(x), format = "%H:%M:%S") else get(x)
+)
+
+# Remove rows where consent is not given
+cleaned_household_data <- cleaned_household_data[is_consent_given == 1]
+
+# Test the cleaned data
+print(str(cleaned_household_data))
+print(summary(cleaned_household_data))
+
+# Check for any remaining NA values
+print(colSums(is.na(cleaned_household_data)))
+
+# Save the cleaned data
+qsave(here(PATH_ZAM_HH_HH))
+
+```
