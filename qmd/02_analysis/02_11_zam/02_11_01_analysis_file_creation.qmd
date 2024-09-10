@@ -65,7 +65,7 @@ Zambia submitted data to WHO at 23th, July, 2024.
 
 ```{r}
 source(here("R/paths.R"))
-sourcr(here("R/data.R"))
+source(here("R/data.R"))
 ```
 
 ### Load Data
@@ -177,7 +177,6 @@ contents(zam_dh_hf)
 
 see @sec-meta-data-date, @sec-meta-data-administrative, @sec-meta-data-malaria for more information.
 
-
 ### Village Population Table
 
 ```{r}
@@ -201,13 +200,11 @@ qsave(zam_dh_vl_pop, here(PATH_ZAM_DH_VL_POP))
 
 ### Weekly Village Level Malaria
 
-The village level data is reported by the health facilities. The raw data provided is aggregated by week and village.
-The raw data was organized:
+The village level data is reported by the health facilities. The raw data provided is aggregated by week and village. The raw data was organized:
 
 ```{r}
 zam_dh_vl_raw <- zam_dh_vl_raw |> as.data.table()
 ```
-
 
 ```{r}
 #| label: zam-updata-dh-vl
@@ -276,67 +273,174 @@ qsave(zam_dh_vl, here(PATH_ZAM_DH_VL))
 #| label: zam-updata-hh-hh
 #| lst-cap: Recode household survey data from Zambia
 
-
+zam_hh_hh_raw <- zam_hh_hh_raw |> as.data.table()
 # Clean and preprocess the data
-zam_hh_hh <- upData(
-    zam_hh_hh_raw,
-    ID = convert_uuid("_id"),
-    HOUSEHOLD_ID = convert_uuid("household_id"),
-    
-
-    .drop = .q(
-      _row_etag,
-      _sync_state,
-      _conflict_type,
-      _filter_type,
-      _filter_value,
-      _form_id,
-      _locale,
-      _savepoint_creator,
-      instance_name
-    ),
-    
-    # Convert date-time columns
-    SAVEPOINT_TIMESTAMP = ymd_hms("_savepoint_timestamp"),
-
-    # Convert numeric columns
-    gps_location_latitude = as.numeric(gps_location_latitude),
-    gps_location_longitude = as.numeric(gps_location_longitude),
-    gps_location_altitude = as.numeric(gps_location_altitude),
-    gps_location_accuracy = as.numeric(gps_location_accuracy),
-
-    # Convert categorical variables to factors
-    province = as.factor(province),
-    district = as.factor(district),
-    catchment = as.factor(catchment),
-    ea = as.factor(ea),
-    is_consent_given = as.factor(is_consent_given),
-    house_section_visited = as.factor(house_section_visited),
-    member_section_visited = as.factor(member_section_visited),
-
-    # Replace empty strings with NA
-    province = ifelse(province == "", NA, province),
-    district = ifelse(district == "", NA, district),
-    catchment = ifelse(catchment == "", NA, catchment),
-    ea = ifelse(ea == "", NA, ea),
-    household_head_name = ifelse(household_head_name == "", NA, household_head_name),
+zam_hh_hh_raw |> setnames(
+    c("_id", "household_id", "_savepoint_timestamp"),
+    c("ID", "HOUSEHOLD_ID", "SAVEPOINT_TIMESTAMP")
+)
 
 
-    # Handle specific columns
-    head_attend_school = as.factor(head_attend_school),
-    highest_level_of_school_attend = as.factor(highest_level_of_school_attend),
+#  [1] "ID"                               "_savepoint_type"                  "SAVEPOINT_TIMESTAMP"
+#  [4] "HOUSEHOLD_ID"                     "household_head_name"              "house_number"
+#  [7] "province"                         "district"                         "catchment"
+# [10] "ea"                               "gps_location_latitude"            "gps_location_longitude"
+# [13] "gps_location_altitude"            "gps_location_accuracy"            "is_consent_given"
+# [16] "house_section_visited"            "check1"                           "check2"
+# [19] "check3"                           "member_section_visited"           "head_attend_school"
+# [22] "highest_level_of_school_attend"   "drinking_water_source"            "drinking_water_source_other"
+# [25] "toilet_facility"                  "toilet_facility_other"            "have_electricity"
+# [28] "have_radio"                       "have_tv"                          "have_mobile"
+# [31] "have_non_mobile"                  "have_refrigerator"                "have_bed"
+# [34] "have_chair"                       "have_table"                       "have_cupboard"
+# [37] "have_sofa"                        "have_clock"                       "have_fan"
+# [40] "have_sewing_machine"              "have_cassette_player"             "have_plough"
+# [43] "have_grain_grinder"               "have_vcr_dvd"                     "have_tractor"
+# [46] "have_vehicle"                     "have_hammer_mill"                 "fuel_hh_use"
+#  [49] "fuel_hh_use_other"                "floor_material"                   "floor_material_other"
+#  [52] "wall_material"                    "wall_material_other"              "roof_material"
+#  [55] "roof_material_other"              "eaves_open_close"                 "have_ceiling"
+#  [58] "type_of_ceiling"                  "type_of_ceiling_other"            "any_window"
+#  [61] "windows_with_glass"               "windows_with_screens"             "winsows_with_curtains"
+#  [64] "windows_screened"                 "materials_2_screen_windows"       "materials_2_screen_windows_other"
+#  [67] "num_of_rooms"                     "rooms_used_4_sleeping"            "num_of_sleeping_spaces"
+#  [70] "own_agricultural_land"            "agri_land_in_hectares"            "own_livestock"
+#  [73] "num_of_traditional_cattle"        "num_of_dairy_cattle"              "num_of_beef_cattle"
+#  [76] "num_of_horse_donkey"              "num_of_goats"                     "num_of_sheeps"
+#  [79] "num_of_pigs"                      "num_of_chickens"                  "num_of_other_poultry"
+#  [82] "num_of_other_livestock"           "own_watch"                        "own_bicycle"
+#  [85] "own_motorcycle"                   "own_animal_cart"                  "own_car"
+#  [88] "own_boat"                         "own_banana_boat"                  "interior_walls_sprayed"
+#  [91] "sprayed_month"                    "who_sprayed_the_house"            "who_sprayed_the_house_other"
+#  [94] "walls_plastered"                  "plastered_month"                  "mosquito_coils_used"
+#  [97] "insecticidede_spray_used"         "repellents_used"                  "socio_section_visited"
+# [100] "have_nets"                        "how_many_nets"                    "ever_sold_nets"
+# [103] "net_section_visited"              "blood_section_visited"            "women_section_visited"
+# [106] "eligible_women_count"             "women_quest_done_count"           "visit_section_visited"
+# [109] "const"                            "ward"                             "responding_to_questions"
+# [112] "any_house_member_in_research"     "house_member_in_research_name"    "highest_level_school_anymember"
+# [115] "heightof_house_metres"            "have_satelite_dish_cable"         "have_electric_iron"
+# [118] "have_animal_scotch_oxcart"        "have_bicycle"                     "have_motorbike"
+# [121] "have_canoe"                       "have_motor_taxi"                  "have_boat"
+# [124] "have_children_under5"             "have_children_5_15_years"         "have_adults_above15years"
+# [127] "num_children_under5"              "num_children_5_15_years"          "num_adults_above15years"
+# [130] "total_number_of_hh_members"       "insecticide_being_used"           "burninggrass_being_used"
+# [133] "mosquitocoil_being_used"          "mosquitosprays_being_used"        "repellant_being_used"
+# [136] "other_being_used"                 "other_being_used_specify"         "sourceoflight_fire"
+# [139] "sourceoflight_traditionallamp"    "sourceoflight_hurricanlamp"       "sourceoflight_batterysolar"
+# [142] "sourceoflight_electricity"        "sourceoflight_candle"             "sourceoflight_other"
+# [145] "sourceoflight_other_specify"      "have_source_of_income"            "income_source_casual_labour"
+# [148] "income_source_donations_social_c" "income_source_fishing"            "income_source_farming"
+# [151] "income_source_livestock_keeping"  "income_source_skilled_labour"     "income_source_driver"
+# [154] "income_source_pension"            "income_source_salary"             "income_source_business"
+# [157] "income_source_other"              "income_source_other_specify"      "rooms_with_cieling"
+# [160] "how_many_windows"                 "windows_protected"                "sleeping_spaces_indoors"
+# [163] "sleeping_spaces_indoors_temporar" "sleeping_spaces_outdoors"         "sleeping_spaces_outdoors_tempora"
+# [166] "have_dogs"                        "have_cats"                        "have_ducks_turkeys"
+# [169] "have_traditional_cattle"          "have_dairy_cattle"                "have_beef_cattle"
+# [172] "have_horse_donkey"                "have_goats"                       "have_sheeps"
+# [175] "have_pigs"                        "have_chickens"                    "have_other_poultry"
+# [178] "own_other_livestock"              "num_of_dogs_indoors"              "num_of_cats_indoors"
+# [181] "num_of_ducks_turkeys_indoors"     "num_of_traditional_cattle_indoor" "num_of_dairy_cattle_indoors"
+# [184] "num_of_beef_cattle_indoors"       "num_of_horse_donkey_indoors"      "num_of_goats_indoors"
+# [187] "num_of_sheeps_indoors"            "num_of_pigs_indoors"              "num_of_chickens_indoors"
+# [190] "num_of_other_poultry_indoors"     "num_of_other_livestock_indoors"   "own_other_livestock_specify_indo"
+# [193] "num_of_dogs_outdoors"             "num_of_cats_outdoors"             "num_of_ducks_turkeys_outdoors"
+# [196] "num_of_traditional_cattle_outdoo" "num_of_dairy_cattle_outdoors"     "num_of_beef_cattle_outdoors"
+# [199] "num_of_horse_donkey_outdoors"     "num_of_goats_outdoors"            "num_of_sheeps_outdoors"
+# [202] "num_of_pigs_outdoors"             "num_of_chickens_outdoors"         "num_of_other_poultry_outdoors"
+# [205] "num_of_other_livestock_outdoors"  "own_other_livestock_specify_outd" "how_many_outside_doors"
+# [208] "time_go_indoors"                  "time_goto_sleep"                  "light_fire"
+# [211] "season_light_fire_dry_season"     "season_light_fire_wet_season"     "season_light_fire_outdoors"
+# [214] "source_file"
+
+# drop columns that are not needed
+
+zam_hh_hh_raw[
+    ,
+    c(
+        "_row_etag",
+        "_sync_state",
+        "_conflict_type",
+        "_filter_type",
+        "_filter_value",
+        "_form_id",
+        "_locale",
+        "_savepoint_creator",
+        "instance_name"
+    ) := NULL
+]
+
+zam_hh_hh_raw[
+    ,
+    `:=`(
+        ID = convert_uuid(ID),
+        HOUSEHOLD_ID = convert_uuid(HOUSEHOLD_ID),
+        SAVEPOINT_TIMESTAMP = ymd_hms(SAVEPOINT_TIMESTAMP)
+    )
+]
+
+# location infomation
+
+zam_hh_hh_raw[
+    ,
+    `:=`(
+        house_number = as.factor(house_number),
+        province = as.factor(province),
+        district = as.factor(district),
+        catchment = as.factor(catchment),
+        ea = as.factor(ea),
+        gps_location_latitude = as.numeric(gps_location_latitude),
+        gps_location_longitude = as.numeric(gps_location_longitude),
+        gps_location_altitude = as.numeric(gps_location_altitude),
+        gps_location_accuracy = as.numeric(gps_location_accuracy)
+    )
+]
+
+# household head information
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    is_consent_given = as.logical(is_consent_given == 1),
+    house_section_visited = as.logical(house_section_visited == 1),
+    check1 = as.logical(check1 == 1),
+    check2 = as.logical(check2 == 1),
+    check3 = as.logical(check3 == 1),
+    member_section_visited = as.logical(member_section_visited == 1),
+    head_attend_school = as.logical(head_attend_school == 1),
+    highest_level_of_school_attend = as.factor(highest_level_of_school_attend)
+  )
+]
+
+# water source
+zam_hh_hh_raw[
+  ,
+  `:=`(
     drinking_water_source = as.factor(drinking_water_source),
-    toilet_facility = as.factor(toilet_facility),
-    fuel_hh_use = as.factor(fuel_hh_use),
-    floor_material = as.factor(floor_material),
-    wall_material = as.factor(wall_material),
-    roof_material = as.factor(roof_material),
-    eaves_open_close = as.factor(eaves_open_close),
-    have_ceiling = as.factor(have_ceiling),
-    type_of_ceiling = as.factor(type_of_ceiling),
+    drinking_water_source_other = as.factor(drinking_water_source_other)
+  )
+]
 
-    # Convert binary variables to logical
-    have_electricity = as.logical(have_electricity == 1),
+# toilet facility
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    toilet_facility = as.factor(toilet_facility)
+  )
+]
+
+# electricity
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    have_electricity = as.logical(have_electricity == 1)
+  )
+]
+
+# household assets
+zam_hh_hh_raw[
+  ,
+  `:=`(
     have_radio = as.logical(have_radio == 1),
     have_tv = as.logical(have_tv == 1),
     have_mobile = as.logical(have_mobile == 1),
@@ -356,23 +460,306 @@ zam_hh_hh <- upData(
     have_vcr_dvd = as.logical(have_vcr_dvd == 1),
     have_tractor = as.logical(have_tractor == 1),
     have_vehicle = as.logical(have_vehicle == 1),
-    have_hammer_mill = as.logical(have_hammer_mill == 1),
+    have_hammer_mill = as.logical(have_hammer_mill == 1)
+  )
+]
 
-    # Handle time variables
-    check = function(x) if (grepl("_time$", x)) parse_time(get(x), format = "%H:%M:%S") else get(x)
-)
+# Fuel use
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    fuel_hh_use = as.factor(fuel_hh_use)
+  )
+]
 
-# Remove rows where consent is not given
-cleaned_household_data <- cleaned_household_data[is_consent_given == 1]
+# floor material
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    floor_material = as.factor(floor_material)
+  )
+]
+
+# wall material
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    wall_material = as.factor(wall_material)
+  )
+]
+
+# roof material
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    roof_material = as.factor(roof_material)
+  )
+]
+
+# eaves open close
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    eaves_open_close = as.factor(eaves_open_close)
+  )
+]
+
+# ceiling
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    have_ceiling = as.logical(have_ceiling == 1),
+    type_of_ceiling = as.factor(type_of_ceiling),
+    rooms_with_cieling = as.numeric(rooms_with_cieling)
+  )
+]
+
+# windows
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    any_window = as.logical(any_window == 1),
+    windows_with_glass = as.logical(windows_with_glass == 1),
+    windows_with_screens = as.logical(windows_with_screens == 1),
+    winsows_with_curtains = as.logical(winsows_with_curtains == 1),
+    windows_screened = as.factor(windows_screened),
+    materials_2_screen_windows = as.factor(materials_2_screen_windows),
+    materials_2_screen_windows_other = as.factor(materials_2_screen_windows_other),
+    how_many_windows = as.numeric(how_many_windows),
+    windows_protected = as.factor(windows_protected)
+  )
+]
+
+# rooms
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    num_of_rooms = as.numeric(num_of_rooms),
+    rooms_used_4_sleeping = as.numeric(rooms_used_4_sleeping),
+    num_of_sleeping_spaces = as.numeric(num_of_sleeping_spaces),
+    sleeping_spaces_indoors = as.numeric(sleeping_spaces_indoors),
+    sleeping_spaces_indoors_temporar = as.numeric(sleeping_spaces_indoors_temporar),
+    sleeping_spaces_outdoors = as.numeric(sleeping_spaces_outdoors),
+    sleeping_spaces_outdoors_tempora = as.numeric(sleeping_spaces_outdoors_tempora)
+  )
+]
+
+# agriculture
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    own_agricultural_land = as.logical(own_agricultural_land == 1),
+    agri_land_in_hectares = as.numeric(agri_land_in_hectares),
+    own_livestock = as.logical(own_livestock == 1),
+    num_of_traditional_cattle = as.numeric(num_of_traditional_cattle),
+    num_of_dairy_cattle = as.numeric(num_of_dairy_cattle),
+    num_of_beef_cattle = as.numeric(num_of_beef_cattle),
+    num_of_horse_donkey = as.numeric(num_of_horse_donkey),
+    num_of_goats = as.numeric(num_of_goats),
+    num_of_sheeps = as.numeric(num_of_sheeps),
+    num_of_pigs = as.numeric(num_of_pigs),
+    num_of_chickens = as.numeric(num_of_chickens),
+    num_of_other_poultry = as.numeric(num_of_other_poultry),
+    have_ducks_turkeys = as.logical(have_ducks_turkeys == 1),
+    have_traditional_cattle = as.logical(have_traditional_cattle == 1),
+    have_dairy_cattle = as.logical(have_dairy_cattle == 1),
+    have_beef_cattle = as.logical(have_beef_cattle == 1),
+    have_horse_donkey = as.logical(have_horse_donkey == 1),
+    have_goats = as.logical(have_goats == 1),
+    have_sheeps = as.logical(have_sheeps == 1),
+    have_pigs = as.logical(have_pigs == 1),
+    have_chickens = as.logical(have_chickens == 1),
+    have_other_poultry = as.logical(have_other_poultry == 1),
+    own_other_livestock = as.logical(own_other_livestock == 1),
+    num_of_dogs_indoors = as.numeric(num_of_dogs_indoors),
+    num_of_cats_indoors = as.numeric(num_of_cats_indoors),
+    num_of_ducks_turkeys_indoors = as.numeric(num_of_ducks_turkeys_indoors),
+    num_of_traditional_cattle_indoor = as.numeric(num_of_traditional_cattle_indoor),
+    num_of_dairy_cattle_indoors = as.numeric(num_of_dairy_cattle_indoors),
+    num_of_beef_cattle_indoors = as.numeric(num_of_beef_cattle_indoors),
+    num_of_horse_donkey_indoors = as.numeric(num_of_horse_donkey_indoors),
+    num_of_goats_indoors = as.numeric(num_of_goats_indoors),
+    num_of_sheeps_indoors = as.numeric(num_of_sheeps_indoors),
+    num_of_pigs_indoors = as.numeric(num_of_pigs_indoors),
+    num_of_chickens_indoors = as.numeric(num_of_chickens_indoors),
+    num_of_other_poultry_indoors = as.numeric(num_of_other_poultry_indoors),
+    num_of_other_livestock_indoors = as.numeric(num_of_other_livestock_indoors),
+    num_of_dogs_outdoors = as.numeric(num_of_dogs_outdoors),
+    num_of_cats_outdoors = as.numeric(num_of_cats_outdoors),
+    num_of_ducks_turkeys_outdoors = as.numeric(num_of_ducks_turkeys_outdoors),
+    num_of_traditional_cattle_outdoo = as.numeric(num_of_traditional_cattle_outdoo),
+    num_of_dairy_cattle_outdoors = as.numeric(num_of_dairy_cattle_outdoors),
+    num_of_beef_cattle_outdoors = as.numeric(num_of_beef_cattle_outdoors),
+    num_of_horse_donkey_outdoors = as.numeric(num_of_horse_donkey_outdoors),
+    num_of_goats_outdoors = as.numeric(num_of_goats_outdoors),
+    num_of_sheeps_outdoors = as.numeric(num_of_sheeps_outdoors),
+    num_of_pigs_outdoors = as.numeric(num_of_pigs_outdoors),
+    num_of_chickens_outdoors = as.numeric(num_of_chickens_outdoors),
+    num_of_other_poultry_outdoors = as.numeric(num_of_other_poultry_outdoors),
+    num_of_other_livestock_outdoors = as.numeric(num_of_other_livestock_outdoors),
+    how_many_outside_doors = as.numeric(how_many_outside_doors)
+  )
+]
+
+# assets
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    own_watch = as.logical(own_watch == 1),
+    own_bicycle = as.logical(own_bicycle == 1),
+    own_motorcycle = as.logical(own_motorcycle == 1),
+    own_animal_cart = as.logical(own_animal_cart == 1),
+    own_car = as.logical(own_car == 1),
+    own_boat = as.logical(own_boat == 1),
+    own_banana_boat = as.logical(own_banana_boat == 1)
+  )
+]
+
+# mosquito control
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    interior_walls_sprayed = as.factor(interior_walls_sprayed),
+    sprayed_month = as.factor(sprayed_month),
+    who_sprayed_the_house = as.factor(who_sprayed_the_house),
+    walls_plastered = as.logical(walls_plastered == 1),
+    plastered_month = as.factor(plastered_month),
+    mosquito_coils_used = as.logical(mosquito_coils_used == 1),
+    insecticidede_spray_used = as.logical(insecticidede_spray_used == 1),
+    repellents_used = as.logical(repellents_used == 1)
+  )
+]
+
+# mosquito nets usage
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    have_nets = as.logical(have_nets == 1),
+    ever_sold_nets = as.factor(ever_sold_nets),
+    net_section_visited = as.logical(net_section_visited == 1)
+  )
+]
+
+# visit
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    blood_section_visited = as.logical(blood_section_visited == 1),
+    women_section_visited = as.logical(women_section_visited == 1),
+    visit_section_visited = as.logical(visit_section_visited == 1)
+  )
+] 
+
+# questionaire
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    const = as.factor(const),
+    ward = as.factor(ward),
+    responding_to_questions = as.factor(responding_to_questions)
+  )
+]
+
+# house member
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    any_house_member_in_research = as.logical(any_house_member_in_research == 1),
+    highest_level_of_school_attend = as.factor(highest_level_of_school_attend),
+    heightof_house_metres = as.numeric(heightof_house_metres),
+    have_children_under5 = as.logical(have_children_under5 == 1),
+    have_children_5_15_years = as.logical(have_children_5_15_years == 1),
+    have_adults_above15years = as.logical(have_adults_above15years == 1),
+    have_dogs = as.logical(have_dogs == 1),
+    have_cats = as.logical(have_cats == 1)
+  )
+]
+
+# have device
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    have_satelite_dish_cable = as.logical(have_satelite_dish_cable == 1),
+    have_electric_iron = as.logical(have_electric_iron == 1),
+    have_animal_scotch_oxcart = as.logical(have_animal_scotch_oxcart == 1),
+    have_bicycle = as.logical(have_bicycle == 1),
+    have_motorbike = as.logical(have_motorbike == 1),
+    have_canoe = as.logical(have_canoe == 1),
+    have_motor_taxi = as.logical(have_motor_taxi == 1),
+    have_boat = as.logical(have_boat == 1)
+  )
+]
+
+# mosquito control usage
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    insecticide_being_used = as.factor(insecticide_being_used),
+    burninggrass_being_used = as.factor(burninggrass_being_used),
+    mosquitocoil_being_used = as.factor(mosquitocoil_being_used),
+    mosquitosprays_being_used = as.factor(mosquitosprays_being_used),
+    repellant_being_used = as.factor(repellant_being_used),
+    other_being_used = as.factor(other_being_used)
+  )
+]
+
+# source of energy
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    sourceoflight_fire = as.factor(sourceoflight_fire),
+    sourceoflight_traditionallamp = as.factor(sourceoflight_traditionallamp),
+    sourceoflight_hurricanlamp = as.factor(sourceoflight_hurricanlamp),
+    sourceoflight_batterysolar = as.factor(sourceoflight_batterysolar),
+    sourceoflight_electricity = as.factor(sourceoflight_electricity),
+    sourceoflight_candle = as.factor(sourceoflight_candle),
+    sourceoflight_other = as.factor(sourceoflight_other)
+  ) 
+]
+ 
+# income source
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    have_source_of_income = as.logical(have_source_of_income == 1),
+    income_source_casual_labour = as.logical(income_source_casual_labour == 1),
+    income_source_donations_social_c = as.logical(income_source_donations_social_c == 1),
+    income_source_fishing = as.logical(income_source_fishing == 1),
+    income_source_farming = as.logical(income_source_farming == 1),
+    income_source_livestock_keeping = as.logical(income_source_livestock_keeping == 1),
+    income_source_skilled_labour = as.factor(income_source_skilled_labour),
+    income_source_driver = as.logical(income_source_driver == 1),
+    income_source_pension = as.logical(income_source_pension == 1),
+    income_source_salary = as.logical(income_source_salary == 1),
+    income_source_business = as.logical(income_source_business == 1),
+    income_source_other = as.factor(income_source_other)
+  )
+]
+
+# behaviour of sleeping
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    time_go_indoors = hms(time_go_indoors),
+    time_goto_sleep = hms(time_goto_sleep)
+  )
+]
+
+# light fire
+zam_hh_hh_raw[
+  ,
+  `:=`(
+    season_light_fire_dry_season = as.factor(season_light_fire_dry_season),
+    season_light_fire_wet_season = as.factor(season_light_fire_wet_season),
+    season_light_fire_outdoors = as.factor(season_light_fire_outdoors)
+  )
+]
+
 
 # Test the cleaned data
-print(str(cleaned_household_data))
-print(summary(cleaned_household_data))
-
-# Check for any remaining NA values
-print(colSums(is.na(cleaned_household_data)))
+print(str(zam_hh_hh_raw))
+print(summary(zam_hh_hh_raw))
 
 # Save the cleaned data
-qsave(here(PATH_ZAM_HH_HH))
-
+qsave(zam_hh_hh_raw, here(PATH_ZAM_HH_HH))
 ```
