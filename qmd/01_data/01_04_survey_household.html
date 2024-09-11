@@ -1,0 +1,3416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Household survey - house survey – One Seven Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../qmd/01_data/01_05_survey_household_member.html" rel="next">
+<link href="../../qmd/01_data/01_03_dhis2_data.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/01_data/01_00_data.html">Data</a></li><li class="breadcrumb-item"><a href="../../qmd/01_data/01_04_survey_household.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Household survey - house survey</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">One Seven Project</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/sepmein/one-seven" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">One Seven Project</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/01_data/01_00_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_01_meta_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Meta Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_02_data_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Codes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_03_dhis2_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DHIS2 Data codes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_04_survey_household.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Household survey - house survey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_05_survey_household_member.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Household survey - household member survey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_06_survey_net_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Household survey - Mosquito net usage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_07_survey_child.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Household survey - Child situation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/01_data/01_08_survey_visit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Household survey - visit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/02_analysis/02_00_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/02_analysis/02_01_methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">02_01_methodology.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Zambia</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/02_analysis/02_11_zam/02_11_01_analysis_file_creation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Analysis File Creation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/02_analysis/02_11_zam/02_11_04_data_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data Overview</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#hh_id-household-id" id="toc-hh_id-household-id" class="nav-link active" data-scroll-target="#hh_id-household-id"><span class="header-section-number">5.1</span> HH_ID (Household ID)</a></li>
+  <li><a href="#instance_name" id="toc-instance_name" class="nav-link" data-scroll-target="#instance_name"><span class="header-section-number">5.2</span> instance_name</a></li>
+  <li><a href="#household_head_name" id="toc-household_head_name" class="nav-link" data-scroll-target="#household_head_name"><span class="header-section-number">5.3</span> household_head_name</a></li>
+  <li><a href="#house_number" id="toc-house_number" class="nav-link" data-scroll-target="#house_number"><span class="header-section-number">5.4</span> house_number</a></li>
+  <li><a href="#district" id="toc-district" class="nav-link" data-scroll-target="#district"><span class="header-section-number">5.5</span> district</a></li>
+  <li><a href="#ward" id="toc-ward" class="nav-link" data-scroll-target="#ward"><span class="header-section-number">5.6</span> ward</a></li>
+  <li><a href="#village" id="toc-village" class="nav-link" data-scroll-target="#village"><span class="header-section-number">5.7</span> village</a></li>
+  <li><a href="#gps_location_latitude" id="toc-gps_location_latitude" class="nav-link" data-scroll-target="#gps_location_latitude"><span class="header-section-number">5.8</span> gps_location_latitude</a></li>
+  <li><a href="#gps_location_longitude" id="toc-gps_location_longitude" class="nav-link" data-scroll-target="#gps_location_longitude"><span class="header-section-number">5.9</span> gps_location_longitude</a></li>
+  <li><a href="#gps_location_altitude" id="toc-gps_location_altitude" class="nav-link" data-scroll-target="#gps_location_altitude"><span class="header-section-number">5.10</span> gps_location_altitude</a></li>
+  <li><a href="#gps_location_accuracy" id="toc-gps_location_accuracy" class="nav-link" data-scroll-target="#gps_location_accuracy"><span class="header-section-number">5.11</span> gps_location_accuracy</a></li>
+  <li><a href="#is_consent_given" id="toc-is_consent_given" class="nav-link" data-scroll-target="#is_consent_given"><span class="header-section-number">5.12</span> is_consent_given</a></li>
+  <li><a href="#house_section_visited" id="toc-house_section_visited" class="nav-link" data-scroll-target="#house_section_visited"><span class="header-section-number">5.13</span> house_section_visited</a></li>
+  <li><a href="#check1" id="toc-check1" class="nav-link" data-scroll-target="#check1"><span class="header-section-number">5.14</span> check1</a></li>
+  <li><a href="#check2" id="toc-check2" class="nav-link" data-scroll-target="#check2"><span class="header-section-number">5.15</span> check2</a></li>
+  <li><a href="#check3" id="toc-check3" class="nav-link" data-scroll-target="#check3"><span class="header-section-number">5.16</span> check3</a></li>
+  <li><a href="#head_attend_school" id="toc-head_attend_school" class="nav-link" data-scroll-target="#head_attend_school"><span class="header-section-number">5.17</span> head_attend_school</a></li>
+  <li><a href="#highest_level_of_school_attend" id="toc-highest_level_of_school_attend" class="nav-link" data-scroll-target="#highest_level_of_school_attend"><span class="header-section-number">5.18</span> highest_level_of_school_attend</a></li>
+  <li><a href="#drinking_water_source" id="toc-drinking_water_source" class="nav-link" data-scroll-target="#drinking_water_source"><span class="header-section-number">5.19</span> drinking_water_source</a></li>
+  <li><a href="#drinking_water_source_other" id="toc-drinking_water_source_other" class="nav-link" data-scroll-target="#drinking_water_source_other"><span class="header-section-number">5.20</span> drinking_water_source_other</a></li>
+  <li><a href="#toilet_facility" id="toc-toilet_facility" class="nav-link" data-scroll-target="#toilet_facility"><span class="header-section-number">5.21</span> toilet_facility</a></li>
+  <li><a href="#toilet_facility_other" id="toc-toilet_facility_other" class="nav-link" data-scroll-target="#toilet_facility_other"><span class="header-section-number">5.22</span> toilet_facility_other</a></li>
+  <li><a href="#household-assets" id="toc-household-assets" class="nav-link" data-scroll-target="#household-assets"><span class="header-section-number">5.23</span> Household Assets</a></li>
+  <li><a href="#fuel_hh_use" id="toc-fuel_hh_use" class="nav-link" data-scroll-target="#fuel_hh_use"><span class="header-section-number">5.24</span> fuel_hh_use</a></li>
+  <li><a href="#fuel_hh_use_other" id="toc-fuel_hh_use_other" class="nav-link" data-scroll-target="#fuel_hh_use_other"><span class="header-section-number">5.25</span> fuel_hh_use_other</a></li>
+  <li><a href="#floor_material" id="toc-floor_material" class="nav-link" data-scroll-target="#floor_material"><span class="header-section-number">5.26</span> floor_material</a></li>
+  <li><a href="#floor_material_other" id="toc-floor_material_other" class="nav-link" data-scroll-target="#floor_material_other"><span class="header-section-number">5.27</span> floor_material_other</a></li>
+  <li><a href="#wall_material" id="toc-wall_material" class="nav-link" data-scroll-target="#wall_material"><span class="header-section-number">5.28</span> wall_material</a></li>
+  <li><a href="#wall_material_other" id="toc-wall_material_other" class="nav-link" data-scroll-target="#wall_material_other"><span class="header-section-number">5.29</span> wall_material_other</a></li>
+  <li><a href="#roof_material" id="toc-roof_material" class="nav-link" data-scroll-target="#roof_material"><span class="header-section-number">5.30</span> roof_material</a></li>
+  <li><a href="#roof_material_other" id="toc-roof_material_other" class="nav-link" data-scroll-target="#roof_material_other"><span class="header-section-number">5.31</span> roof_material_other</a></li>
+  <li><a href="#eaves_open_close" id="toc-eaves_open_close" class="nav-link" data-scroll-target="#eaves_open_close"><span class="header-section-number">5.32</span> eaves_open_close</a></li>
+  <li><a href="#have_ceiling" id="toc-have_ceiling" class="nav-link" data-scroll-target="#have_ceiling"><span class="header-section-number">5.33</span> have_ceiling</a></li>
+  <li><a href="#type_of_ceiling" id="toc-type_of_ceiling" class="nav-link" data-scroll-target="#type_of_ceiling"><span class="header-section-number">5.34</span> type_of_ceiling</a></li>
+  <li><a href="#type_of_ceiling_other" id="toc-type_of_ceiling_other" class="nav-link" data-scroll-target="#type_of_ceiling_other"><span class="header-section-number">5.35</span> type_of_ceiling_other</a></li>
+  <li><a href="#any_window" id="toc-any_window" class="nav-link" data-scroll-target="#any_window"><span class="header-section-number">5.36</span> any_window</a></li>
+  <li><a href="#windows_with_glass" id="toc-windows_with_glass" class="nav-link" data-scroll-target="#windows_with_glass"><span class="header-section-number">5.37</span> windows_with_glass</a></li>
+  <li><a href="#windows_with_screens" id="toc-windows_with_screens" class="nav-link" data-scroll-target="#windows_with_screens"><span class="header-section-number">5.38</span> windows_with_screens</a></li>
+  <li><a href="#windows_with_curtains" id="toc-windows_with_curtains" class="nav-link" data-scroll-target="#windows_with_curtains"><span class="header-section-number">5.39</span> windows_with_curtains</a></li>
+  <li><a href="#windows_screened" id="toc-windows_screened" class="nav-link" data-scroll-target="#windows_screened"><span class="header-section-number">5.40</span> windows_screened</a></li>
+  <li><a href="#materials_2_screen_windows" id="toc-materials_2_screen_windows" class="nav-link" data-scroll-target="#materials_2_screen_windows"><span class="header-section-number">5.41</span> materials_2_screen_windows</a></li>
+  <li><a href="#materials_2_screen_windows_other" id="toc-materials_2_screen_windows_other" class="nav-link" data-scroll-target="#materials_2_screen_windows_other"><span class="header-section-number">5.42</span> materials_2_screen_windows_other</a></li>
+  <li><a href="#num_of_rooms" id="toc-num_of_rooms" class="nav-link" data-scroll-target="#num_of_rooms"><span class="header-section-number">5.43</span> num_of_rooms</a></li>
+  <li><a href="#rooms_used_4_sleeping" id="toc-rooms_used_4_sleeping" class="nav-link" data-scroll-target="#rooms_used_4_sleeping"><span class="header-section-number">5.44</span> rooms_used_4_sleeping</a></li>
+  <li><a href="#num_of_sleeping_spaces" id="toc-num_of_sleeping_spaces" class="nav-link" data-scroll-target="#num_of_sleeping_spaces"><span class="header-section-number">5.45</span> num_of_sleeping_spaces</a></li>
+  <li><a href="#own_agricultural_land" id="toc-own_agricultural_land" class="nav-link" data-scroll-target="#own_agricultural_land"><span class="header-section-number">5.46</span> own_agricultural_land</a></li>
+  <li><a href="#agri_land_in_hectares" id="toc-agri_land_in_hectares" class="nav-link" data-scroll-target="#agri_land_in_hectares"><span class="header-section-number">5.47</span> agri_land_in_hectares</a></li>
+  <li><a href="#own_livestock" id="toc-own_livestock" class="nav-link" data-scroll-target="#own_livestock"><span class="header-section-number">5.48</span> own_livestock</a></li>
+  <li><a href="#num_of_traditional_cattle" id="toc-num_of_traditional_cattle" class="nav-link" data-scroll-target="#num_of_traditional_cattle"><span class="header-section-number">5.49</span> num_of_traditional_cattle</a></li>
+  <li><a href="#num_of_dairy_cattle" id="toc-num_of_dairy_cattle" class="nav-link" data-scroll-target="#num_of_dairy_cattle"><span class="header-section-number">5.50</span> num_of_dairy_cattle</a></li>
+  <li><a href="#num_of_beef_cattle" id="toc-num_of_beef_cattle" class="nav-link" data-scroll-target="#num_of_beef_cattle"><span class="header-section-number">5.51</span> num_of_beef_cattle</a></li>
+  <li><a href="#num_of_horse_donkey" id="toc-num_of_horse_donkey" class="nav-link" data-scroll-target="#num_of_horse_donkey"><span class="header-section-number">5.52</span> num_of_horse_donkey</a></li>
+  <li><a href="#num_of_goats" id="toc-num_of_goats" class="nav-link" data-scroll-target="#num_of_goats"><span class="header-section-number">5.53</span> num_of_goats</a></li>
+  <li><a href="#num_of_sheeps" id="toc-num_of_sheeps" class="nav-link" data-scroll-target="#num_of_sheeps"><span class="header-section-number">5.54</span> num_of_sheeps</a></li>
+  <li><a href="#num_of_pigs" id="toc-num_of_pigs" class="nav-link" data-scroll-target="#num_of_pigs"><span class="header-section-number">5.55</span> num_of_pigs</a></li>
+  <li><a href="#num_of_chickens" id="toc-num_of_chickens" class="nav-link" data-scroll-target="#num_of_chickens"><span class="header-section-number">5.56</span> num_of_chickens</a></li>
+  <li><a href="#num_of_other_poultry" id="toc-num_of_other_poultry" class="nav-link" data-scroll-target="#num_of_other_poultry"><span class="header-section-number">5.57</span> num_of_other_poultry</a></li>
+  <li><a href="#num_of_other_livestock" id="toc-num_of_other_livestock" class="nav-link" data-scroll-target="#num_of_other_livestock"><span class="header-section-number">5.58</span> num_of_other_livestock</a></li>
+  <li><a href="#own_watch" id="toc-own_watch" class="nav-link" data-scroll-target="#own_watch"><span class="header-section-number">5.59</span> own_watch</a></li>
+  <li><a href="#own_bicycle" id="toc-own_bicycle" class="nav-link" data-scroll-target="#own_bicycle"><span class="header-section-number">5.60</span> own_bicycle</a></li>
+  <li><a href="#own_motorcycle" id="toc-own_motorcycle" class="nav-link" data-scroll-target="#own_motorcycle"><span class="header-section-number">5.61</span> own_motorcycle</a></li>
+  <li><a href="#own_animal_cart" id="toc-own_animal_cart" class="nav-link" data-scroll-target="#own_animal_cart"><span class="header-section-number">5.62</span> own_animal_cart</a></li>
+  <li><a href="#own_car" id="toc-own_car" class="nav-link" data-scroll-target="#own_car"><span class="header-section-number">5.63</span> own_car</a></li>
+  <li><a href="#own_boat" id="toc-own_boat" class="nav-link" data-scroll-target="#own_boat"><span class="header-section-number">5.64</span> own_boat</a></li>
+  <li><a href="#own_banana_boat" id="toc-own_banana_boat" class="nav-link" data-scroll-target="#own_banana_boat"><span class="header-section-number">5.65</span> own_banana_boat</a></li>
+  <li><a href="#interior_walls_sprayed" id="toc-interior_walls_sprayed" class="nav-link" data-scroll-target="#interior_walls_sprayed"><span class="header-section-number">5.66</span> interior_walls_sprayed</a></li>
+  <li><a href="#sprayed_month" id="toc-sprayed_month" class="nav-link" data-scroll-target="#sprayed_month"><span class="header-section-number">5.67</span> sprayed_month</a></li>
+  <li><a href="#who_sprayed_the_house" id="toc-who_sprayed_the_house" class="nav-link" data-scroll-target="#who_sprayed_the_house"><span class="header-section-number">5.68</span> who_sprayed_the_house</a></li>
+  <li><a href="#who_sprayed_the_house_other" id="toc-who_sprayed_the_house_other" class="nav-link" data-scroll-target="#who_sprayed_the_house_other"><span class="header-section-number">5.69</span> who_sprayed_the_house_other</a></li>
+  <li><a href="#walls_plastered" id="toc-walls_plastered" class="nav-link" data-scroll-target="#walls_plastered"><span class="header-section-number">5.70</span> walls_plastered</a></li>
+  <li><a href="#plastered_month" id="toc-plastered_month" class="nav-link" data-scroll-target="#plastered_month"><span class="header-section-number">5.71</span> plastered_month</a></li>
+  <li><a href="#mosquito_coils_used" id="toc-mosquito_coils_used" class="nav-link" data-scroll-target="#mosquito_coils_used"><span class="header-section-number">5.72</span> mosquito_coils_used</a></li>
+  <li><a href="#insecticidede_spray_used" id="toc-insecticidede_spray_used" class="nav-link" data-scroll-target="#insecticidede_spray_used"><span class="header-section-number">5.73</span> insecticidede_spray_used</a></li>
+  <li><a href="#repellents_used" id="toc-repellents_used" class="nav-link" data-scroll-target="#repellents_used"><span class="header-section-number">5.74</span> repellents_used</a></li>
+  <li><a href="#socio_section_visited" id="toc-socio_section_visited" class="nav-link" data-scroll-target="#socio_section_visited"><span class="header-section-number">5.75</span> socio_section_visited</a></li>
+  <li><a href="#have_nets" id="toc-have_nets" class="nav-link" data-scroll-target="#have_nets"><span class="header-section-number">5.76</span> have_nets</a></li>
+  <li><a href="#how_many_nets" id="toc-how_many_nets" class="nav-link" data-scroll-target="#how_many_nets"><span class="header-section-number">5.77</span> how_many_nets</a></li>
+  <li><a href="#ever_sold_nets" id="toc-ever_sold_nets" class="nav-link" data-scroll-target="#ever_sold_nets"><span class="header-section-number">5.78</span> ever_sold_nets</a></li>
+  <li><a href="#net_section_visited" id="toc-net_section_visited" class="nav-link" data-scroll-target="#net_section_visited"><span class="header-section-number">5.79</span> net_section_visited</a></li>
+  <li><a href="#blood_section_visited" id="toc-blood_section_visited" class="nav-link" data-scroll-target="#blood_section_visited"><span class="header-section-number">5.80</span> blood_section_visited</a></li>
+  <li><a href="#women_section_visited" id="toc-women_section_visited" class="nav-link" data-scroll-target="#women_section_visited"><span class="header-section-number">5.81</span> women_section_visited</a></li>
+  <li><a href="#visit_section_visited" id="toc-visit_section_visited" class="nav-link" data-scroll-target="#visit_section_visited"><span class="header-section-number">5.82</span> visit_section_visited</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sepmein/one-seven/edit/master/qmd/01_data/01_04_survey_household.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sepmein/one-seven/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/01_data/01_00_data.html">Data</a></li><li class="breadcrumb-item"><a href="../../qmd/01_data/01_04_survey_household.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Household survey - house survey</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Household survey - house survey</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="hh_id-household-id" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="hh_id-household-id"><span class="header-section-number">5.1</span> HH_ID (Household ID)</h2>
+<ul>
+<li><p><strong>Title</strong>: Household ID</p></li>
+<li><p><strong>Definition</strong>: A universally unique identifier (UUID) assigned to each household in the survey.</p></li>
+<li><p><strong>Data Type</strong>: Nominal</p></li>
+<li><p><strong>Data Element Code</strong>: HH_ID</p></li>
+<li><p><strong>Format</strong>: UUID (Universally Unique Identifier)</p></li>
+<li><p><strong>Allowed Values</strong>: A 128-bit number represented as 32 hexadecimal digits, displayed in five groups separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 alphanumeric characters and 4 hyphens)</p></li>
+<li><p><strong>Example</strong>: 123e4567-e89b-12d3-a456-426614174000</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically generated by the data collection system</p></li>
+<li><p><strong>Data Source</strong>: Household survey</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>: Each household is assigned a unique UUID that is not duplicated within the survey or across different surveys</p></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for uniqueness across all survey entries</li>
+<li>Ensure correct UUID format</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>System failures in UUID generation</li>
+<li>Data transmission errors</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for each household across baseline and endline surveys</li>
+<li>New UUIDs will be generated for new households in subsequent surveys</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be unique</li>
+<li>Must follow the UUID format</li>
+<li>Must be present for every household entry</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>: Can be used to link all data related to a specific household across different data sets and survey rounds</p></li>
+</ul>
+</section>
+<section id="instance_name" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="instance_name"><span class="header-section-number">5.2</span> instance_name</h2>
+<ul>
+<li><p><strong>Title</strong>: Instance Name</p></li>
+<li><p><strong>Definition</strong>: A descriptive identifier for each survey instance, typically including location and household information.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: instance_name</p></li>
+<li><p><strong>Format</strong>: [Catchment area number] &gt; [Household head name] ([Health facility] [Village name]) ([House number])</p></li>
+<li><p><strong>Example</strong>: “47 &gt; Elias Tembo (Lukwipa RHC, Chindebele village) (549)”</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically generated based on other survey responses</p></li>
+<li><p><strong>Data Source</strong>: Household survey</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>: The instance name is unique for each survey entry and contains accurate information about the household and its location</p></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other related fields (catchment area, household head name, health facility, village name, house number)</li>
+<li>Ensure the format is consistent across all entries</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Inconsistencies with other survey responses</li>
+<li>Typographical errors in manual data entry (if applicable)</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household information (e.g., household head) changes between survey rounds</li>
+<li>Should be consistent within a single survey round</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should follow the specified format</li>
+<li>Components should match corresponding individual fields in the survey</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>: Can be used to quickly identify and categorize households by catchment area, health facility, and village</p></li>
+</ul>
+</section>
+<section id="household_head_name" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="household_head_name"><span class="header-section-number">5.3</span> household_head_name</h2>
+<ul>
+<li><p><strong>Title</strong>: Household Head Name</p></li>
+<li><p><strong>Definition</strong>: The name of the person considered to be the head of the household.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: household_head_name</p></li>
+<li><p><strong>Format</strong>: [First Name] [Last Name]</p></li>
+<li><p><strong>Example</strong>: “Elias Tembo”</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The household has a designated head</li>
+<li>The respondent provides accurate information</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with the household head name in the instance_name field</li>
+<li>Ensure the name is properly formatted (first name and last name)</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspelling of names</li>
+<li>Inconsistent naming conventions (e.g., inclusion of middle names, titles)</li>
+<li>Cultural differences in naming practices</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if the household head changes between survey rounds</li>
+<li>Should be consistent within a single survey round for the same household</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should contain at least two words (first and last name)</li>
+<li>Should not contain numeric characters or special symbols (except for hyphens or apostrophes in some names)</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to track households across survey rounds</li>
+<li>May be used for demographic analysis (e.g., gender of household head, if gender can be inferred from names)</li>
+</ul></li>
+</ul>
+</section>
+<section id="house_number" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="house_number"><span class="header-section-number">5.4</span> house_number</h2>
+<ul>
+<li><p><strong>Title</strong>: House Number</p></li>
+<li><p><strong>Definition</strong>: A unique identifier assigned to each house within a specific area or village.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: house_number</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 549</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly observed or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey or pre-existing community records</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Each house in the survey area has a unique number</li>
+<li>The numbering system is consistent within each village or catchment area</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with the house number in the instance_name field</li>
+<li>Ensure the number is unique within each village or catchment area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Transcription errors during data entry</li>
+<li>Confusion with other numerical identifiers (e.g., household ID)</li>
+<li>Inconsistent numbering systems across different areas</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for each physical house across survey rounds</li>
+<li>May change if houses are rebuilt, renumbered, or if the numbering system is updated</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a positive integer</li>
+<li>Should be unique within each village or catchment area</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to identify specific houses within a village or catchment area</li>
+<li>Useful for follow-up visits or linking data across multiple surveys</li>
+</ul></li>
+</ul>
+</section>
+<section id="district" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="district"><span class="header-section-number">5.5</span> district</h2>
+<ul>
+<li><p><strong>Title</strong>: District</p></li>
+<li><p><strong>Definition</strong>: The district within the province where the surveyed household is located.</p></li>
+<li><p><strong>Data Type</strong>: Integer (coded)</p></li>
+<li><p><strong>Data Element Code</strong>: district</p></li>
+<li><p><strong>Format</strong>: Numeric code representing a specific district</p></li>
+<li><p><strong>Example</strong>: 21</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Pre-determined based on survey location</p></li>
+<li><p><strong>Data Source</strong>: Administrative records or survey design</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Each numeric code corresponds to a specific district within a province</li>
+<li>The coding system is consistent across all survey entries</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that the code corresponds to a valid district within the specified province</li>
+<li>Ensure consistency with other geographical data in the survey</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Miscoding of districts</li>
+<li>Changes in administrative boundaries not reflected in the coding system</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent unless there are changes in district boundaries or coding systems</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a positive integer</li>
+<li>Should correspond to a valid district code within the specified province</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Allows for analysis and comparison of data at the district level</li>
+<li>Can be used to group households for more localized analysis than provincial level</li>
+</ul></li>
+</ul>
+</section>
+<section id="ward" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="ward"><span class="header-section-number">5.6</span> ward</h2>
+<ul>
+<li><p><strong>Title</strong>: Ward</p></li>
+<li><p><strong>Definition</strong>: The administrative ward within the district where the surveyed household is located.</p></li>
+<li><p><strong>Data Type</strong>: Integer (coded) or String</p></li>
+<li><p><strong>Data Element Code</strong>: ward</p></li>
+<li><p><strong>Format</strong>: Numeric code or name representing a specific ward</p></li>
+<li><p><strong>Example</strong>: [Not provided in the given data, assuming it exists]</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Pre-determined based on survey location or directly asked during the survey</p></li>
+<li><p><strong>Data Source</strong>: Administrative records, survey design, or household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Each ward is uniquely identifiable within a district</li>
+<li>The coding or naming system is consistent across all survey entries</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that the ward corresponds to a valid ward within the specified district</li>
+<li>Ensure consistency with other geographical data in the survey</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Miscoding or misreporting of wards</li>
+<li>Changes in administrative boundaries not reflected in the data</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent unless there are changes in ward boundaries or coding systems</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should correspond to a valid ward within the specified district</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Allows for analysis and comparison of data at the ward level</li>
+<li>Can be used to group households for localized analysis within districts</li>
+</ul></li>
+</ul>
+</section>
+<section id="village" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="village"><span class="header-section-number">5.7</span> village</h2>
+<ul>
+<li><p><strong>Title</strong>: Village</p></li>
+<li><p><strong>Definition</strong>: The village or specific locality within the ward where the surveyed household is located.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: village</p></li>
+<li><p><strong>Format</strong>: Name of the village</p></li>
+<li><p><strong>Example</strong>: “Chindebele village”, “Simoko Village”, “Talabuku village”</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey or pre-determined based on survey location</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or administrative records</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Each village name is unique within a ward</li>
+<li>The naming convention is consistent across all survey entries</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency in village names within the same ward</li>
+<li>Ensure the village exists within the specified ward and district</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspelling of village names</li>
+<li>Inconsistent naming conventions (e.g., inclusion or exclusion of the word “village”)</li>
+<li>Changes in village boundaries or names not reflected in the data</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent unless there are changes in village names or boundaries</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a valid village name within the specified ward and district</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Allows for the most granular level of geographical analysis</li>
+<li>Can be used to identify specific communities for targeted interventions or follow-up studies</li>
+</ul></li>
+</ul>
+</section>
+<section id="gps_location_latitude" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="gps_location_latitude"><span class="header-section-number">5.8</span> gps_location_latitude</h2>
+<ul>
+<li><p><strong>Title</strong>: GPS Location Latitude</p></li>
+<li><p><strong>Definition</strong>: The latitude coordinate of the surveyed household’s location.</p></li>
+<li><p><strong>Data Type</strong>: Float</p></li>
+<li><p><strong>Data Element Code</strong>: gps_location_latitude</p></li>
+<li><p><strong>Format</strong>: Decimal degrees</p></li>
+<li><p><strong>Example</strong>: -15.033149</p></li>
+<li><p><strong>Unit of Measurement</strong>: Degrees</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically captured by GPS-enabled device during the survey</p></li>
+<li><p><strong>Data Source</strong>: GPS device or smartphone used for data collection</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The GPS device is functioning correctly</li>
+<li>The surveyor is at the correct location when capturing coordinates</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that the latitude falls within the expected range for the survey area</li>
+<li>Ensure consistency with other geographical data in the survey</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>GPS device inaccuracy</li>
+<li>Poor satellite signal in certain areas</li>
+<li>Incorrect positioning when capturing coordinates</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for the same physical location</li>
+<li>May change slightly due to variations in GPS accuracy between survey rounds</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a valid latitude value (between -90 and 90)</li>
+<li>Should fall within the expected range for the survey area</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used with longitude for precise location mapping</li>
+<li>Allows for spatial analysis of survey data</li>
+</ul></li>
+</ul>
+</section>
+<section id="gps_location_longitude" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="gps_location_longitude"><span class="header-section-number">5.9</span> gps_location_longitude</h2>
+<ul>
+<li><p><strong>Title</strong>: GPS Location Longitude</p></li>
+<li><p><strong>Definition</strong>: The longitude coordinate of the surveyed household’s location.</p></li>
+<li><p><strong>Data Type</strong>: Float</p></li>
+<li><p><strong>Data Element Code</strong>: gps_location_longitude</p></li>
+<li><p><strong>Format</strong>: Decimal degrees</p></li>
+<li><p><strong>Example</strong>: 29.930206</p></li>
+<li><p><strong>Unit of Measurement</strong>: Degrees</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically captured by GPS-enabled device during the survey</p></li>
+<li><p><strong>Data Source</strong>: GPS device or smartphone used for data collection</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The GPS device is functioning correctly</li>
+<li>The surveyor is at the correct location when capturing coordinates</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that the longitude falls within the expected range for the survey area</li>
+<li>Ensure consistency with other geographical data in the survey</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>GPS device inaccuracy</li>
+<li>Poor satellite signal in certain areas</li>
+<li>Incorrect positioning when capturing coordinates</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for the same physical location</li>
+<li>May change slightly due to variations in GPS accuracy between survey rounds</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a valid longitude value (between -180 and 180)</li>
+<li>Should fall within the expected range for the survey area</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used with latitude for precise location mapping</li>
+<li>Allows for spatial analysis of survey data</li>
+</ul></li>
+</ul>
+</section>
+<section id="gps_location_altitude" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="gps_location_altitude"><span class="header-section-number">5.10</span> gps_location_altitude</h2>
+<ul>
+<li><p><strong>Title</strong>: GPS Location Altitude</p></li>
+<li><p><strong>Definition</strong>: The altitude (elevation above sea level) of the surveyed household’s location.</p></li>
+<li><p><strong>Data Type</strong>: Float</p></li>
+<li><p><strong>Data Element Code</strong>: gps_location_altitude</p></li>
+<li><p><strong>Format</strong>: Decimal meters</p></li>
+<li><p><strong>Example</strong>: 812.74121</p></li>
+<li><p><strong>Unit of Measurement</strong>: Meters</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically captured by GPS-enabled device during the survey</p></li>
+<li><p><strong>Data Source</strong>: GPS device or smartphone used for data collection</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The GPS device is capable of capturing altitude data accurately</li>
+<li>The altitude is measured relative to mean sea level</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that the altitude falls within the expected range for the survey area</li>
+<li>Compare with known elevation data for the region</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>GPS device inaccuracy, especially for altitude measurements</li>
+<li>Atmospheric conditions affecting altitude readings</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain relatively consistent for the same physical location</li>
+<li>May vary slightly due to GPS accuracy and atmospheric conditions</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should be present for every household entry where GPS data is collected</li>
+<li>Should be a plausible value for the known geography of the survey area</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used for analyzing the impact of elevation on various survey outcomes</li>
+</ul></li>
+</ul>
+</section>
+<section id="gps_location_accuracy" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="gps_location_accuracy"><span class="header-section-number">5.11</span> gps_location_accuracy</h2>
+<ul>
+<li><p><strong>Title</strong>: GPS Location Accuracy</p></li>
+<li><p><strong>Definition</strong>: The estimated accuracy of the GPS coordinates, indicating the potential error range of the location data.</p></li>
+<li><p><strong>Data Type</strong>: Float</p></li>
+<li><p><strong>Data Element Code</strong>: gps_location_accuracy</p></li>
+<li><p><strong>Format</strong>: Decimal meters</p></li>
+<li><p><strong>Example</strong>: 4.2880001</p></li>
+<li><p><strong>Unit of Measurement</strong>: Meters</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically calculated by GPS-enabled device during the survey</p></li>
+<li><p><strong>Data Source</strong>: GPS device or smartphone used for data collection</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The GPS device provides an accurate estimate of location accuracy</li>
+<li>Lower values indicate higher accuracy</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency in accuracy levels across similar environments</li>
+<li>Flag unusually high accuracy values for verification</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Environmental factors affecting GPS signal (e.g., urban canyons, dense forest)</li>
+<li>Device limitations or malfunctions</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May vary between measurements even at the same location</li>
+<li>Affected by number of visible satellites, atmospheric conditions, and local obstructions</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should be present for every household entry where GPS data is collected</li>
+<li>Should be a positive value</li>
+<li>Unusually high values (indicating low accuracy) should be flagged for review</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to assess the reliability of location data in different survey areas</li>
+</ul></li>
+</ul>
+</section>
+<section id="is_consent_given" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="is_consent_given"><span class="header-section-number">5.12</span> is_consent_given</h2>
+<ul>
+<li><p><strong>Title</strong>: Consent Given</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household has given consent to participate in the survey.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: is_consent_given</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent understands the implications of giving or withholding consent</li>
+<li>The consent process follows ethical guidelines and local regulations</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Ensure that no survey data is collected for households where consent is not given (code 2)</li>
+<li>Check for consistency in consent across all household members (if applicable)</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of the consent process</li>
+<li>Coercion or undue influence on the respondent</li>
+<li>Incorrect coding of the response</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should be re-obtained for each survey round</li>
+<li>May change if household members or circumstances change</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+<li>If 2 (consent not given), no further survey data should be collected</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze participation rates and potential biases in survey responses</li>
+<li>May be used to assess the effectiveness of the consent process in different areas or among different demographic groups</li>
+</ul></li>
+</ul>
+</section>
+<section id="house_section_visited" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="house_section_visited"><span class="header-section-number">5.13</span> house_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: House Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the house section of the survey has been completed.</p></li>
+<li><p><strong>Data Type</strong>: String (Single character)</p></li>
+<li><p><strong>Data Element Code</strong>: house_section_visited</p></li>
+<li><p><strong>Format</strong>: Single character code â = Visited/Completed (Other values may exist but are not evident in the provided data)</p></li>
+<li><p><strong>Example</strong>: â</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically updated by the survey application upon completion of the house section</p></li>
+<li><p><strong>Data Source</strong>: Survey application</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The survey application correctly marks the section as visited when all required questions are answered</li>
+<li>The â character indicates successful completion of the section</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that all required questions in the house section are answered when this field is marked as visited</li>
+<li>Ensure consistency between this field and the completeness of house-related data</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>System errors in the survey application</li>
+<li>Incomplete data entry not properly reflected in this field</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should be consistent within a single survey instance</li>
+<li>May change if the survey is conducted in multiple visits or if data is updated</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should contain valid codes as defined in the survey protocol</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to track survey progress and completion rates</li>
+<li>May be used to identify partially completed surveys for follow-up</li>
+</ul></li>
+</ul>
+</section>
+<section id="check1" class="level2" data-number="5.14">
+<h2 data-number="5.14" class="anchored" data-anchor-id="check1"><span class="header-section-number">5.14</span> check1</h2>
+<ul>
+<li><p><strong>Title</strong>: Check 1 - Forgotten Household Members</p></li>
+<li><p><strong>Definition</strong>: Indicates whether there are any household members that were forgotten in the initial listing.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: check1</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent has a clear understanding of who should be considered a household member</li>
+<li>The initial household roster was completed before this question was asked</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>If answered ‘Yes’, verify that additional members were added to the household roster</li>
+<li>Check for consistency between this response and the final household size</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of the definition of household membership</li>
+<li>Intentional omission of household members</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change between survey rounds if household composition changes</li>
+<li>Could be used to track improvements in initial roster completion accuracy over multiple surveys</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to assess the accuracy of initial household roster completion</li>
+<li>May indicate need for additional training of enumerators if many households report forgotten members</li>
+</ul></li>
+</ul>
+</section>
+<section id="check2" class="level2" data-number="5.15">
+<h2 data-number="5.15" class="anchored" data-anchor-id="check2"><span class="header-section-number">5.15</span> check2</h2>
+<ul>
+<li><p><strong>Title</strong>: Check 2 - Household Members Away</p></li>
+<li><p><strong>Definition</strong>: Indicates whether there are any household members who are away but are still considered part of the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: check2</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent understands the criteria for considering someone a household member even if they are away</li>
+<li>The initial household roster was completed before this question was asked</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>If answered ‘Yes’, verify that these away members were included in the household roster</li>
+<li>Check for consistency between this response and the presence of members marked as ‘away’ in the roster</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of the criteria for household membership for absent individuals</li>
+<li>Inconsistent application of household membership rules across different households</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change between survey rounds as household members move or travel</li>
+<li>Could be used to track seasonal migration patterns if collected over multiple time points</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to identify households with absent members for further analysis</li>
+<li>May be relevant for understanding household dynamics and resource allocation</li>
+</ul></li>
+</ul>
+</section>
+<section id="check3" class="level2" data-number="5.16">
+<h2 data-number="5.16" class="anchored" data-anchor-id="check3"><span class="header-section-number">5.16</span> check3</h2>
+<ul>
+<li><p><strong>Title</strong>: Check 3 - Visitors Staying</p></li>
+<li><p><strong>Definition</strong>: Indicates whether there are any visitors staying with the household who have not been included in the household listing.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: check3</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent understands the definition of a visitor in the context of the survey</li>
+<li>The initial household roster was completed before this question was asked</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>If answered ‘Yes’, verify that these visitors were added to the household roster if they meet the criteria for inclusion</li>
+<li>Check for consistency between this response and the presence of members marked as ‘visitors’ in the roster</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of the criteria for including visitors in the household listing</li>
+<li>Inconsistent application of visitor inclusion rules across different households</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change between survey rounds depending on the presence of visitors</li>
+<li>Could be used to understand patterns of temporary residence or visitation in the community</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to identify households with visitors for further analysis</li>
+<li>May be relevant for understanding household composition and its impact on various outcomes</li>
+</ul></li>
+</ul>
+</section>
+<section id="head_attend_school" class="level2" data-number="5.17">
+<h2 data-number="5.17" class="anchored" data-anchor-id="head_attend_school"><span class="header-section-number">5.17</span> head_attend_school</h2>
+<ul>
+<li><p><strong>Title</strong>: Household Head Attended School</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the head of the household has ever attended school.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: head_attend_school</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent (likely the household head or a knowledgeable adult member)</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent has accurate knowledge of the household head’s educational history</li>
+<li>“Attended school” refers to formal education at any level</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other education-related variables for the household head</li>
+<li>Verify against the highest level of education attained, if available</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of what constitutes “attending school”</li>
+<li>Recall bias, especially for older household heads</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for the same household head across survey rounds</li>
+<li>May change if there is a new household head in subsequent surveys</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze educational attainment of household heads</li>
+<li>May be correlated with other socioeconomic indicators</li>
+</ul></li>
+</ul>
+</section>
+<section id="highest_level_of_school_attend" class="level2" data-number="5.18">
+<h2 data-number="5.18" class="anchored" data-anchor-id="highest_level_of_school_attend"><span class="header-section-number">5.18</span> highest_level_of_school_attend</h2>
+<ul>
+<li><p><strong>Title</strong>: Highest Level of School Attended by Household Head</p></li>
+<li><p><strong>Definition</strong>: The highest level of education attended by the head of the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: highest_level_of_school_attend</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Primary 2 = Secondary 3 = Higher (Other codes may exist but are not evident in the provided data)</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent (likely the household head or a knowledgeable adult member)</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent accurately reports the highest level of education attended</li>
+<li>The coding system adequately captures the education system in the survey area</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with the ‘head_attend_school’ variable</li>
+<li>Verify against other socioeconomic indicators</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of education level categories</li>
+<li>Recall bias, especially for older household heads</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Should remain consistent for the same household head across survey rounds</li>
+<li>May change if there is a new household head in subsequent surveys</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present if ‘head_attend_school’ is Yes (1)</li>
+<li>Should contain valid codes as defined in the survey protocol</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze educational attainment levels of household heads</li>
+<li>May be correlated with other socioeconomic indicators</li>
+</ul></li>
+</ul>
+</section>
+<section id="drinking_water_source" class="level2" data-number="5.19">
+<h2 data-number="5.19" class="anchored" data-anchor-id="drinking_water_source"><span class="header-section-number">5.19</span> drinking_water_source</h2>
+<ul>
+<li><p><strong>Title</strong>: Drinking Water Source</p></li>
+<li><p><strong>Definition</strong>: The main source of drinking water for the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: drinking_water_source</p></li>
+<li><p><strong>Format</strong>: Coded value 1 River/stream 2 Shared well/pump 3 Water tank public (buy) 5 Piped water, neighbour (buy) 6 Water distributed by trucks/vendors 7 Own well/pump 8 Piped water in home 97 Other, specify</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent accurately identifies the main drinking water source</li>
+<li>The coding system adequately captures all relevant water sources in the survey area</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other water and sanitation-related variables</li>
+<li>Verify against known water infrastructure in the area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of water source categories</li>
+<li>Seasonal variations in water sources not captured</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household gains access to new water sources</li>
+<li>Could be used to track improvements in water access over time</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should contain valid codes as defined in the survey protocol</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze access to safe drinking water</li>
+<li>May be correlated with health outcomes and other socioeconomic indicators</li>
+</ul></li>
+</ul>
+</section>
+<section id="drinking_water_source_other" class="level2" data-number="5.20">
+<h2 data-number="5.20" class="anchored" data-anchor-id="drinking_water_source_other"><span class="header-section-number">5.20</span> drinking_water_source_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Drinking Water Source</p></li>
+<li><p><strong>Definition</strong>: Specifies the drinking water source if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: drinking_water_source_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main drinking water source is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>This field is only filled if the main drinking_water_source is categorized as “Other”</li>
+<li>The response provides meaningful information about the water source</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that this field is only filled when appropriate based on the drinking_water_source variable</li>
+<li>Verify that the response is a valid water source</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspellings or inconsistent naming of water sources</li>
+<li>Incorrect categorization of standard water sources as “Other”</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if new water sources become available</li>
+<li>Could be used to identify emerging water sources not captured in the main categories</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should only be present if drinking_water_source indicates “Other”</li>
+<li>Should contain meaningful text describing a water source</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to refine analysis of water sources beyond the main categories</li>
+<li>May help identify locally specific water sources</li>
+</ul></li>
+</ul>
+</section>
+<section id="toilet_facility" class="level2" data-number="5.21">
+<h2 data-number="5.21" class="anchored" data-anchor-id="toilet_facility"><span class="header-section-number">5.21</span> toilet_facility</h2>
+<ul>
+<li><p><strong>Title</strong>: Principal Type of Toilet Facility</p></li>
+<li><p><strong>Definition</strong>: The main type of toilet facility used by members of the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: toilet_facility</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Bush 2 = Shared pit latrine 3 = Own pit latrine 4 = Shared flush toilet 5 = Own flush toilet 6 = Other, specify</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent accurately identifies the main toilet facility used by the household</li>
+<li>If multiple facilities are used, the respondent reports the most frequently used or principal facility</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other sanitation-related variables</li>
+<li>Verify against known sanitation infrastructure in the area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of toilet facility categories</li>
+<li>Reporting of aspirational rather than actual facilities</li>
+<li>Seasonal variations in facility use not captured</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household gains access to improved sanitation facilities</li>
+<li>Could be used to track improvements in sanitation access over time</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, or 6</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze access to different types of sanitation facilities</li>
+<li>May be correlated with health outcomes and other socioeconomic indicators</li>
+<li>Can be categorized into improved and unimproved sanitation facilities for further analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="toilet_facility_other" class="level2" data-number="5.22">
+<h2 data-number="5.22" class="anchored" data-anchor-id="toilet_facility_other"><span class="header-section-number">5.22</span> toilet_facility_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Toilet Facility</p></li>
+<li><p><strong>Definition</strong>: Specifies the toilet facility if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: toilet_facility_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main toilet facility is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>This field is only filled if the toilet_facility is categorized as “Other” (code 6)</li>
+<li>The response provides meaningful information about the toilet facility</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that this field is only filled when toilet_facility is coded as 6 (Other, specify)</li>
+<li>Verify that the response is a valid description of a toilet facility</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspellings or inconsistent naming of facilities</li>
+<li>Incorrect categorization of standard facilities as “Other”</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if new sanitation technologies become available</li>
+<li>Could be used to identify emerging sanitation solutions not captured in the main categories</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should only be present if toilet_facility is coded as 6 (Other, specify)</li>
+<li>Should contain meaningful text describing a toilet facility</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to refine analysis of sanitation facilities beyond the main categories</li>
+<li>May help identify locally specific sanitation practices</li>
+</ul></li>
+</ul>
+</section>
+<section id="household-assets" class="level2" data-number="5.23">
+<h2 data-number="5.23" class="anchored" data-anchor-id="household-assets"><span class="header-section-number">5.23</span> Household Assets</h2>
+<ul>
+<li><p><strong>Title</strong>: Household Asset Ownership</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household owns or has access to various assets and amenities.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Codes and Formats</strong>:</p>
+<ul>
+<li>have_electricity: 1 = Yes, 2 = No</li>
+<li>have_radio: 1 = Yes, 2 = No</li>
+<li>have_tv: 1 = Yes, 2 = No</li>
+<li>have_mobile: 1 = Yes, 2 = No</li>
+<li>have_non_mobile: 1 = Yes, 2 = No</li>
+<li>have_refrigerator: 1 = Yes, 2 = No</li>
+<li>have_bed: 1 = Yes, 2 = No</li>
+<li>have_chair: 1 = Yes, 2 = No</li>
+<li>have_table: 1 = Yes, 2 = No</li>
+<li>have_cupboard: 1 = Yes, 2 = No</li>
+<li>have_sofa: 1 = Yes, 2 = No</li>
+<li>have_clock: 1 = Yes, 2 = No</li>
+<li>have_fan: 1 = Yes, 2 = No</li>
+<li>have_sewing_machine: 1 = Yes, 2 = No</li>
+<li>have_cassette_player: 1 = Yes, 2 = No</li>
+<li>have_plough: 1 = Yes, 2 = No</li>
+<li>have_grain_grinder: 1 = Yes, 2 = No</li>
+<li>have_vcr_dvd: 1 = Yes, 2 = No</li>
+<li>have_tractor: 1 = Yes, 2 = No</li>
+<li>have_vehicle: 1 = Yes, 2 = No</li>
+<li>have_hammer_mill: 1 = Yes, 2 = No</li>
+</ul></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: These variables can be used to calculate asset indices or wealth scores.</p></li>
+<li><p><strong>Formula or Equation</strong>: Specific formulas for asset indices would depend on the chosen methodology (e.g., principal component analysis, simple sum of assets).</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Respondents accurately report asset ownership</li>
+<li>The list of assets is relevant to the local context and captures meaningful variation in household wealth</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for internal consistency (e.g., households with electricity should be more likely to have electric appliances)</li>
+<li>Verify against visual observations of the household where possible</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Recall bias</li>
+<li>Misunderstanding of what constitutes ownership (e.g., broken items, shared assets)</li>
+<li>Seasonal variation in asset ownership</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>Can be used to track changes in household wealth and living standards over time</li>
+<li>Some assets may become obsolete or universal over time, affecting their discriminatory power</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>All variables must be present for each household</li>
+<li>Each variable should only contain values 1 or 2</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be analyzed individually or combined into asset indices</li>
+<li>May be used to create wealth quintiles or other socioeconomic classifications</li>
+<li>Can be disaggregated by geographic area, household characteristics, or other relevant factors</li>
+</ul></li>
+<li><p><strong>Interpretation</strong>:</p>
+<ul>
+<li>Higher ownership of assets generally indicates higher socioeconomic status</li>
+<li>The relevance of specific assets may vary by context (urban/rural, cultural norms)</li>
+<li>Some assets (e.g., plough, tractor) may be more indicative of livelihood strategies than general wealth</li>
+</ul></li>
+</ul>
+</section>
+<section id="fuel_hh_use" class="level2" data-number="5.24">
+<h2 data-number="5.24" class="anchored" data-anchor-id="fuel_hh_use"><span class="header-section-number">5.24</span> fuel_hh_use</h2>
+<ul>
+<li><p><strong>Title</strong>: Main Cooking Fuel</p></li>
+<li><p><strong>Definition</strong>: The primary type of fuel used by the household for cooking.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: fuel_hh_use</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Electricity 2 = LPG/Natural Gas 3 = Biogas 4 = Kerosene 5 = Coal/Lignite 6 = Charcoal 7 = Firewood/Straw 8 = Dung 96 = Other (Specify)</p></li>
+<li><p><strong>Example</strong>: 6</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The respondent accurately identifies the main fuel used for cooking</li>
+<li>If multiple fuels are used, the respondent reports the most frequently used or primary fuel</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other energy-related variables</li>
+<li>Verify against known fuel availability and usage patterns in the area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misunderstanding of fuel categories</li>
+<li>Reporting of aspirational rather than actual fuel use</li>
+<li>Seasonal variations in fuel use not captured</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household gains access to cleaner or more efficient fuel sources</li>
+<li>Could be used to track transitions in energy use over time</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, 6, 7, 8, or 96</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze access to clean cooking fuels</li>
+<li>May be correlated with health outcomes, particularly respiratory health</li>
+<li>Can be categorized into clean and polluting fuels for further analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="fuel_hh_use_other" class="level2" data-number="5.25">
+<h2 data-number="5.25" class="anchored" data-anchor-id="fuel_hh_use_other"><span class="header-section-number">5.25</span> fuel_hh_use_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Cooking Fuel</p></li>
+<li><p><strong>Definition</strong>: Specifies the cooking fuel if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: fuel_hh_use_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main cooking fuel is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>This field is only filled if the fuel_hh_use is categorized as “Other” (code 96)</li>
+<li>The response provides meaningful information about the cooking fuel</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that this field is only filled when fuel_hh_use is coded as 96 (Other)</li>
+<li>Verify that the response is a valid description of a cooking fuel</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspellings or inconsistent naming of fuels</li>
+<li>Incorrect categorization of standard fuels as “Other”</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if new fuel types become available</li>
+<li>Could be used to identify emerging fuel sources not captured in the main categories</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should only be present if fuel_hh_use is coded as 96 (Other)</li>
+<li>Should contain meaningful text describing a cooking fuel</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to refine analysis of cooking fuel use beyond the main categories</li>
+<li>May help identify locally specific fuel sources or practices</li>
+</ul></li>
+</ul>
+</section>
+<section id="floor_material" class="level2" data-number="5.26">
+<h2 data-number="5.26" class="anchored" data-anchor-id="floor_material"><span class="header-section-number">5.26</span> floor_material</h2>
+<ul>
+<li><p><strong>Title</strong>: Main Material of the Floor</p></li>
+<li><p><strong>Definition</strong>: The primary material used for the floor of the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: floor_material</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Earth 2 = Reed mats 3 = Cement 4 = Carpet/Terrazzo 5 = Tiles 6 = Other (Specify) 97 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The observed or reported material is the predominant flooring in the dwelling</li>
+<li>The coding system adequately captures all relevant floor materials in the survey area</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other housing quality indicators</li>
+<li>Verify against typical construction materials in the area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misclassification of materials</li>
+<li>Inconsistent interpretation of “main” material if multiple types are present</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household renovates or moves to a new dwelling</li>
+<li>Could be used to track improvements in housing quality over time</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, 6, or 97</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze housing quality</li>
+<li>May be correlated with socioeconomic status and health outcomes</li>
+</ul></li>
+</ul>
+</section>
+<section id="floor_material_other" class="level2" data-number="5.27">
+<h2 data-number="5.27" class="anchored" data-anchor-id="floor_material_other"><span class="header-section-number">5.27</span> floor_material_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Floor Material</p></li>
+<li><p><strong>Definition</strong>: Specifies the floor material if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: floor_material_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main floor material is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>This field is only filled if the floor_material is categorized as “Other” (code 6)</li>
+<li>The response provides meaningful information about the floor material</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check that this field is only filled when floor_material is coded as 6 (Other)</li>
+<li>Verify that the response is a valid description of a floor material</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misspellings or inconsistent naming of materials</li>
+<li>Incorrect categorization of standard materials as “Other”</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if new construction materials become available in the area</li>
+<li>Could be used to identify emerging floor materials not captured in the main categories</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should only be present if floor_material is coded as 6 (Other)</li>
+<li>Should contain meaningful text describing a floor material</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to refine analysis of housing quality beyond the main categories</li>
+<li>May help identify locally specific construction practices</li>
+</ul></li>
+</ul>
+</section>
+<section id="wall_material" class="level2" data-number="5.28">
+<h2 data-number="5.28" class="anchored" data-anchor-id="wall_material"><span class="header-section-number">5.28</span> wall_material</h2>
+<ul>
+<li><p><strong>Title</strong>: Main Material of the Wall</p></li>
+<li><p><strong>Definition</strong>: The primary material used for the walls of the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: wall_material</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Mud 2 = Sticks/Wood 3 = Sticks/Wood and plaster 4 = Plaster 5 = Burned bricks 6 = Cement bricks 7 = Other (Specify)</p></li>
+<li><p><strong>Example</strong>: 5</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Numerators and Denominators</strong>: NA</p></li>
+<li><p><strong>Calculations</strong>: NA</p></li>
+<li><p><strong>Formula or Equation</strong>: NA</p></li>
+<li><p><strong>Assumptions</strong>:</p>
+<ul>
+<li>The observed or reported material is the predominant wall material in the dwelling</li>
+<li>The coding system adequately captures all relevant wall materials in the survey area</li>
+</ul></li>
+<li><p><strong>Validation and Verification</strong>:</p>
+<ul>
+<li>Check for consistency with other housing quality indicators</li>
+<li>Verify against typical construction materials in the area</li>
+</ul></li>
+<li><p><strong>Potential Sources of Error</strong>:</p>
+<ul>
+<li>Misclassification of materials</li>
+<li>Inconsistent interpretation of “main” material if multiple types are present</li>
+</ul></li>
+<li><p><strong>Changes Over Time</strong>:</p>
+<ul>
+<li>May change if household renovates or moves to a new dwelling</li>
+<li>Could be used to track improvements in housing quality over time</li>
+</ul></li>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, 6, or 7</li>
+</ul></li>
+<li><p><strong>Disaggregation</strong>:</p>
+<ul>
+<li>Can be used to analyze housing quality</li>
+<li>May be correlated with socioeconomic status and health outcomes</li>
+</ul></li>
+</ul>
+</section>
+<section id="wall_material_other" class="level2" data-number="5.29">
+<h2 data-number="5.29" class="anchored" data-anchor-id="wall_material_other"><span class="header-section-number">5.29</span> wall_material_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Wall Material</p></li>
+<li><p><strong>Definition</strong>: Specifies the wall material if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: wall_material_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main wall material is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Assumptions</strong>:
+<ul>
+<li>This field is only filled if the wall_material is categorized as “Other” (code 7)</li>
+<li>The response provides meaningful information about the wall material</li>
+</ul></li>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if wall_material is coded as 7 (Other)</li>
+<li>Should contain meaningful text describing a wall material</li>
+</ul></li>
+</ul>
+</section>
+<section id="roof_material" class="level2" data-number="5.30">
+<h2 data-number="5.30" class="anchored" data-anchor-id="roof_material"><span class="header-section-number">5.30</span> roof_material</h2>
+<ul>
+<li><p><strong>Title</strong>: Main Material of the Roof</p></li>
+<li><p><strong>Definition</strong>: The primary material used for the roof of the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: roof_material</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Grass/leaves 2 = Pieces of barrel 3 = Iron sheets 4 = Asbestos 5 = Tiles 6 = Concrete 7 = Other, specify</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, 6, or 7</li>
+</ul></li>
+</ul>
+</section>
+<section id="roof_material_other" class="level2" data-number="5.31">
+<h2 data-number="5.31" class="anchored" data-anchor-id="roof_material_other"><span class="header-section-number">5.31</span> roof_material_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Roof Material</p></li>
+<li><p><strong>Definition</strong>: Specifies the roof material if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: roof_material_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the main roof material is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if roof_material is coded as 7 (Other)</li>
+<li>Should contain meaningful text describing a roof material</li>
+</ul></li>
+</ul>
+</section>
+<section id="eaves_open_close" class="level2" data-number="5.32">
+<h2 data-number="5.32" class="anchored" data-anchor-id="eaves_open_close"><span class="header-section-number">5.32</span> eaves_open_close</h2>
+<ul>
+<li><p><strong>Title</strong>: Eaves Open or Closed</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the eaves of the house or building occupied by this household are open or closed.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: eaves_open_close</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes (Open) 2 = No (Closed) 3 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, or 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="have_ceiling" class="level2" data-number="5.33">
+<h2 data-number="5.33" class="anchored" data-anchor-id="have_ceiling"><span class="header-section-number">5.33</span> have_ceiling</h2>
+<ul>
+<li><p><strong>Title</strong>: Presence of Ceiling</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the part of the house or building occupied by the household has a ceiling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: have_ceiling</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = None 2 = Partial/ Poorly sealed/worn out 3 = Complete and sealed</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, or 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="type_of_ceiling" class="level2" data-number="5.34">
+<h2 data-number="5.34" class="anchored" data-anchor-id="type_of_ceiling"><span class="header-section-number">5.34</span> type_of_ceiling</h2>
+<ul>
+<li><p><strong>Title</strong>: Type of Ceiling Material</p></li>
+<li><p><strong>Definition</strong>: The primary material used for the ceiling of the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: type_of_ceiling</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = No ceiling 2 = Traditional e.g leaves, mud/mat 3 = Ceiling Board 4 = Gypsum/Rhino board 5 = Wood 6 = Other (Specify) 97 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, 5, 6, or 97</li>
+</ul></li>
+</ul>
+</section>
+<section id="type_of_ceiling_other" class="level2" data-number="5.35">
+<h2 data-number="5.35" class="anchored" data-anchor-id="type_of_ceiling_other"><span class="header-section-number">5.35</span> type_of_ceiling_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Ceiling Material</p></li>
+<li><p><strong>Definition</strong>: Specifies the ceiling material if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: type_of_ceiling_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the ceiling material is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if type_of_ceiling is coded as 6 (Other)</li>
+<li>Should contain meaningful text describing a ceiling material</li>
+</ul></li>
+</ul>
+</section>
+<section id="any_window" class="level2" data-number="5.36">
+<h2 data-number="5.36" class="anchored" data-anchor-id="any_window"><span class="header-section-number">5.36</span> any_window</h2>
+<ul>
+<li><p><strong>Title</strong>: Presence of Windows</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household dwelling has any windows.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: any_window</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="windows_with_glass" class="level2" data-number="5.37">
+<h2 data-number="5.37" class="anchored" data-anchor-id="windows_with_glass"><span class="header-section-number">5.37</span> windows_with_glass</h2>
+<ul>
+<li><p><strong>Title</strong>: Windows with Glass</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household dwelling has windows with glass.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: windows_with_glass</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="windows_with_screens" class="level2" data-number="5.38">
+<h2 data-number="5.38" class="anchored" data-anchor-id="windows_with_screens"><span class="header-section-number">5.38</span> windows_with_screens</h2>
+<ul>
+<li><p><strong>Title</strong>: Windows with Screens</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household dwelling has windows with screens.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: windows_with_screens</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="windows_with_curtains" class="level2" data-number="5.39">
+<h2 data-number="5.39" class="anchored" data-anchor-id="windows_with_curtains"><span class="header-section-number">5.39</span> windows_with_curtains</h2>
+<ul>
+<li><p><strong>Title</strong>: Windows with Curtains or Shutters</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household dwelling has windows with curtains or shutters.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: windows_with_curtains</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="windows_screened" class="level2" data-number="5.40">
+<h2 data-number="5.40" class="anchored" data-anchor-id="windows_screened"><span class="header-section-number">5.40</span> windows_screened</h2>
+<ul>
+<li><p><strong>Title</strong>: Window Screening Status</p></li>
+<li><p><strong>Definition</strong>: Indicates the status of window screening against mosquito entry in the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: windows_screened</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Incompletely screened or with large holes, tears or gaps 2 = Completely screened with small holes 3 = Completely screened without holes 4 = Glazed with glass window 97 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, or 97</li>
+</ul></li>
+</ul>
+</section>
+<section id="materials_2_screen_windows" class="level2" data-number="5.41">
+<h2 data-number="5.41" class="anchored" data-anchor-id="materials_2_screen_windows"><span class="header-section-number">5.41</span> materials_2_screen_windows</h2>
+<ul>
+<li><p><strong>Title</strong>: Materials Used to Screen Windows</p></li>
+<li><p><strong>Definition</strong>: The primary material used to screen windows against mosquito entry.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: materials_2_screen_windows</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Plastic Netting 2 = Old bed net 3 = Wire mesh 4 = Other material, specify 97 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Direct observation or asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, or 97</li>
+</ul></li>
+</ul>
+</section>
+<section id="materials_2_screen_windows_other" class="level2" data-number="5.42">
+<h2 data-number="5.42" class="anchored" data-anchor-id="materials_2_screen_windows_other"><span class="header-section-number">5.42</span> materials_2_screen_windows_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Materials Used to Screen Windows</p></li>
+<li><p><strong>Definition</strong>: Specifies the material used to screen windows if it’s not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: materials_2_screen_windows_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the window screening material is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent or enumerator observation</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if materials_2_screen_windows is coded as 4 (Other)</li>
+<li>Should contain meaningful text describing a window screening material</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_rooms" class="level2" data-number="5.43">
+<h2 data-number="5.43" class="anchored" data-anchor-id="num_of_rooms"><span class="header-section-number">5.43</span> num_of_rooms</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Separate Rooms in Household</p></li>
+<li><p><strong>Definition</strong>: The total number of separate rooms in the household dwelling.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_rooms</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: Rooms</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a positive integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="rooms_used_4_sleeping" class="level2" data-number="5.44">
+<h2 data-number="5.44" class="anchored" data-anchor-id="rooms_used_4_sleeping"><span class="header-section-number">5.44</span> rooms_used_4_sleeping</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Rooms Used for Sleeping</p></li>
+<li><p><strong>Definition</strong>: The number of rooms in the household that are used for sleeping.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: rooms_used_4_sleeping</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: Rooms</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a positive integer</li>
+<li>Should not exceed the total number of rooms (num_of_rooms)</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_sleeping_spaces" class="level2" data-number="5.45">
+<h2 data-number="5.45" class="anchored" data-anchor-id="num_of_sleeping_spaces"><span class="header-section-number">5.45</span> num_of_sleeping_spaces</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Separate Sleeping Spaces</p></li>
+<li><p><strong>Definition</strong>: The total number of separate sleeping spaces in the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_sleeping_spaces</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 4</p></li>
+<li><p><strong>Unit of Measurement</strong>: Sleeping spaces</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should be a positive integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_agricultural_land" class="level2" data-number="5.46">
+<h2 data-number="5.46" class="anchored" data-anchor-id="own_agricultural_land"><span class="header-section-number">5.46</span> own_agricultural_land</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of Agricultural Land</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns agricultural land.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_agricultural_land</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="agri_land_in_hectares" class="level2" data-number="5.47">
+<h2 data-number="5.47" class="anchored" data-anchor-id="agri_land_in_hectares"><span class="header-section-number">5.47</span> agri_land_in_hectares</h2>
+<ul>
+<li><p><strong>Title</strong>: Amount of Agricultural Land Owned</p></li>
+<li><p><strong>Definition</strong>: The total amount of agricultural land owned by members of the household.</p></li>
+<li><p><strong>Data Type</strong>: Float</p></li>
+<li><p><strong>Data Element Code</strong>: agri_land_in_hectares</p></li>
+<li><p><strong>Format</strong>: Numeric value with decimal places</p></li>
+<li><p><strong>Example</strong>: 2.5</p></li>
+<li><p><strong>Unit of Measurement</strong>: Hectares</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_agricultural_land is coded as 1 (Yes)</li>
+<li>Should be a positive number</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_livestock" class="level2" data-number="5.48">
+<h2 data-number="5.48" class="anchored" data-anchor-id="own_livestock"><span class="header-section-number">5.48</span> own_livestock</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of Livestock</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household owns any livestock, herds, other farm animals, or poultry.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_livestock</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_traditional_cattle" class="level2" data-number="5.49">
+<h2 data-number="5.49" class="anchored" data-anchor-id="num_of_traditional_cattle"><span class="header-section-number">5.49</span> num_of_traditional_cattle</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Traditional Cattle Owned</p></li>
+<li><p><strong>Definition</strong>: The number of traditional cattle owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_traditional_cattle</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 5</p></li>
+<li><p><strong>Unit of Measurement</strong>: Cattle</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_dairy_cattle" class="level2" data-number="5.50">
+<h2 data-number="5.50" class="anchored" data-anchor-id="num_of_dairy_cattle"><span class="header-section-number">5.50</span> num_of_dairy_cattle</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Dairy Cattle Owned</p></li>
+<li><p><strong>Definition</strong>: The number of dairy cattle owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_dairy_cattle</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: Cattle</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_beef_cattle" class="level2" data-number="5.51">
+<h2 data-number="5.51" class="anchored" data-anchor-id="num_of_beef_cattle"><span class="header-section-number">5.51</span> num_of_beef_cattle</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Beef Cattle Owned</p></li>
+<li><p><strong>Definition</strong>: The number of beef cattle owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_beef_cattle</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: Cattle</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_horse_donkey" class="level2" data-number="5.52">
+<h2 data-number="5.52" class="anchored" data-anchor-id="num_of_horse_donkey"><span class="header-section-number">5.52</span> num_of_horse_donkey</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Horses, Donkeys, or Mules Owned</p></li>
+<li><p><strong>Definition</strong>: The number of horses, donkeys, or mules owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_horse_donkey</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: Animals</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_goats" class="level2" data-number="5.53">
+<h2 data-number="5.53" class="anchored" data-anchor-id="num_of_goats"><span class="header-section-number">5.53</span> num_of_goats</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Goats Owned</p></li>
+<li><p><strong>Definition</strong>: The number of goats owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_goats</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 7</p></li>
+<li><p><strong>Unit of Measurement</strong>: Goats</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_sheeps" class="level2" data-number="5.54">
+<h2 data-number="5.54" class="anchored" data-anchor-id="num_of_sheeps"><span class="header-section-number">5.54</span> num_of_sheeps</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Sheep Owned</p></li>
+<li><p><strong>Definition</strong>: The number of sheep owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_sheeps</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 4</p></li>
+<li><p><strong>Unit of Measurement</strong>: Sheep</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_pigs" class="level2" data-number="5.55">
+<h2 data-number="5.55" class="anchored" data-anchor-id="num_of_pigs"><span class="header-section-number">5.55</span> num_of_pigs</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Pigs Owned</p></li>
+<li><p><strong>Definition</strong>: The number of pigs owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_pigs</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: Pigs</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_chickens" class="level2" data-number="5.56">
+<h2 data-number="5.56" class="anchored" data-anchor-id="num_of_chickens"><span class="header-section-number">5.56</span> num_of_chickens</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Chickens Owned</p></li>
+<li><p><strong>Definition</strong>: The number of chickens owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_chickens</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 15</p></li>
+<li><p><strong>Unit of Measurement</strong>: Chickens</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_other_poultry" class="level2" data-number="5.57">
+<h2 data-number="5.57" class="anchored" data-anchor-id="num_of_other_poultry"><span class="header-section-number">5.57</span> num_of_other_poultry</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Other Poultry Owned</p></li>
+<li><p><strong>Definition</strong>: The number of other poultry (excluding chickens) owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_other_poultry</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 5</p></li>
+<li><p><strong>Unit of Measurement</strong>: Poultry</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="num_of_other_livestock" class="level2" data-number="5.58">
+<h2 data-number="5.58" class="anchored" data-anchor-id="num_of_other_livestock"><span class="header-section-number">5.58</span> num_of_other_livestock</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Other Livestock Owned</p></li>
+<li><p><strong>Definition</strong>: The number of other livestock (not specified in previous categories) owned by the household.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: num_of_other_livestock</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: Animals</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if own_livestock is coded as 1 (Yes)</li>
+<li>Should be a non-negative integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_watch" class="level2" data-number="5.59">
+<h2 data-number="5.59" class="anchored" data-anchor-id="own_watch"><span class="header-section-number">5.59</span> own_watch</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Watch</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a watch.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_watch</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_bicycle" class="level2" data-number="5.60">
+<h2 data-number="5.60" class="anchored" data-anchor-id="own_bicycle"><span class="header-section-number">5.60</span> own_bicycle</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Bicycle</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a bicycle.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_bicycle</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_motorcycle" class="level2" data-number="5.61">
+<h2 data-number="5.61" class="anchored" data-anchor-id="own_motorcycle"><span class="header-section-number">5.61</span> own_motorcycle</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Motorcycle or Motor Scooter</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a motorcycle or motor scooter.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_motorcycle</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_animal_cart" class="level2" data-number="5.62">
+<h2 data-number="5.62" class="anchored" data-anchor-id="own_animal_cart"><span class="header-section-number">5.62</span> own_animal_cart</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of an Animal-Drawn Cart</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns an animal-drawn cart.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_animal_cart</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_car" class="level2" data-number="5.63">
+<h2 data-number="5.63" class="anchored" data-anchor-id="own_car"><span class="header-section-number">5.63</span> own_car</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Car or Truck</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a car or truck.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_car</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_boat" class="level2" data-number="5.64">
+<h2 data-number="5.64" class="anchored" data-anchor-id="own_boat"><span class="header-section-number">5.64</span> own_boat</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Boat with a Motor</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a boat with a motor.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_boat</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="own_banana_boat" class="level2" data-number="5.65">
+<h2 data-number="5.65" class="anchored" data-anchor-id="own_banana_boat"><span class="header-section-number">5.65</span> own_banana_boat</h2>
+<ul>
+<li><p><strong>Title</strong>: Ownership of a Banana Boat</p></li>
+<li><p><strong>Definition</strong>: Indicates whether any member of the household owns a banana boat.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: own_banana_boat</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="interior_walls_sprayed" class="level2" data-number="5.66">
+<h2 data-number="5.66" class="anchored" data-anchor-id="interior_walls_sprayed"><span class="header-section-number">5.66</span> interior_walls_sprayed</h2>
+<ul>
+<li><p><strong>Title</strong>: Interior Walls Sprayed Against Mosquitoes</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the interior walls of the dwelling have been sprayed against mosquitoes in the past 12 months.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: interior_walls_sprayed</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No 99 = Don’t know 97 = Not applicable</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 99, or 97</li>
+</ul></li>
+</ul>
+</section>
+<section id="sprayed_month" class="level2" data-number="5.67">
+<h2 data-number="5.67" class="anchored" data-anchor-id="sprayed_month"><span class="header-section-number">5.67</span> sprayed_month</h2>
+<ul>
+<li><p><strong>Title</strong>: Months Since House Was Sprayed</p></li>
+<li><p><strong>Definition</strong>: The number of months ago the house was sprayed against mosquitoes.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: sprayed_month</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: Months</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if interior_walls_sprayed is coded as 1 (Yes)</li>
+<li>Should be a positive integer not exceeding 12</li>
+</ul></li>
+</ul>
+</section>
+<section id="who_sprayed_the_house" class="level2" data-number="5.68">
+<h2 data-number="5.68" class="anchored" data-anchor-id="who_sprayed_the_house"><span class="header-section-number">5.68</span> who_sprayed_the_house</h2>
+<ul>
+<li><p><strong>Title</strong>: Who Sprayed the House</p></li>
+<li><p><strong>Definition</strong>: Indicates who sprayed the house against mosquitoes.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: who_sprayed_the_house</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Government worker/program 2 = Private company 3 = Household member 6 = Other (Specify) 8 = Don’t know</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Should only be present if interior_walls_sprayed is coded as 1 (Yes)</li>
+<li>Should only contain values 1, 2, 3, 6, or 8</li>
+</ul></li>
+</ul>
+</section>
+<section id="who_sprayed_the_house_other" class="level2" data-number="5.69">
+<h2 data-number="5.69" class="anchored" data-anchor-id="who_sprayed_the_house_other"><span class="header-section-number">5.69</span> who_sprayed_the_house_other</h2>
+<ul>
+<li><p><strong>Title</strong>: Other Entity Who Sprayed the House</p></li>
+<li><p><strong>Definition</strong>: Specifies who sprayed the house if not included in the main categories.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: who_sprayed_the_house_other</p></li>
+<li><p><strong>Format</strong>: Free text</p></li>
+<li><p><strong>Example</strong>: (No example provided in the given data)</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview if the entity who sprayed is categorized as “Other”</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if who_sprayed_the_house is coded as 6 (Other)</li>
+<li>Should contain meaningful text describing who sprayed the house</li>
+</ul></li>
+</ul>
+</section>
+<section id="walls_plastered" class="level2" data-number="5.70">
+<h2 data-number="5.70" class="anchored" data-anchor-id="walls_plastered"><span class="header-section-number">5.70</span> walls_plastered</h2>
+<ul>
+<li><p><strong>Title</strong>: Walls Plastered or Painted in Past 12 Months</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the walls in the dwelling have been plastered or painted in the past 12 months.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: walls_plastered</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No 3 = Don’t know</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, or 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="plastered_month" class="level2" data-number="5.71">
+<h2 data-number="5.71" class="anchored" data-anchor-id="plastered_month"><span class="header-section-number">5.71</span> plastered_month</h2>
+<ul>
+<li><p><strong>Title</strong>: Months Since Walls Were Plastered or Painted</p></li>
+<li><p><strong>Definition</strong>: The number of months ago the walls were plastered or painted.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: plastered_month</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: Months</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if walls_plastered is coded as 1 (Yes)</li>
+<li>Should be a positive integer</li>
+<li>Should be less than or equal to 12</li>
+</ul></li>
+</ul>
+</section>
+<section id="mosquito_coils_used" class="level2" data-number="5.72">
+<h2 data-number="5.72" class="anchored" data-anchor-id="mosquito_coils_used"><span class="header-section-number">5.72</span> mosquito_coils_used</h2>
+<ul>
+<li><p><strong>Title</strong>: Use of Mosquito Coils in Living Space</p></li>
+<li><p><strong>Definition</strong>: Indicates whether mosquito coils have been used in the living space over the last week.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: mosquito_coils_used</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="insecticidede_spray_used" class="level2" data-number="5.73">
+<h2 data-number="5.73" class="anchored" data-anchor-id="insecticidede_spray_used"><span class="header-section-number">5.73</span> insecticidede_spray_used</h2>
+<ul>
+<li><p><strong>Title</strong>: Use of Insecticide Spray in Living Space</p></li>
+<li><p><strong>Definition</strong>: Indicates whether insecticide spray has been used in the living space over the last week.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: insecticidede_spray_used</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="repellents_used" class="level2" data-number="5.74">
+<h2 data-number="5.74" class="anchored" data-anchor-id="repellents_used"><span class="header-section-number">5.74</span> repellents_used</h2>
+<ul>
+<li><p><strong>Title</strong>: Use of Repellents in Living Space</p></li>
+<li><p><strong>Definition</strong>: Indicates whether repellents have been used in the living space over the last week.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: repellents_used</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="socio_section_visited" class="level2" data-number="5.75">
+<h2 data-number="5.75" class="anchored" data-anchor-id="socio_section_visited"><span class="header-section-number">5.75</span> socio_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: Socio-Economic Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the data collectors completed the socio-economic section of the survey.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: socio_section_visited</p></li>
+<li><p><strong>Format</strong>: String value ✔ = Section completed NA = Section not applicable or not completed</p></li>
+<li><p><strong>Example</strong>: ✔</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically filled by the survey tool</p></li>
+<li><p><strong>Data Source</strong>: Survey tool</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values ✔ or NA</li>
+</ul></li>
+</ul>
+</section>
+<section id="have_nets" class="level2" data-number="5.76">
+<h2 data-number="5.76" class="anchored" data-anchor-id="have_nets"><span class="header-section-number">5.76</span> have_nets</h2>
+<ul>
+<li><p><strong>Title</strong>: Household Has Mosquito Nets</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the household has any mosquito nets that can be used while sleeping.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: have_nets</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes 2 = No</p></li>
+<li><p><strong>Example</strong>: 1</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1 or 2</li>
+</ul></li>
+</ul>
+</section>
+<section id="how_many_nets" class="level2" data-number="5.77">
+<h2 data-number="5.77" class="anchored" data-anchor-id="how_many_nets"><span class="header-section-number">5.77</span> how_many_nets</h2>
+<ul>
+<li><p><strong>Title</strong>: Number of Mosquito Nets in Household</p></li>
+<li><p><strong>Definition</strong>: The number of mosquito nets the household has.</p></li>
+<li><p><strong>Data Type</strong>: Integer</p></li>
+<li><p><strong>Data Element Code</strong>: how_many_nets</p></li>
+<li><p><strong>Format</strong>: Numeric value</p></li>
+<li><p><strong>Example</strong>: 2</p></li>
+<li><p><strong>Unit of Measurement</strong>: Nets</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Should only be present if have_nets is coded as 1 (Yes)</li>
+<li>Should be a positive integer</li>
+</ul></li>
+</ul>
+</section>
+<section id="ever_sold_nets" class="level2" data-number="5.78">
+<h2 data-number="5.78" class="anchored" data-anchor-id="ever_sold_nets"><span class="header-section-number">5.78</span> ever_sold_nets</h2>
+<ul>
+<li><p><strong>Title</strong>: Household Ever Sold or Given Away Mosquito Net</p></li>
+<li><p><strong>Definition</strong>: Indicates whether anyone in the household has ever sold or given away a mosquito net.</p></li>
+<li><p><strong>Data Type</strong>: Integer (Coded)</p></li>
+<li><p><strong>Data Element Code</strong>: ever_sold_nets</p></li>
+<li><p><strong>Format</strong>: Coded value 1 = Yes, sold a mosquito net 2 = Yes, give away a mosquito net 3 = No 4 = Don’t know 5 = Refused</p></li>
+<li><p><strong>Example</strong>: 3</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Directly asked during the survey interview</p></li>
+<li><p><strong>Data Source</strong>: Household survey respondent</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values 1, 2, 3, 4, or 5</li>
+</ul></li>
+</ul>
+</section>
+<section id="net_section_visited" class="level2" data-number="5.79">
+<h2 data-number="5.79" class="anchored" data-anchor-id="net_section_visited"><span class="header-section-number">5.79</span> net_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: Net Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the data collectors completed the net section of the survey.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: net_section_visited</p></li>
+<li><p><strong>Format</strong>: String value ✔ = Section completed NA = Section not applicable or not completed</p></li>
+<li><p><strong>Example</strong>: ✔</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically filled by the survey tool</p></li>
+<li><p><strong>Data Source</strong>: Survey tool</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values ✔ or NA</li>
+</ul></li>
+</ul>
+</section>
+<section id="blood_section_visited" class="level2" data-number="5.80">
+<h2 data-number="5.80" class="anchored" data-anchor-id="blood_section_visited"><span class="header-section-number">5.80</span> blood_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: Blood Test Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the data collectors completed the blood test section of the survey.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: blood_section_visited</p></li>
+<li><p><strong>Format</strong>: String value ✔ = Section completed NA = Section not applicable or not completed</p></li>
+<li><p><strong>Example</strong>: ✔</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically filled by the survey tool</p></li>
+<li><p><strong>Data Source</strong>: Survey tool</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values ✔ or NA</li>
+</ul></li>
+</ul>
+</section>
+<section id="women_section_visited" class="level2" data-number="5.81">
+<h2 data-number="5.81" class="anchored" data-anchor-id="women_section_visited"><span class="header-section-number">5.81</span> women_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: Women Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the data collectors completed the women section of the survey.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: women_section_visited</p></li>
+<li><p><strong>Format</strong>: String value ✔ = Section completed NA = Section not applicable or not completed</p></li>
+<li><p><strong>Example</strong>: ✔</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically filled by the survey tool</p></li>
+<li><p><strong>Data Source</strong>: Survey tool</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values ✔ or NA</li>
+</ul></li>
+</ul>
+</section>
+<section id="visit_section_visited" class="level2" data-number="5.82">
+<h2 data-number="5.82" class="anchored" data-anchor-id="visit_section_visited"><span class="header-section-number">5.82</span> visit_section_visited</h2>
+<ul>
+<li><p><strong>Title</strong>: Visit Section Visited</p></li>
+<li><p><strong>Definition</strong>: Indicates whether the data collectors completed the visit section of the survey.</p></li>
+<li><p><strong>Data Type</strong>: String</p></li>
+<li><p><strong>Data Element Code</strong>: visit_section_visited</p></li>
+<li><p><strong>Format</strong>: String value ✔ = Section completed NA = Section not applicable or not completed</p></li>
+<li><p><strong>Example</strong>: ✔</p></li>
+<li><p><strong>Unit of Measurement</strong>: NA</p></li>
+<li><p><strong>Data Collection Method</strong>: Automatically filled by the survey tool</p></li>
+<li><p><strong>Data Source</strong>: Survey tool</p></li>
+</ul>
+<p>Optional Metadata Fields:</p>
+<ul>
+<li><strong>Validation Rules</strong>:
+<ul>
+<li>Must be present for every household entry</li>
+<li>Should only contain values ✔ or NA</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../qmd/01_data/01_03_dhis2_data.html" class="pagination-link" aria-label="DHIS2 Data codes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DHIS2 Data codes</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../qmd/01_data/01_05_survey_household_member.html" class="pagination-link" aria-label="Household survey - household member survey">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Household survey - household member survey</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>One seven project.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sepmein/one-seven/edit/master/qmd/01_data/01_04_survey_household.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sepmein/one-seven/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This site was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
