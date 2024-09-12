@@ -14,13 +14,20 @@ require(wesanderson)
 require(cowplot)
 require(lubridate)
 require(gt)
+require(tmap)
+require(sf)
 source(here("R/paths.r"))
 source(here("R/plot.r"))
 options(prType = "html")
 hookaddcap()
+zam_dh_vl_pop <- qread(here(PATH_ZAM_DH_VL_POP))
+zam_hh_hh <- qread(here(PATH_ZAM_HH_HH))
 ```
 
 ## Population
+
+Total number of villages included in the analysis: `r nrow(zam_dh_vl_pop)`, total population: `r sum(zam_dh_vl_pop$POPULATION)`.
+
 
 ```{r}
 #| label: zam_dh_vl_pop
@@ -31,7 +38,6 @@ hookaddcap()
 #| tbl-width: 100%
 #| tbl-align: "center"
 #| tbl-font-size: 12 
-zam_dh_vl_pop <- qread(here(PATH_ZAM_DH_VL_POP))
 
 zam_dh_vl_pop |>
     gt() |>
@@ -65,15 +71,12 @@ zam_dh_vl_pop |>
         column_labels.border.bottom.color = "black",
         column_labels.border.bottom.width = px(3)
     )
-
 ```
-
 
 ::: {.callout-warning}
 ## TODO
 The village list for each HFCA is still pending. We are waiting for Zambia to send this information back.
 :::
-
 
 ## Date of project
 
@@ -91,7 +94,6 @@ In this analysis, we will focus on the following HFCA:
 
 -   Kankumba
 -   Lukwipa
-
 
 ::: {.callout-note}
 ## Intervention and Control Group Definition
@@ -114,3 +116,21 @@ This clear definition of intervention and control groups allows for a robust com
 :::
 
 ## Geographical distribution
+
+The map of the study villages and the distribution of the study households are shown below.
+
+```{r}
+#| label: zam_hh_hh
+#| warning: false
+#| message: false
+#| column: page
+#| tbl-cap: Overview of the household data
+
+# use the household data to plot the map of the study households
+# tmap and leaflet are not good at plotting in RMarkdown
+zam_hh_hh |>
+    st_as_sf(coords = c("gps_location_longitude", "gps_location_latitude"), crs = 4326) |>
+    tm_shape() +
+    tm_dots() |>
+    tmap_leaflet()
+```
